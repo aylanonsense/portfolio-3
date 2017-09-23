@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link href="http://fonts.googleapis.com/css?family=Raleway:800,400|Roboto:100,300,100italic,400,700" rel="stylesheet" type="text/css">
 	<style>
 		/*
 			size ranges that capture common breakpoints
@@ -15,54 +16,84 @@
 		body {
 			margin: 0;
 			padding: 0;
+			min-width: 232px;
+			font-family: 'Raleway',sans-serif;
 		}
 		header {
-			background-color: #ddf;
+			/*background-color: #ddf;*/
 			text-align: center;
+			margin: 30px 0 30px;
+			/*border: 1px solid red;*/
 		}
 		header h1 {
+			margin: 0 0 5px;
+			padding: 0;
+			font-size: 350%;
+		}
+		header p {
 			padding: 0;
 			margin: 0;
+			font-size: 89%;
 		}
 		nav {
-			background-color: #ddf;
+			/*background-color: #ddf;*/
+			margin: 30px 0;
+			/*border: 1px solid green;*/
 		}
 		nav ul {
-			background-color: #99f;
+			/*background-color: #99f;*/
 			display: flex;
 			justify-content: center;
 			margin: 0;
 			padding: 0;
 		}
 		nav ul li {
-			background-color: #77f;
+			/*background-color: #77f;*/
 			list-style-type: none;
 			margin: 0;
 			padding: 0;
 			min-width: 100px;
 			text-align: center;
 		}
+		nav ul li a {
+			text-decoration: none;
+			color: #000;
+		}
+		nav ul li a:hover {
+			text-decoration: underline;
+		}
 		main {
-			background-color: #ddf;
+			/*border: 1px solid blue;*/
+			/*background-color: #ddf;*/
 			display: flex;
 			justify-content: center;
+			margin: 20px 0;
 		}
 		main #grid {
-			border: 1px solid #000;
-			background-color: #bbf;
+			/*background-color: #bbf;*/
 			position: relative;
 		}
 		main #grid .grid-item {
-			background-color: #99f;
+			background-color: #ccc;
 			position: absolute;
 		}
 		footer {
-			background-color: #ddf;
+			margin: 20px 0 0;
+			/*border: 1px solid orange;*/
+			/*background-color: #ddf;*/
 			text-align: center;
 		}
 		footer p {
 			padding: 0;
 			margin: 0;
+		}
+		@media (max-width: 300px) {
+			nav ul {
+				justify-content: space-around;
+			}
+			nav ul li {
+				min-width: 0px;
+			}	
 		}
 	</style>
 </head>
@@ -70,6 +101,7 @@
 
 	<header>
 		<h1>bridgs</h1>
+		<p>I make games and schtuff</p>
 	</header>
 
 	<nav>
@@ -81,7 +113,7 @@
 	</nav>
 
 	<main>
-		<div id="grid" style="width:230px;height:230px;">
+		<div id="grid" style="width:630px;height:710px;">
 			<div class="grid-item" style="top:0px;left:0px;width:30px;height:30px"></div>
 			<div class="grid-item" style="top:40px;left:0px;width:30px;height:30px"></div>
 			<div class="grid-item" style="top:0px;left:40px;width:30px;height:30px"></div>
@@ -92,6 +124,35 @@
 			<div class="grid-item" style="top:80px;left:80px;width:150px;height:150px"></div>
 			<div class="grid-item" style="top:200px;left:0px;width:30px;height:30px"></div>
 			<div class="grid-item" style="top:200px;left:40px;width:30px;height:30px"></div>
+			<div class="grid-item" style="top:0px;left:240px;width:230px;height:230px"></div>
+			<div class="grid-item" style="top:240px;left:240px;width:30px;height:30px"></div>
+			<div class="grid-item" style="top:280px;left:240px;width:30px;height:30px"></div>
+			<div class="grid-item" style="top:240px;left:280px;width:30px;height:30px"></div>
+			<div class="grid-item" style="top:280px;left:280px;width:30px;height:30px"></div>
+			<div class="grid-item" style="top:240px;left:320px;width:70px;height:70px"></div>
+			<div class="grid-item" style="top:240px;left:400px;width:70px;height:70px"></div>
+			<div class="grid-item" style="top:320px;left:240px;width:70px;height:110px"></div>
+			<div class="grid-item" style="top:320px;left:320px;width:150px;height:150px"></div>
+			<div class="grid-item" style="top:440px;left:240px;width:30px;height:30px"></div>
+			<div class="grid-item" style="top:440px;left:280px;width:30px;height:30px"></div>
+			<div class="grid-item" style="top:240px;left:0px;width:230px;height:230px"></div>
+			<div class="grid-item" style="top:480px;left:240px;width:30px;height:30px"></div>
+			<div class="grid-item" style="top:520px;left:240px;width:30px;height:30px"></div>
+			<div class="grid-item" style="top:480px;left:280px;width:30px;height:30px"></div>
+			<div class="grid-item" style="top:520px;left:280px;width:30px;height:30px"></div>
+			<div class="grid-item" style="top:480px;left:320px;width:70px;height:70px"></div>
+			<div class="grid-item" style="top:480px;left:400px;width:70px;height:70px"></div>
+			<div class="grid-item" style="top:560px;left:240px;width:70px;height:110px"></div>
+			<div class="grid-item" style="top:560px;left:320px;width:150px;height:150px"></div>
+			<div class="grid-item" style="top:680px;left:240px;width:30px;height:30px"></div>
+			<div class="grid-item" style="top:680px;left:280px;width:30px;height:30px"></div>
+			<div class="grid-item" style="top:480px;left:0px;width:230px;height:230px"></div>
+			<div class="grid-item" style="top:0px;left:480px;width:70px;height:230px"></div>
+			<div class="grid-item" style="top:240px;left:480px;width:70px;height:230px"></div>
+			<div class="grid-item" style="top:480px;left:480px;width:70px;height:230px"></div>
+			<div class="grid-item" style="top:0px;left:560px;width:70px;height:230px"></div>
+			<div class="grid-item" style="top:240px;left:560px;width:70px;height:230px"></div>
+			<div class="grid-item" style="top:480px;left:560px;width:70px;height:230px"></div>
 		</div>
 	</main>
 
