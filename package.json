@@ -1,0 +1,9 @@
+{
+  "name": "portfolio-3",
+  "version": "0.0.1",
+  "description": "Uhhh attempt 3 at a portfolio?",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
+}
