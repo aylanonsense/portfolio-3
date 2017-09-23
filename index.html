@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		/*
+			size ranges that capture common breakpoints
+				0px to 400px
+				401px to 600px
+				601px to 900px
+				901px to 1200px
+				1201px to 1800px
+			tile size + gap
+				30px + 10px
+		*/
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		header {
+			background-color: #ddf;
+			text-align: center;
+		}
+		header h1 {
+			padding: 0;
+			margin: 0;
+		}
+		nav {
+			background-color: #ddf;
+		}
+		nav ul {
+			background-color: #99f;
+			display: flex;
+			justify-content: center;
+			margin: 0;
+			padding: 0;
+		}
+		nav ul li {
+			background-color: #77f;
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			min-width: 100px;
+			text-align: center;
+		}
+		main {
+			background-color: #ddf;
+			display: flex;
+			justify-content: center;
+		}
+		main #grid {
+			border: 1px solid #000;
+			background-color: #bbf;
+			position: relative;
+		}
+		main #grid .grid-item {
+			background-color: #99f;
+			position: absolute;
+		}
+		footer {
+			background-color: #ddf;
+			text-align: center;
+		}
+		footer p {
+			padding: 0;
+			margin: 0;
+		}
+	</style>
+</head>
+<body>
+
+	<header>
+		<h1>bridgs</h1>
+	</header>
+
+	<nav>
+		<ul>
+			<li><a href="#">Pixel Art</a></li>
+			<li><a href="#">Games</a></li>
+			<li><a href="#">Misc</a></li>
+		</ul>
+	</nav>
+
+	<main>
+		<div id="grid" style="width:230px;height:230px;">
+			<div class="grid-item" style="top:0px;left:0px;width:30px;height:30px"></div>
+			<div class="grid-item" style="top:40px;left:0px;width:30px;height:30px"></div>
+			<div class="grid-item" style="top:0px;left:40px;width:30px;height:30px"></div>
+			<div class="grid-item" style="top:40px;left:40px;width:30px;height:30px"></div>
+			<div class="grid-item" style="top:0px;left:80px;width:70px;height:70px"></div>
+			<div class="grid-item" style="top:0px;left:160px;width:70px;height:70px"></div>
+			<div class="grid-item" style="top:80px;left:0px;width:70px;height:110px"></div>
+			<div class="grid-item" style="top:80px;left:80px;width:150px;height:150px"></div>
+			<div class="grid-item" style="top:200px;left:0px;width:30px;height:30px"></div>
+			<div class="grid-item" style="top:200px;left:40px;width:30px;height:30px"></div>
+		</div>
+	</main>
+
+	<footer>
+		<p>Some line of text</p>
+		<p>Another line of text</p>
+	</footer>
+
+</body>
+</html>
