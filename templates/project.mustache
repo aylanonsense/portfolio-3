@@ -1,0 +1,7 @@
+<div id="project-pane" style="width:{{projectWidth}}px;height:{{projectHeight}}px;"></div>
+{{#description}}
+	<p>{{description}}{{#dateText}} ({{dateText}}){{/dateText}}</p>
+{{/description}}
+{{^description}}
+	{{#dateText}}<p>{{dateText}}</p>{{/dateText}}
+{{/description}}

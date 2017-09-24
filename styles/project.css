@@ -1,0 +1,65 @@
+html {
+	height: 100%;
+}
+body {
+	height: 100%;
+}
+#wrapper {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-between;
+}
+header {
+	padding: 10px 0;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+header h1 {
+	padding: 0 0 0 20px;
+	position: relative;
+	top: -4px;
+	font-size: 200%;
+}
+main {
+	padding: 0 10px;
+	flex-grow: 1;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+}
+main h2 {
+	margin-top: 30px;
+	font-size: 120%;
+	text-align: center;
+	font-weight: 400;
+}
+main p {
+	margin: 0;
+	padding: 10px 0 0;
+	font-size: 85%;
+	font-weight: 200;
+	word-spacing: 1px;
+	letter-spacing: 0.5px;
+}
+#project-pane {
+	background-color: #ccc;
+}
+footer {
+	width: 100%;
+	padding: 10px 0 10px;
+}
+@media (max-width: 475px) {
+	nav li {
+		min-width: 0px;
+		padding: 0 10px;
+	}	
+}
+@media (max-width: 350px) {
+	nav li {
+		font-size: 75%;
+	}	
+}

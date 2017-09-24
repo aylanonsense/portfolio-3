@@ -4,10 +4,12 @@
 		<title>{{#pageTitle}}{{.}} | {{/pageTitle}}{{siteName}}</title>
 		<link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway:100,200,300,400,800">
 		<style>
-			{{> styles}}
+			{{> style}}
 		</style>
 	</head>
-	<body>
-		{{> layout}}
+	<body style="{{#minBodyWidth}}min-width:{{minBodyWidth}}px;{{/minBodyWidth}}{{#minBodyHeight}}min-height:{{minBodyHeight}}px;{{/minBodyHeight}}">
+		<div id="wrapper">
+			{{> layout}}
+		</div>
 	</body>
 </html>

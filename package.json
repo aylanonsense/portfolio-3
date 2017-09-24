@@ -21,6 +21,10 @@
     ],
     "plugins": [ "transform-object-rest-spread" ]
   },
+  "nodemonConfig": {
+    "ext": "js,json,mustache,css,svg",
+    "ignore": "build/"
+  },
   "dependencies": {
     "express": "^4.15.4"
   },

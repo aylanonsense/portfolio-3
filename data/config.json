@@ -9,5 +9,6 @@
 	"links": {
 		"github": "https://github.com/bridgs",
 		"twitter": "https://twitter.com/bridgs_dev"
-	}
+	},
+	"showDebugColors": false
 }

@@ -1,28 +1,20 @@
 body {
 	margin: 0;
-	padding: 0 10px;
-	min-width: 250px;
+	padding: 0;
 	font-family: 'Raleway',sans-serif;
-	background-color: yellow;
 }
 header {
-	padding: 30px 0 15px;
 	text-align: center;
-	background-color: red;
+	{{#showDebugColors}}background-color: #f88;{{/showDebugColors}}
 }
 header h1 {
-	margin: 0 0 5px;
-	padding: 0;
-	font-size: 320%;
-}
-header p {
 	margin: 0;
-	padding: 0;
-	font-size: 79%;
 }
+{{#showDebugColors}}
 nav {
-	padding: 15px 0;
+	background-color: #8e8;
 }
+{{/showDebugColors}}
 nav ul {
 	margin: 0;
 	padding: 0;
@@ -47,18 +39,11 @@ main {
 	padding: 15px 0;
 	display: flex;
 	justify-content: center;
-	background-color: green;
-}
-main h2 {
-	margin-top: 30px;
-	font-size: 100%;
-	text-align: center;
-	font-weight: 400;
+	{{#showDebugColors}}background-color: #88f;{{/showDebugColors}}
 }
 footer {
-	padding: 15px 0 30px;
 	text-align: center;
-	background-color: blue;
+	{{#showDebugColors}}background-color: #ff6;{{/showDebugColors}}
 }
 footer p {
 	margin: 0;
@@ -68,12 +53,4 @@ footer a {
 	position: relative;
 	top: 3px;
 	text-decoration: none;
-}
-@media (max-width: 300px) {
-	nav ul {
-		justify-content: space-around;
-	}
-	nav li {
-		min-width: 0px;
-	}	
 }
