@@ -14,16 +14,19 @@
         {
           "targets": {
             "node": "8.5.0"
-          }
+          },
+          "debug": false
         }
       ]
-    ]
+    ],
+    "plugins": [ "transform-object-rest-spread" ]
   },
   "dependencies": {
     "express": "^4.15.4"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "canvas": "^1.6.7",
     "mustache": "^2.3.0",

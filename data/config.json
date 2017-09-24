@@ -1,8 +1,13 @@
 {
 	"siteName": "bridgs",
-	"pages": [
-		{ "name": "Pixel Art", "uri": "pixels" },
-		{ "name": "Games", "uri": "games" },
-		{ "name": "Misc", "uri": "misc" }
-	]
+	"pages": {
+		"pixels": { "name": "Pixel Art", "uri": "pixels" },
+		"games": { "name": "Games", "uri": "games" },
+		"misc": { "name": "Misc", "uri": "misc" }
+	},
+	"pageOrder": [ "pixels", "games", "misc" ],
+	"links": {
+		"github": "https://github.com/bridgs",
+		"twitter": "https://twitter.com/bridgs_dev"
+	}
 }
