@@ -1,0 +1,19 @@
+<header>
+	{{header}}
+	{{#navInHeader}}
+	<nav>
+		{{nav}}
+	</nav>
+	{{/navInHeader}}
+</header>
+{{^navInHeader}}
+<nav>
+	{{nav}}
+</nav>
+{{/navInHeader}}
+<main>
+	{{content}}
+</main>
+<footer>
+	{{footer}}
+</footer>

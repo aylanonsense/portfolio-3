@@ -1,0 +1,8 @@
+{
+	"siteName": "bridgs",
+	"pages": [
+		{ "name": "Pixel Art", "uri": "pixels" },
+		{ "name": "Games", "uri": "games" },
+		{ "name": "Misc", "uri": "misc" }
+	]
+}

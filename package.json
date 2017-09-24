@@ -2,8 +2,31 @@
   "name": "portfolio-3",
   "version": "0.0.1",
   "description": "Uhhh attempt 3 at a portfolio?",
-  "main": "server.js",
+  "scripts": {
+    "start": "babel-node index.js --presets env",
+    "build": "babel-node build.js --presets env",
+    "build:watch": "nodemon build.js --exec babel-node --presets env"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": "8.5.0"
+          }
+        }
+      ]
+    ]
+  },
   "dependencies": {
     "express": "^4.15.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "canvas": "^1.6.7",
+    "mustache": "^2.3.0",
+    "nodemon": "^1.12.1"
   }
 }

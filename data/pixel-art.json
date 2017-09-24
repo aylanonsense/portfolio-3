@@ -1,0 +1,342 @@
+{
+	"nightmare": {
+		"title": null,
+		"description": null,
+		"date": "2017/06",
+		"image": "nightmare.gif",
+		"background": "#1c0b20",
+		"animated": true,
+		"grid": { "cols": 6, "rows": 2, "scale": 4 },
+		"thumbnail": { "x": 3, "y": 7, "width": 58, "height": 18 }
+	},
+	"palace": {
+		"title": null,
+		"description": null,
+		"date": "2017/05",
+		"image": "palace.png",
+		"background": "#f7e9dc",
+		"animated": false,
+		"grid": { "cols": 4, "rows": 8, "scale": 3 },
+		"thumbnail": { "x": 2, "y": 1, "width": 50, "height": 104 }
+	},
+	"cherry-scene": {
+		"title": null,
+		"description": null,
+		"date": "2017/05",
+		"image": "cherry-scene.png",
+		"background": "#ffccaa",
+		"animated": false,
+		"grid": { "cols": 1, "rows": 2, "scale": 2 },
+		"thumbnail": { "x": 0, "y": 0, "width": 15, "height": 35 }
+	},
+	"flower-bloom": {
+		"title": null,
+		"description": null,
+		"date": "2017/04",
+		"image": "flower-bloom.gif",
+		"background": "#e9f7e3",
+		"animated": true,
+		"grid": { "cols": 4, "rows": 4, "scale": 3 },
+		"thumbnail": { "x": 18, "y": 5, "width": 50, "height": 50 }
+	},
+	"blueberry": {
+		"title": null,
+		"description": null,
+		"date": "2017/04",
+		"image": "blueberry.png",
+		"background": "#fc8778",
+		"animated": false,
+		"grid": { "cols": 2, "rows": 2, "scale": 2 },
+		"thumbnail": { "x": 3, "y": 2, "width": 35, "height": 35 }
+	},
+	"alabaster-giant": {
+		"title": null,
+		"description": null,
+		"date": "2016/11",
+		"image": "alabaster-giant.png",
+		"background": "#452416",
+		"animated": false,
+		"grid": { "cols": 6, "rows": 10, "scale": 2 },
+		"thumbnail": { "x": 12, "y": 4, "width": 115, "height": 195 }
+	},
+	"phantom-dust": {
+		"title": null,
+		"description": null,
+		"date": "2016/09",
+		"image": "phantom-dust.png",
+		"background": "#d88869",
+		"animated": false,
+		"grid": { "cols": 2, "rows": 2, "scale": 1 },
+		"thumbnail": { "x": 5, "y": 0, "width": 70, "height": 70 }
+	},
+	"spectral-armor": {
+		"title": null,
+		"description": null,
+		"date": "2016/09",
+		"image": "spectral-armor.png",
+		"background": "#2a0039",
+		"animated": false,
+		"grid": { "cols": 2, "rows": 4, "scale": 2 },
+		"thumbnail": { "x": 16, "y": 0, "width": 35, "height": 70 }
+	},
+	"happy-tree": {
+		"title": null,
+		"description": null,
+		"date": "2016/09",
+		"image": "happy-tree.png",
+		"background": "#ffd1a2",
+		"animated": false,
+		"grid": { "cols": 2, "rows": 2, "scale": 2 },
+		"thumbnail": { "x": 6, "y": 1, "width": 35, "height": 35 }
+	},
+	"gaudy-ladybug": {
+		"title": null,
+		"description": null,
+		"date": "2016/08",
+		"image": "gaudy-ladybug.png",
+		"background": "#5a8751",
+		"animated": false,
+		"grid": { "cols": 6, "rows": 6, "scale": 2 },
+		"thumbnail": null
+	},
+	"mortimer": {
+		"title": null,
+		"description": null,
+		"date": "2016/08",
+		"image": "mortimer.png",
+		"background": "#fbac00",
+		"animated": false,
+		"grid": { "cols": 2, "rows": 2, "scale": 2 },
+		"thumbnail": { "x": 0, "y": 0, "width": 35, "height": 35 }
+	},
+	"deku": {
+		"title": null,
+		"description": null,
+		"date": "2016/08",
+		"image": "deku.png",
+		"background": "#0d0f1c",
+		"animated": false,
+		"grid": { "cols": 4, "rows": 4, "scale": 3 },
+		"thumbnail": { "x": 0, "y": 0, "width": 43, "height": 46 }
+	},
+	"monolith": {
+		"title": null,
+		"description": null,
+		"date": "2016/07",
+		"image": "monolith.png",
+		"background": "#645146",
+		"animated": false,
+		"grid": { "cols": 6, "rows": 6, "scale": 2 },
+		"thumbnail": { "x": 2, "y": 2, "width": 115, "height": 115 }
+	},
+	"autumn-hair": {
+		"title": "Autumn Hair",
+		"description": null,
+		"date": "2016/07",
+		"image": "autumn-hair.png",
+		"background": "#debb37",
+		"animated": false,
+		"grid": { "cols": 4, "rows": 4, "scale": 2 },
+		"thumbnail": { "x": 3, "y": 3, "width": 75, "height": 75 }
+	},
+	"zergling": {
+		"title": null,
+		"description": null,
+		"date": "2016/07",
+		"image": "zergling.gif",
+		"background": "#f4e9d7",
+		"animated": true,
+		"grid": { "cols": 6, "rows": 4, "scale": 2 },
+		"thumbnail": { "x": 12, "y": 12, "width": 115, "height": 75 }
+	},
+	"mail-angel": {
+		"title": null,
+		"description": null,
+		"date": "2016/06",
+		"image": "mail-angel.gif",
+		"background": "#fffe5e",
+		"animated": true,
+		"grid": { "cols": 4, "rows": 6, "scale": 3 },
+		"thumbnail": { "x": 15, "y": 3, "width": 50, "height": 76 }
+	},
+	"traffic-knight": {
+		"title": null,
+		"description": null,
+		"date": "2016/06",
+		"image": "traffic-knight.png",
+		"background": "#fffdb3",
+		"animated": false,
+		"grid": { "cols": 6, "rows": 6, "scale": 1 },
+		"thumbnail": { "x": 8, "y": 8, "width": 230, "height": 230 }
+	},
+	"croc": {
+		"title": null,
+		"description": null,
+		"date": "2016/04",
+		"image": "croc.gif",
+		"background": "#b8e0e4",
+		"animated": true,
+		"grid": { "cols": 2, "rows": 2, "scale": 1 },
+		"thumbnail": { "x": 19, "y": 3, "width": 70, "height": 70 }
+	},
+	"bonsai": {
+		"title": "Bonsai",
+		"description": "A quick sketch of a bonsai tree for a class on pixel art.",
+		"date": "2016/03",
+		"image": "bonsai.png",
+		"background": "#fcff9f",
+		"animated": false,
+		"grid": { "cols": 2, "rows": 2, "scale": 3 },
+		"thumbnail": null
+	},
+	"froggins": {
+		"title": "Froggins",
+		"description": "A quick sketch of a frog for a class on pixel art.",
+		"date": "2016/03",
+		"image": "froggins.png",
+		"background": "#62dbaf",
+		"animated": false,
+		"grid": { "cols": 2, "rows": 2, "scale": 2 },
+		"thumbnail": null
+	},
+	"robo-gladiator": {
+		"title": "Robo Gladiator",
+		"description": "Animation test for a game.",
+		"date": "2016/02",
+		"image": "robo-gladiator.gif",
+		"background": "#f2cbfc",
+		"animated": true,
+		"grid": { "cols": 8, "rows": 6, "scale": 4 },
+		"thumbnail": { "x": 1, "y": 0, "width": 78, "height": 55 }
+	},
+	"catbug": {
+		"title": null,
+		"description": null,
+		"date": "2016",
+		"image": "catbug.png",
+		"background": "#f1f0d2",
+		"animated": false,
+		"grid": { "cols": 2, "rows": 2, "scale": 1 },
+		"thumbnail": null
+	},
+	"sprouts": {
+		"title": null,
+		"description": null,
+		"date": "2016",
+		"image": "sprouts.png",
+		"background": "#d7ab4f",
+		"animated": false,
+		"grid": { "cols": 4, "rows": 2, "scale": 2 },
+		"thumbnail": null
+	},
+	"test-tileset": {
+		"title": null,
+		"description": null,
+		"date": "2016",
+		"image": "test-tileset.png",
+		"background": "#5ece53",
+		"animated": false,
+		"grid": { "cols": 2, "rows": 2, "scale": 2 },
+		"thumbnail": { "x": 145, "y": 134, "width": 35, "height": 35 }
+	},
+	"hammer-spider": {
+		"title": null,
+		"description": null,
+		"date": "2016",
+		"image": "hammer-spider.png",
+		"background": "#111111",
+		"animated": false,
+		"grid": { "cols": 2, "rows": 2, "scale": 3 },
+		"thumbnail": { "x": 9, "y": 33, "width": 24, "height": 24 }
+	},
+	"tiny-face": {
+		"title": null,
+		"description": null,
+		"date": "2016",
+		"image": "tiny-face.png",
+		"background": "#ffffff",
+		"animated": false,
+		"grid": { "cols": 2, "rows": 2, "scale": 3 },
+		"thumbnail": null
+	},
+	"grapple-girl": {
+		"title": "Grapple Girl",
+		"description": "Walk cycle test of video game sprite.",
+		"date": "2015/11",
+		"image": "grapple-girl.gif",
+		"background": "#ededd7",
+		"animated": true,
+		"grid": { "cols": 2, "rows": 2, "scale": 3 },
+		"thumbnail": null
+	},
+	"rocky-platforms": {
+		"title": null,
+		"description": null,
+		"date": "2015/11",
+		"image": "rocky-platforms.png",
+		"background": "#ffeedd",
+		"animated": false,
+		"grid": { "cols": 2, "rows": 4, "scale": 2 },
+		"thumbnail": { "x": 0, "y": 1, "width": 35, "height": 75 }
+	},
+	"pillars": {
+		"title": null,
+		"description": null,
+		"date": "2015/11",
+		"image": "pillars.png",
+		"background": "#ffeedd",
+		"animated": false,
+		"grid": { "cols": 4, "rows": 2, "scale": 1 },
+		"thumbnail": { "x": 0, "y": 0, "width": 150, "height": 67 }
+	},
+	"rock-blocks": {
+		"title": null,
+		"description": null,
+		"date": "2015/11",
+		"image": "rock-blocks.png",
+		"background": "#ffeedd",
+		"animated": false,
+		"grid": { "cols": 4, "rows": 4, "scale": 3 },
+		"thumbnail": { "x": 73, "y": 1, "width": 50, "height": 50 }
+	},
+	"tree-progression": {
+		"title": null,
+		"description": null,
+		"date": "2015/11",
+		"image": "tree-progression.png",
+		"background": "#ffeedd",
+		"animated": false,
+		"grid": { "cols": 4, "rows": 6, "scale": 4 },
+		"thumbnail": { "x": 214, "y": 16, "width": 21, "height": 53 }
+	},
+	"ghus": {
+		"title": "Gh&uuml;s",
+		"description": "Animation of Gh&uuml;s from the Saga comic book series.",
+		"date": "2015/06",
+		"image": "ghus.gif",
+		"background": "#e6f8f9",
+		"animated": true,
+		"grid": { "cols": 4, "rows": 4, "scale": 3 },
+		"thumbnail": null
+	},
+	"tree": {
+		"title": null,
+		"description": "A tree painted pixel by pixel.",
+		"date": "2015/06",
+		"image": "tree.png",
+		"background": "#faf6ea",
+		"animated": false,
+		"grid": { "cols": 8, "rows": 10, "scale": 3 },
+		"thumbnail": { "x": 20, "y": 8, "width": 89, "height": 114 }
+	},
+	"gazelle-gladiator": {
+		"title": "Gazelle Gladiator",
+		"description": "One of my first pieces of pixel art.",
+		"date": "2012",
+		"image": "gazelle-gladiator.gif",
+		"background": "#312526",
+		"animated": true,
+		"grid": { "cols": 2, "rows": 2, "scale": 3 },
+		"thumbnail": { "x": 2, "y": 0, "width": 24, "height": 24 }
+	}
+}
