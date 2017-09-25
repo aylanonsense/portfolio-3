@@ -41,32 +41,43 @@ async function load() {
 	};
 }
 
-export async function buildProjectPage(page, project) {
+export async function buildGalleryPage(pageData, buildOptions) {
 	if (!isLoaded) {
 		await load();
 	}
-	let pageUri = config.pages[page].uri
-	let projectData;
-	if (page === 'pixels') {
-		projectData = pixels[project];
-	}
-	let imagePath = `images/${pageUri}/${projectData.image}`;
-	let image = await loadImage(imagePath);
-	let mult = Math.min(6, Math.floor(Math.min(500 / image.width, 500 / image.height)));
-	let width = image.width * mult;
-	let height = image.height * mult;
 	let html = Mustache.render(templates.base, {
 		...siteData,
-		pageTitle: projectData.title,
+		...buildOptions,
+		pageTitle: pageData.title,
+		showSubheading: true,
+		navInHeader: false,
+		showFooterText: true,
+		minBodyWidth: 300,
+		minBodyHeight: null
+	}, {
+		...templates,
+		main: content.grid,
+		style: styles.universal + styles.gallery + styles.grid
+	});
+	await saveFile(`build/public/${pageData.uri}.html`, html);
+}
+
+export async function buildProjectPage(pageData, projectData, buildOptions) {
+	if (!isLoaded) {
+		await load();
+	}
+	let mult = Math.min(6, Math.floor(Math.min(500 / projectData.imageWidth, 500 / projectData.imageHeight)));
+	let width = projectData.imageWidth * mult;
+	let height = projectData.imageHeight * mult;
+	let html = Mustache.render(templates.base, {
+		...siteData,
+		...projectData,
+		...buildOptions,
 		showSubheading: false,
 		navInHeader: true,
 		showFooterText: false,
-		image: imagePath,
 		width: width,
 		height: height,
-		backgroundColor: projectData.background,
-		description: projectData.description,
-		dateText: 'Dec 2016',
 		isPixelArt: true,
 		minBodyWidth: Math.max(width + 20, 300),
 		minBodyHeight: Math.max(height + 200, 400),
@@ -76,5 +87,5 @@ export async function buildProjectPage(page, project) {
 		main: content.project,
 		style: styles.universal + styles.project
 	});
-	await saveFile(`build/public/${pageUri}/${project}.html`, html);
+	await saveFile(`build/public/${pageData.uri}/${projectData.project}.html`, html);
 };

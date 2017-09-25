@@ -11,5 +11,7 @@
 		"github": "https://github.com/bridgs",
 		"twitter": "https://twitter.com/bridgs_dev"
 	},
+	"abbreviateMonths": true,
+	"dateDelimeter": "to",
 	"showDebugColors": false
 }

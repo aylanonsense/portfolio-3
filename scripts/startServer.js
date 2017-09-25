@@ -15,7 +15,7 @@ export default async () => {
 	app.get(/.*\.html/, (req, res) => send404(res));
 	for (let [ k, page ] of Object.entries(config.pages)) {
 		let uri = page.uri;
-		let filePath = path.join(__dirname, '..', 'build', `${uri}.html`);
+		let filePath = path.join(__dirname, '..', 'build/public', `${uri}.html`);
 		app.get(`/${uri}`, (req, res) => res.sendFile(filePath));
 	}
 	app.use('/images', express.static('images'));

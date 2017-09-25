@@ -23,7 +23,9 @@
         }
       ]
     ],
-    "plugins": [ "transform-object-rest-spread" ]
+    "plugins": [
+      "transform-object-rest-spread"
+    ]
   },
   "nodemonConfig": {
     "ext": "js,json,mustache,css,svg",
@@ -36,6 +38,7 @@
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.0",
+    "bin-pack": "^1.0.2",
     "canvas": "^1.6.7",
     "mustache": "^2.3.0",
     "nodemon": "^1.12.1"

@@ -1,49 +1,53 @@
 import Mustache from 'mustache';
 import loadFile from './loadFile';
-import loadImage from './loadImage';
 import saveFile from './saveFile';
+import loadImage from './loadImage';
+import packProjects from './packProjects';
+import saveSpriteSheet from './saveSpriteSheet';
+import { buildGalleryPage, buildProjectPage } from './buildPage';
+import parseDate from './parseDate';
 import config from '../data/config.json';
 import pixels from '../data/pixels.json';
 
-import { buildProjectPage } from './buildPage';
-
 export default async () => {
-	const templates = {
-		base: await loadFile('templates/base.mustache'),
-		layout: await loadFile('templates/layout.mustache'),
-		header: await loadFile('templates/header.mustache'),
-		nav: await loadFile('templates/nav.mustache'),
-		footer: await loadFile('templates/footer.mustache'),
-		githubIcon: await loadFile('icons/github.svg'),
-		twitterIcon: await loadFile('icons/twitter.svg')
-	};
-	const content = {
-		project: await loadFile('templates/project.mustache'),
-		grid: await loadFile('templates/grid.mustache')
-	};
-	const styles = {
-		universal: await loadFile('styles/universal.css'),
-		project: await loadFile('styles/project.css'),
-		gallery: await loadFile('styles/gallery.css'),
-		grid: await loadFile('styles/grid.css')
-	};
-	const siteData = {
-		siteName: config.siteName,
-		pages: config.pageOrder.map(page => config.pages[page]),
-		githubUri: config.links.github,
-		twitterUri: config.links.twitter,
-		showDebugColors: config.showDebugColors
-	};
+	// gather some metadata
+	let pixelsOrdering = [];
+	for (let [ project, projectData ] of Object.entries(pixels)) {
+		let { time, dateText } = parseDate(projectData.date);
+		let imagePath = `images/${config.pages.pixels.imagesUri}/${projectData.image}`;
+		let image = await loadImage(imagePath);
+		pixels[project] = {
+			...pixels[project],
+			project,
+			time,
+			dateText,
+			imagePath,
+			imageWidth: image.width,
+			imageHeight: image.height
+		};
+		pixelsOrdering.push({ project, time });
+	}
+
+	// add metadata about which projects come next/prev in the order
+	pixelsOrdering.sort((a, b) => b.time - a.time);
+	for (let i = 0; i < pixelsOrdering.length; i++) {
+		let nextProjectIndex = i === pixelsOrdering.length - 1 ? 0 : i + 1;
+		let prevProjectIndex = i === 0 ? pixelsOrdering.length - 1 : i - 1;
+		let project = pixelsOrdering[i].project;
+		let nextProject = pixelsOrdering[nextProjectIndex].project;
+		let prevProject = pixelsOrdering[prevProjectIndex].project;
+		pixels[project] = {
+			...pixels[project],
+			nextProject,
+			prevProject
+		}
+	}
+
+	// pack the thumbnails into sprite sheets
+	await saveSpriteSheet('build/public/images/test.png', pixels, ...packProjects(pixels));
 
 	// pretend we're making the base pixel art page
-	let html = Mustache.render(templates.base, {
-		...siteData,
-		pageTitle: config.pages.pixels.title,
-		showSubheading: true,
-		navInHeader: false,
-		showFooterText: true,
-		minBodyWidth: 300,
-		minBodyHeight: null,
+	await buildGalleryPage(config.pages.pixels, {
 		gridWidth: 630,
 		gridHeight: 710,
 		gridItems: [
@@ -87,43 +91,10 @@ export default async () => {
 			{ x: 560, y: 240, width: 70,  height: 230 },
 			{ x: 560, y: 480, width: 70,  height: 230 },
 		]
-	}, {
-		...templates,
-		main: content.grid,
-		style: styles.universal + styles.gallery + styles.grid
 	});
-	await saveFile(`build/public/${config.pages.pixels.uri}.html`, html);
 
 	// pretend we're in a loop
-	{
-		await buildProjectPage('pixels', 'bonsai');
-		// let data = pixels[key];
-		// let imagePath = `images/${config.pages.pixels.uri}/${data.image}`;
-		// let image = await loadImage(imagePath);
-		// let mult = Math.min(6, Math.floor(Math.min(500 / image.width, 500 / image.height)));
-		// let width = image.width * mult;
-		// let height = image.height * mult;
-		// let html = Mustache.render(templates.base, {
-		// 	...siteData,
-		// 	pageTitle: data.title,
-		// 	showSubheading: false,
-		// 	navInHeader: true,
-		// 	showFooterText: false,
-		// 	image: imagePath,
-		// 	width: width,
-		// 	height: height,
-		// 	backgroundColor: data.background,
-		// 	isPixelArt: true,
-		// 	minBodyWidth: Math.max(width + 20, 300),
-		// 	minBodyHeight: Math.max(height + 200, 400),
-		// 	mainWidth: Math.max(width, 280),
-		// 	description: 'This is a description of the thing. It could go on a little long and I should account for that in some way.',
-		// 	dateText: 'Dec 2016'
-		// }, {
-		// 	...templates,
-		// 	main: content.project,
-		// 	style: styles.universal + styles.project
-		// });
-		// await saveFile(`build/public/${config.pages.pixels.uri}/${project}.html`, html);
+	for (let project in pixels) {
+		await buildProjectPage(config.pages.pixels, pixels[project], {});
 	}
 };
