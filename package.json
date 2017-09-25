@@ -5,7 +5,11 @@
   "scripts": {
     "start": "babel-node index.js --presets env",
     "build": "babel-node build.js --presets env",
-    "build:watch": "nodemon build.js --exec babel-node --presets env"
+    "build:watch": "nodemon build.js --exec babel-node --presets env",
+    "build-and-serve": "babel-node build-and-serve.js --presets env",
+    "build-and-serve:watch": "nodemon build-and-serve.js --exec babel-node --presets env",
+    "server": "babel-node server.js --presets env",
+    "server:watch": "nodemon server.js --exec babel-node --presets env"
   },
   "babel": {
     "presets": [

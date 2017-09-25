@@ -1,11 +1,12 @@
 {
 	"siteName": "bridgs",
 	"pages": {
-		"pixels": { "name": "Pixel Art", "uri": "pixels" },
-		"games": { "name": "Games", "uri": "games" },
-		"misc": { "name": "Misc", "uri": "misc" }
+		"pixels": { "title": "Pixel Art", "uri": "pixels", "imagesUri": "pixels" },
+		"games": { "title": "Games", "uri": "games", "imagesUri": "games" },
+		"misc": { "title": "Misc", "uri": "misc", "imagesUri": "misc" }
 	},
 	"pageOrder": [ "pixels", "games", "misc" ],
+	"defaultPage": "pixels",
 	"links": {
 		"github": "https://github.com/bridgs",
 		"twitter": "https://twitter.com/bridgs_dev"
