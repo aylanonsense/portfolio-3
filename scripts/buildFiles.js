@@ -1,9 +1,11 @@
 import Mustache from 'mustache';
-import loadFile from '../scripts/loadFile';
-import loadImage from '../scripts/loadImage';
-import saveFile from '../scripts/saveFile';
+import loadFile from './loadFile';
+import loadImage from './loadImage';
+import saveFile from './saveFile';
 import config from '../data/config.json';
 import pixels from '../data/pixels.json';
+
+import { buildProjectPage } from './buildPage';
 
 export default async () => {
 	const templates = {
@@ -90,34 +92,38 @@ export default async () => {
 		main: content.grid,
 		style: styles.universal + styles.gallery + styles.grid
 	});
-	await saveFile(`build/${config.pages.pixels.uri}.html`, html);
+	await saveFile(`build/public/${config.pages.pixels.uri}.html`, html);
 
 	// pretend we're in a loop
 	{
-		let key = 'bonsai';
-		let data = pixels[key];
-		let project = {
-			width: 500,
-			height: 350
-		};
-		let html = Mustache.render(templates.base, {
-			...siteData,
-			pageTitle: data.title,
-			showSubheading: false,
-			navInHeader: true,
-			showFooterText: false,
-			projectWidth: project.width,
-			projectHeight: project.height,
-			minBodyWidth: Math.max(project.width + 20, 300),
-			minBodyHeight: Math.max(project.height + 200, 400),
-			mainWidth: Math.max(project.width, 280),
-			description: 'This is a description of the thing. It could go on a little long and I should account for that in some way.',
-			dateText: 'Dec 2016'
-		}, {
-			...templates,
-			main: content.project,
-			style: styles.universal + styles.project
-		});
-		await saveFile(`build/${config.pages.pixels.uri}/${key}.html`, html);
+		await buildProjectPage('pixels', 'bonsai');
+		// let data = pixels[key];
+		// let imagePath = `images/${config.pages.pixels.uri}/${data.image}`;
+		// let image = await loadImage(imagePath);
+		// let mult = Math.min(6, Math.floor(Math.min(500 / image.width, 500 / image.height)));
+		// let width = image.width * mult;
+		// let height = image.height * mult;
+		// let html = Mustache.render(templates.base, {
+		// 	...siteData,
+		// 	pageTitle: data.title,
+		// 	showSubheading: false,
+		// 	navInHeader: true,
+		// 	showFooterText: false,
+		// 	image: imagePath,
+		// 	width: width,
+		// 	height: height,
+		// 	backgroundColor: data.background,
+		// 	isPixelArt: true,
+		// 	minBodyWidth: Math.max(width + 20, 300),
+		// 	minBodyHeight: Math.max(height + 200, 400),
+		// 	mainWidth: Math.max(width, 280),
+		// 	description: 'This is a description of the thing. It could go on a little long and I should account for that in some way.',
+		// 	dateText: 'Dec 2016'
+		// }, {
+		// 	...templates,
+		// 	main: content.project,
+		// 	style: styles.universal + styles.project
+		// });
+		// await saveFile(`build/public/${config.pages.pixels.uri}/${project}.html`, html);
 	}
 };

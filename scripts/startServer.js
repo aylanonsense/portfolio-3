@@ -19,7 +19,7 @@ export default async () => {
 		app.get(`/${uri}`, (req, res) => res.sendFile(filePath));
 	}
 	app.use('/images', express.static('images'));
-	app.use(express.static('build', {
+	app.use(express.static('build/public', {
 		extensions: [ 'html' ],
 		index: `${config.pages[config.defaultPage].uri}.html`
 	}));
