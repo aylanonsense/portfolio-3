@@ -1,6 +1,6 @@
 import Canvas from 'canvas';
-import loadImage from './helper/loadImage';
-import saveCanvas from './helper/saveCanvas';
+import loadImage from './loadImage';
+import saveCanvas from './saveCanvas';
 import fs from 'fs';
 
 export default async (filePath, projects, width, height) => {

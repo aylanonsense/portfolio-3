@@ -5,21 +5,25 @@
 			"title": "Pixel Art",
 			"uri": "pixels",
 			"imagesUri": "pixels",
-			"isGallery": true
+			"isGallery": true,
+			"isPixelArt": true
 		},
 		"games": {
 			"title": "Games",
 			"uri": "games",
 			"imagesUri": "games",
-			"isGallery": true
+			"isGallery": true,
+			"isPixelArt": false
 		},
 		"misc": {
 			"title": "Misc",
 			"uri": "misc",
 			"imagesUri": "misc",
-			"isGallery": true
+			"isGallery": true,
+			"isPixelArt": false
 		}
 	},
+	"grid": { "cellWidth": 30, "cellHeight": 30, "cellGap": 10 },
 	"nav": [ "pixels", "games", "misc" ],
 	"defaultSection": "pixels",
 	"links": {

@@ -40,19 +40,21 @@ async function load() {
 	};
 }
 
-export async function buildGalleryHtml(galleryData, buildOptions) {
+export async function buildGalleryHtml(galleryData, projects, buildOptions) {
 	if (!isLoaded) {
 		await load();
 	}
 	let html = Mustache.render(templates.base, {
 		...siteData,
 		...buildOptions,
-		pageTitle: galleryData.title,
+		projects: Object.values(projects),
+		title: galleryData.title,
 		showSubheading: true,
 		navInHeader: false,
 		showFooterText: true,
+		isPixelArt: galleryData.isPixelArt,
 		minBodyWidth: 300,
-		minBodyHeight: null
+		minBodyHeight: null,
 	}, {
 		...templates,
 		main: content.grid,
@@ -72,7 +74,7 @@ export async function buildProjectHtml(galleryData, projectData, buildOptions) {
 		showSubheading: false,
 		navInHeader: true,
 		showFooterText: false,
-		isPixelArt: true,
+		isPixelArt: galleryData.isPixelArt,
 		minBodyWidth: Math.max(projectData.image.project.width + 20, 300),
 		minBodyHeight: Math.max(projectData.image.project.height + 200, 400),
 		mainWidth: Math.max(projectData.image.project.width, 280)

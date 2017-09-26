@@ -17,12 +17,14 @@ export default async (galleryData, projects) => {
 		projectData.project = project;
 		projectData.image.raw = {
 			path: imagePath,
+			uri: '/' + imagePath,
 			width: image.width,
 			height: image.height
 		};
 		let mult = Math.max(1, Math.min(Math.floor(Math.min(500 / image.width, 500 / image.height)), 6));
 		projectData.image.project = {
 			path: imagePath,
+			uri: '/' + imagePath,
 			width: image.width * mult,
 			height: image.height * mult
 		};
