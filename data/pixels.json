@@ -25,7 +25,7 @@
 		"description": null,
 		"date": "2017/04",
 		"image": { "name": "flower-bloom.gif", "animated": true },
-		"backgroundColor": "#e9f7e3"
+		"backgroundColor": "#ffffff"
 	},
 	"blueberry": {
 		"title": null,
@@ -139,6 +139,7 @@
 		"description": "A quick sketch of a frog for a class on pixel art.",
 		"date": "2016/03",
 		"image": { "name": "froggins.png" },
+		"grid": { "scale": 2 },
 		"backgroundColor": "#62dbaf"
 	},
 	"robo-gladiator": {

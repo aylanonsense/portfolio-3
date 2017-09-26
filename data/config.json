@@ -23,7 +23,14 @@
 			"isPixelArt": false
 		}
 	},
-	"grid": { "cellWidth": 30, "cellHeight": 30, "cellGap": 10 },
+	"grid": {
+		"cellWidth": 30,
+		"cellHeight": 30,
+		"cellGap": 10,
+		"colStep": 2,
+		"rowStep": 2,
+		"packAttempts": 1000
+	},
 	"nav": [ "pixels", "games", "misc" ],
 	"defaultSection": "pixels",
 	"links": {
