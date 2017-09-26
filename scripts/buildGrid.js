@@ -6,8 +6,8 @@ export default async projects => {
 	for (let [ project, projectData ] of Object.entries(projects)) {
 		let col = 0;
 		let row = totalRows;
-		// projectData.grid.col = col;
-		// projectData.grid.row = row;
+		projectData.grid.col = col;
+		projectData.grid.row = row;
 		projectData.grid.x = (config.grid.cellWidth + config.grid.cellGap) * col;
 		projectData.grid.y = (config.grid.cellHeight + config.grid.cellGap) * row;
 		totalRows += projectData.grid.rows;

@@ -16,3 +16,14 @@ nav {
 footer {
 	padding: 15px 0 30px;
 }
+#gallery {
+	position: relative;
+}
+#gallery .gallery-item {
+	position: absolute;
+	background-color: #ccc;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

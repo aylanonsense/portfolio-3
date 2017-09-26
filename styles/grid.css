@@ -1,7 +1,0 @@
-#grid {
-	position: relative;
-}
-#grid .grid-item {
-	position: absolute;
-	background-color: #ccc;
-}

@@ -1,3 +1,5 @@
 import buildEverything from './scripts/buildEverything';
 
-buildEverything();
+(async () => {
+	await buildEverything();
+})();

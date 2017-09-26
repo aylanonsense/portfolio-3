@@ -1,16 +1,18 @@
 import config from '../data/config.json';
 
+const SCALE_PENALTY = [ 0.1, 0.03, 0, 0, 0.05, 0.2 ];
+
 export default async projects => {
 	for (let [ project, projectData ] of Object.entries(projects)) {
-		let spriteSheetImage = projectData.image.spriteSheet;
+		let image = projectData.image.raw;
 		let bestFit = null;
 		for (let cols = 1; cols <= 8; cols++) {
 			let gridWidth = config.grid.cellWidth * cols + config.grid.cellGap * (cols - 1);
 			for (let rows = 1; rows <= 10; rows++) {
 				let gridHeight = config.grid.cellHeight * rows + config.grid.cellGap * (rows - 1);
-				for (let mult = 1; mult <= 6; mult++) {
-					let imageWidth = mult * spriteSheetImage.width;
-					let imageHeight = mult * spriteSheetImage.height;
+				for (let scale = 1; scale <= 6; scale++) {
+					let imageWidth = scale * image.width;
+					let imageHeight = scale * image.height;
 					let unusedGridArea = 0;
 					let unusedImageArea = 0;
 					if (gridWidth > imageWidth) {
@@ -27,24 +29,41 @@ export default async projects => {
 					}
 					let unusedGridPercentage = unusedGridArea / (gridWidth * gridHeight);
 					let unusedImagePercentage = unusedImageArea / (imageWidth * imageHeight);
-					let fitness = 1 - unusedGridPercentage / 2 - unusedImagePercentage / 2;
+					let unusedGridMult = projectData.image.touchesEdges ? 3 : 1;
+					let unusedImageMult = 1;
+					let fitness = 0
+						- unusedGridMult * unusedGridPercentage
+						- unusedImageMult * unusedImagePercentage
+						- SCALE_PENALTY[scale - 1];
+					if (projectData.grid) {
+						if (projectData.grid.cols && cols === projectData.grid.cols) {
+							fitness += 1;
+						}
+						if (projectData.grid.rows && rows === projectData.grid.rows) {
+							fitness += 1;
+						}
+						if (projectData.grid.scale && scale === projectData.grid.scale) {
+							fitness += 1;
+						}
+					}
 					if (!bestFit || bestFit.fitness < fitness) {
-						bestFit = { mult, cols, rows, fitness, gridWidth, gridHeight };
+						bestFit = { scale, cols, rows, fitness, gridWidth, gridHeight };
 					}
 				}
 			}
 		}
-		projectData.image.gallery = {
-			path: spriteSheetImage.path,
-			uri: spriteSheetImage.uri,
-			x: bestFit.mult * spriteSheetImage.x,
-			y: bestFit.mult * spriteSheetImage.y,
-			width: bestFit.mult * spriteSheetImage.width,
-			height: bestFit.mult * spriteSheetImage.height,
-			sheetWidth: bestFit.mult * spriteSheetImage.sheetWidth,
-			sheetHeight: bestFit.mult * spriteSheetImage.sheetHeight
-		};
+		// projectData.image.gallery = {
+		// 	path: image.path,
+		// 	uri: image.uri,
+		// 	x: bestFit.scale * image.x,
+		// 	y: bestFit.scale * image.y,
+		// 	width: bestFit.scale * image.width,
+		// 	height: bestFit.scale * image.height,
+		// 	sheetWidth: bestFit.scale * image.sheetWidth,
+		// 	sheetHeight: bestFit.scale * image.sheetHeight
+		// };
 		projectData.grid = {
+			scale: bestFit.scale,
 			cols: bestFit.cols,
 			rows: bestFit.rows,
 			width: bestFit.gridWidth,

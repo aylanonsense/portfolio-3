@@ -29,7 +29,7 @@ export default async (galleryData, projects) => {
 			height: image.height * mult
 		};
 		// if it's an animated image, we need to create a non-animated one
-		if (projectData.animated) {
+		if (projectData.image.animated) {
 			let deanimatedImagePath = `build/deanimated/${galleryData.imagesUri}/${projectData.image.name}`;
 			await saveDeanimatedImage(imagePath, deanimatedImagePath);
 			projectData.image.raw.deanimatedPath = deanimatedImagePath;

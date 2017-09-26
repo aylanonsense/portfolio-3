@@ -2,7 +2,10 @@ import fs from 'fs';
 import rimraf from 'rimraf';
 import config from './data/config.json';
 
+console.log('Cleaning file system')
+console.log('  Removing all build files...');
 rimraf('build', () => {
+	console.log('  Making new blank directories...');
 	fs.mkdirSync('build');
 	fs.mkdirSync('build/public');
 	fs.mkdirSync('build/public/images');
@@ -14,4 +17,5 @@ rimraf('build', () => {
 			fs.mkdirSync(`build/deanimated/${sectionData.imagesUri}`);
 		}
 	}
+	console.log('  Done!');
 });

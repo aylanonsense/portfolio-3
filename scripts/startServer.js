@@ -8,6 +8,7 @@ function send404(res) {
 }
 
 export default async () => {
+	console.log('Starting server');
 	// create a new app
 	const app = express();
 
@@ -34,5 +35,7 @@ export default async () => {
 	app.use((req, res) => send404(res));
 
 	// start listening
-	return app.listen(process.env.PORT || 3000);
+	let port = process.env.PORT || 3000;
+	app.listen(port);
+	console.log(`  Server listening on port ${port}`);
 };

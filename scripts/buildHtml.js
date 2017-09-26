@@ -23,13 +23,12 @@ async function load() {
 	};
 	content = {
 		project: await loadFile('templates/project.mustache'),
-		grid: await loadFile('templates/grid.mustache')
+		gallery: await loadFile('templates/gallery.mustache')
 	};
 	styles = {
 		universal: await loadFile('styles/universal.css'),
 		project: await loadFile('styles/project.css'),
-		gallery: await loadFile('styles/gallery.css'),
-		grid: await loadFile('styles/grid.css')
+		gallery: await loadFile('styles/gallery.css')
 	};
 	siteData = {
 		siteName: config.siteName,
@@ -57,8 +56,8 @@ export async function buildGalleryHtml(galleryData, projects, buildOptions) {
 		minBodyHeight: null,
 	}, {
 		...templates,
-		main: content.grid,
-		style: styles.universal + styles.gallery + styles.grid
+		main: content.gallery,
+		style: styles.universal + styles.gallery
 	});
 	await saveFile(`build/public/${galleryData.uri}.html`, html);
 }
