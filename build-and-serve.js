@@ -1,5 +1,5 @@
-import buildFiles from './scripts/buildFiles';
+import buildEverything from './scripts/buildEverything';
 import startServer from './scripts/startServer';
 
-buildFiles();
+buildEverything();
 startServer();

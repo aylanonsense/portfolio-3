@@ -1,3 +1,3 @@
-import buildFiles from './scripts/buildFiles';
+import buildEverything from './scripts/buildEverything';
 
-buildFiles();
+buildEverything();

@@ -8,6 +8,7 @@
     "build:watch": "nodemon build.js --exec babel-node --presets env",
     "build-and-serve": "babel-node build-and-serve.js --presets env",
     "build-and-serve:watch": "nodemon build-and-serve.js --exec babel-node --presets env",
+    "clean": "babel-node clean.js --presets env",
     "server": "babel-node server.js --presets env",
     "server:watch": "nodemon server.js --exec babel-node --presets env"
   },
@@ -43,6 +44,7 @@
     "gif-frames": "^0.3.0",
     "gm": "^1.23.0",
     "mustache": "^2.3.0",
-    "nodemon": "^1.12.1"
+    "nodemon": "^1.12.1",
+    "rimraf": "^2.6.2"
   }
 }
