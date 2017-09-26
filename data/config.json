@@ -1,12 +1,27 @@
 {
 	"siteName": "bridgs",
-	"pages": {
-		"pixels": { "title": "Pixel Art", "uri": "pixels", "imagesUri": "pixels" },
-		"games": { "title": "Games", "uri": "games", "imagesUri": "games" },
-		"misc": { "title": "Misc", "uri": "misc", "imagesUri": "misc" }
+	"sections": {
+		"pixels": {
+			"title": "Pixel Art",
+			"uri": "pixels",
+			"imagesUri": "pixels",
+			"isGallery": true
+		},
+		"games": {
+			"title": "Games",
+			"uri": "games",
+			"imagesUri": "games",
+			"isGallery": true
+		},
+		"misc": {
+			"title": "Misc",
+			"uri": "misc",
+			"imagesUri": "misc",
+			"isGallery": true
+		}
 	},
-	"pageOrder": [ "pixels", "games", "misc" ],
-	"defaultPage": "pixels",
+	"nav": [ "pixels", "games", "misc" ],
+	"defaultSection": "pixels",
 	"links": {
 		"github": "https://github.com/bridgs",
 		"twitter": "https://twitter.com/bridgs_dev"

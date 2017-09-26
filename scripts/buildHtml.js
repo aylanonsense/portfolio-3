@@ -33,21 +33,21 @@ async function load() {
 	};
 	siteData = {
 		siteName: config.siteName,
-		pages: config.pageOrder.map(page => config.pages[page]),
+		sections: config.nav.map(section => config.sections[section]),
 		githubUri: config.links.github,
 		twitterUri: config.links.twitter,
 		showDebugColors: config.showDebugColors
 	};
 }
 
-export async function buildGalleryHtml(pageData, buildOptions) {
+export async function buildGalleryHtml(galleryData, buildOptions) {
 	if (!isLoaded) {
 		await load();
 	}
 	let html = Mustache.render(templates.base, {
 		...siteData,
 		...buildOptions,
-		pageTitle: pageData.title,
+		pageTitle: galleryData.title,
 		showSubheading: true,
 		navInHeader: false,
 		showFooterText: true,
@@ -58,10 +58,10 @@ export async function buildGalleryHtml(pageData, buildOptions) {
 		main: content.grid,
 		style: styles.universal + styles.gallery + styles.grid
 	});
-	await saveFile(`build/public/${pageData.uri}.html`, html);
+	await saveFile(`build/public/${galleryData.uri}.html`, html);
 }
 
-export async function buildProjectHtml(pageData, projectData, buildOptions) {
+export async function buildProjectHtml(galleryData, projectData, buildOptions) {
 	if (!isLoaded) {
 		await load();
 	}
@@ -81,5 +81,5 @@ export async function buildProjectHtml(pageData, projectData, buildOptions) {
 		main: content.project,
 		style: styles.universal + styles.project
 	});
-	await saveFile(`build/public/${pageData.uri}/${projectData.project}.html`, html);
+	await saveFile(`build/public/${galleryData.uri}/${projectData.project}.html`, html);
 };

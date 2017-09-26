@@ -7,9 +7,11 @@ rimraf('build', () => {
 	fs.mkdirSync('build/public');
 	fs.mkdirSync('build/public/images');
 	fs.mkdirSync('build/deanimated');
-	for (let [ page, pageData ] of Object.entries(config.pages)) {
-		fs.mkdirSync(`build/public/${pageData.uri}`);
-		fs.mkdirSync(`build/public/images/${pageData.imagesUri}`);
-		fs.mkdirSync(`build/deanimated/${pageData.imagesUri}`);
+	for (let [ section, sectionData ] of Object.entries(config.sections)) {
+		if (sectionData.isGallery) {
+			fs.mkdirSync(`build/public/${sectionData.uri}`);
+			fs.mkdirSync(`build/public/images/${sectionData.imagesUri}`);
+			fs.mkdirSync(`build/deanimated/${sectionData.imagesUri}`);
+		}
 	}
 });

@@ -1,8 +1,8 @@
+import parseDate from './parseDate';
 import loadImage from './helper/loadImage';
 import saveDeanimatedImage from './helper/saveDeanimatedImage';
-import parseDate from './parseDate';
 
-export default async (pageData, projects) => {
+export default async (galleryData, projects) => {
 	// gather some metadata
 	let ordered = [];
 	for (let [ project, projectData ] of Object.entries(projects)) {
@@ -12,7 +12,7 @@ export default async (pageData, projects) => {
 		projectData.dateText = dateText;
 		ordered.push({ project, time });
 		// add metadata about the image
-		let imagePath = `images/${pageData.imagesUri}/${projectData.image.name}`;
+		let imagePath = `images/${galleryData.imagesUri}/${projectData.image.name}`;
 		let image = await loadImage(imagePath);
 		projectData.project = project;
 		projectData.image.raw = {
@@ -28,7 +28,7 @@ export default async (pageData, projects) => {
 		};
 		// if it's an animated image, we need to create a non-animated one
 		if (projectData.animated) {
-			let deanimatedImagePath = `build/deanimated/${pageData.imagesUri}/${projectData.image.name}`;
+			let deanimatedImagePath = `build/deanimated/${galleryData.imagesUri}/${projectData.image.name}`;
 			await saveDeanimatedImage(imagePath, deanimatedImagePath);
 			projectData.image.raw.deanimatedPath = deanimatedImagePath;
 		}

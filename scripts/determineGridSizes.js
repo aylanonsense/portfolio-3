@@ -1,4 +1,4 @@
 
-export default projects => {
+export default async projects => {
 
 };

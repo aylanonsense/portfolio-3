@@ -1,7 +1,8 @@
-import buildPage from './buildPage';
+import buildGallery from './buildGallery';
 import config from '../data/config.json';
 import pixels from '../data/pixels.json';
 
 export default async () => {
-	await buildPage(config.pages.pixels, pixels);
+	// todo iterate through all sections
+	await buildGallery(config.sections.pixels, pixels);
 };
