@@ -4,8 +4,8 @@ export default projects => {
 	let bins = Object.entries(projects).map(([ project, projectData ]) => {
 		return {
 			project: project,
-			width: projectData.imageWidth + 2,
-			height: projectData.imageHeight + 2
+			width: projectData.image.raw.width + 2,
+			height: projectData.image.raw.height + 2
 		};
 	});
 	let { width, height } = pack(bins, { inPlace: true });

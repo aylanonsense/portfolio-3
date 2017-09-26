@@ -65,9 +65,6 @@ export async function buildProjectPage(pageData, projectData, buildOptions) {
 	if (!isLoaded) {
 		await load();
 	}
-	let mult = Math.min(6, Math.floor(Math.min(500 / projectData.imageWidth, 500 / projectData.imageHeight)));
-	let width = projectData.imageWidth * mult;
-	let height = projectData.imageHeight * mult;
 	let html = Mustache.render(templates.base, {
 		...siteData,
 		...projectData,
@@ -75,12 +72,10 @@ export async function buildProjectPage(pageData, projectData, buildOptions) {
 		showSubheading: false,
 		navInHeader: true,
 		showFooterText: false,
-		width: width,
-		height: height,
 		isPixelArt: true,
-		minBodyWidth: Math.max(width + 20, 300),
-		minBodyHeight: Math.max(height + 200, 400),
-		mainWidth: Math.max(width, 280)
+		minBodyWidth: Math.max(projectData.image.project.width + 20, 300),
+		minBodyHeight: Math.max(projectData.image.project.height + 200, 400),
+		mainWidth: Math.max(projectData.image.project.width, 280)
 	}, {
 		...templates,
 		main: content.project,

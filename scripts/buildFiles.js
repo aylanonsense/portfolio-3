@@ -12,48 +12,64 @@ export default async () => {
 	// gather some metadata
 	let pixelsOrdering = [];
 	for (let [ project, projectData ] of Object.entries(pixels)) {
+		// parse the time and human-readable date
 		let { time, dateText } = parseDate(projectData.date);
-		let imagePath = `images/${config.pages.pixels.imagesUri}/${projectData.image}`;
+		projectData.time = time;
+		projectData.dateText = dateText;
+		pixelsOrdering.push({ project, time });
+		// add metadata about the image
+		let imagePath = `images/${config.pages.pixels.imagesUri}/${projectData.image.name}`;
 		let image = await loadImage(imagePath);
+		projectData.project = project;
+		projectData.image.raw = {
+			path: imagePath,
+			width: image.width,
+			height: image.height
+		};
+		let mult = Math.max(1, Math.min(Math.floor(Math.min(500 / image.width, 500 / image.height)), 6));
+		projectData.image.project = {
+			path: imagePath,
+			width: image.width * mult,
+			height: image.height * mult
+		};
+		// if it's an animated image, we need to create a non-animated one
 		if (projectData.animated) {
 			let deanimatedImagePath = `build/deanimated/${config.pages.pixels.imagesUri}/${projectData.image}`;
 			await saveDeanimatedImage(imagePath, deanimatedImagePath);
-			projectData.deanimatedImagePath = deanimatedImagePath;
+			projectData.image.raw.deanimatedPath = deanimatedImagePath;
 		}
-		pixels[project] = {
-			...pixels[project],
-			project,
-			time,
-			dateText,
-			imagePath,
-			imageWidth: image.width,
-			imageHeight: image.height
-		};
-		pixelsOrdering.push({ project, time });
 	}
 
-	// add metadata about which projects come next/prev in the order
+	// add metadata about which projects comes next/prev in the order
 	pixelsOrdering.sort((a, b) => b.time - a.time);
 	for (let i = 0; i < pixelsOrdering.length; i++) {
+		let project = pixelsOrdering[i].project;
+		let projectData = pixels[project];
 		let nextProjectIndex = i === pixelsOrdering.length - 1 ? 0 : i + 1;
 		let prevProjectIndex = i === 0 ? pixelsOrdering.length - 1 : i - 1;
-		let project = pixelsOrdering[i].project;
-		pixels[project].nextProject = pixelsOrdering[nextProjectIndex].project;
-		pixels[project].prevProject = pixelsOrdering[prevProjectIndex].project;
+		projectData.nextProject = pixelsOrdering[nextProjectIndex].project;
+		projectData.prevProject = pixelsOrdering[prevProjectIndex].project;
 	}
 
 	// pack the thumbnails into sprite sheets
+	let spriteSheetPath = `build/public/images/${config.pages.pixels.imagesUri}-1.png`;
 	let { bins, width, height } = packProjects(pixels);
 	for (let bin of bins) {
 		let project = bin.project;
-		pixels[project].spriteSheetX = bin.x;
-		pixels[project].spriteSheetY = bin.y;
-		pixels[project].spriteSheetWidth = bin.width;
-		pixels[project].spriteSheetHeight = bin.height;
+		let projectData = pixels[project];
+		projectData.image.spriteSheet = {
+			path: spriteSheetPath,
+			x: bin.x,
+			y: bin.y,
+			width: bin.width,
+			height: bin.height,
+			sheetWidth: width,
+			sheetHeight: height
+		};
 	}
-	await saveSpriteSheet('build/public/images/test.png', pixels, width, height);
+	await saveSpriteSheet(spriteSheetPath, pixels, width, height);
 
-	// pretend we're making the base pixel art page
+	// make the base pixel art page
 	await buildGalleryPage(config.pages.pixels, {
 		gridWidth: 630,
 		gridHeight: 710,
@@ -100,7 +116,7 @@ export default async () => {
 		]
 	});
 
-	// pretend we're in a loop
+	// make all the pixel art project pages
 	for (let project in pixels) {
 		await buildProjectPage(config.pages.pixels, pixels[project], {});
 	}
