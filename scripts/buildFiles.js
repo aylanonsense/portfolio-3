@@ -1,7 +1,6 @@
 import Mustache from 'mustache';
-import loadFile from './loadFile';
-import saveFile from './saveFile';
-import loadImage from './loadImage';
+import loadImage from './helper/loadImage';
+import saveDeanimatedImage from './helper/saveDeanimatedImage';
 import packProjects from './packProjects';
 import saveSpriteSheet from './saveSpriteSheet';
 import { buildGalleryPage, buildProjectPage } from './buildPage';
@@ -16,6 +15,11 @@ export default async () => {
 		let { time, dateText } = parseDate(projectData.date);
 		let imagePath = `images/${config.pages.pixels.imagesUri}/${projectData.image}`;
 		let image = await loadImage(imagePath);
+		if (projectData.animated) {
+			let deanimatedImagePath = `build/deanimated/${config.pages.pixels.imagesUri}/${projectData.image}`;
+			await saveDeanimatedImage(imagePath, deanimatedImagePath);
+			projectData.deanimatedImagePath = deanimatedImagePath;
+		}
 		pixels[project] = {
 			...pixels[project],
 			project,
@@ -34,17 +38,20 @@ export default async () => {
 		let nextProjectIndex = i === pixelsOrdering.length - 1 ? 0 : i + 1;
 		let prevProjectIndex = i === 0 ? pixelsOrdering.length - 1 : i - 1;
 		let project = pixelsOrdering[i].project;
-		let nextProject = pixelsOrdering[nextProjectIndex].project;
-		let prevProject = pixelsOrdering[prevProjectIndex].project;
-		pixels[project] = {
-			...pixels[project],
-			nextProject,
-			prevProject
-		}
+		pixels[project].nextProject = pixelsOrdering[nextProjectIndex].project;
+		pixels[project].prevProject = pixelsOrdering[prevProjectIndex].project;
 	}
 
 	// pack the thumbnails into sprite sheets
-	await saveSpriteSheet('build/public/images/test.png', pixels, ...packProjects(pixels));
+	let { bins, width, height } = packProjects(pixels);
+	for (let bin of bins) {
+		let project = bin.project;
+		pixels[project].spriteSheetX = bin.x;
+		pixels[project].spriteSheetY = bin.y;
+		pixels[project].spriteSheetWidth = bin.width;
+		pixels[project].spriteSheetHeight = bin.height;
+	}
+	await saveSpriteSheet('build/public/images/test.png', pixels, width, height);
 
 	// pretend we're making the base pixel art page
 	await buildGalleryPage(config.pages.pixels, {

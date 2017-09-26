@@ -40,6 +40,8 @@
     "babel-preset-env": "^1.6.0",
     "bin-pack": "^1.0.2",
     "canvas": "^1.6.7",
+    "gif-frames": "^0.3.0",
+    "gm": "^1.23.0",
     "mustache": "^2.3.0",
     "nodemon": "^1.12.1"
   }

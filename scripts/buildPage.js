@@ -1,7 +1,6 @@
 import Mustache from 'mustache';
-import loadFile from '../scripts/loadFile';
-import loadImage from '../scripts/loadImage';
-import saveFile from '../scripts/saveFile';
+import loadFile from './helper/loadFile';
+import saveFile from './helper/saveFile';
 import config from '../data/config.json';
 import pixels from '../data/pixels.json';
 
