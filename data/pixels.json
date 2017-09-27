@@ -1,142 +1,158 @@
 {
+	"match-three": {
+		"title": "Match Three",
+		"description": "Concept art for a hypothetical game. Inspired by <a href=\"https://twitter.com/Pixel_Dailies\">Pixel Dailies</a> prompt for #MatchThree.",
+		"date": "2017/09",
+		"image": { "name": "match-three.gif", "animated": true },
+		"backgroundColor": "#000000"
+	},
+	"west-showcase": {
+		"title": "West Showcase",
+		"description": "Showcase of some gameplay mechanics for a wild west PICO-8 game.",
+		"date": "2017/09",
+		"image": { "name": "west-showcase.gif", "animated": true },
+		"grid": { "cols": 8, "rows": 2, "scale": 2 },
+		"backgroundColor": "#000000"
+	},
 	"nightmare": {
-		"title": null,
-		"description": null,
+		"title": "Nightmare",
+		"description": "Animation inspired by <a href=\"https://twitter.com/Pixel_Dailies\">Pixel Dailies</a> prompt for #nightmare.",
 		"date": "2017/06",
 		"image": { "name": "nightmare.gif", "animated": true, "touchesEdges": true },
 		"backgroundColor": "#1c0b20"
 	},
 	"palace": {
-		"title": null,
-		"description": null,
+		"title": "Palace",
+		"description": "Inspired by <a href=\"https://twitter.com/Pixel_Dailies\">Pixel Dailies</a> prompt for #palace.",
 		"date": "2017/05",
 		"image": { "name": "palace.png", "touchesEdges": true },
 		"backgroundColor": "#f7e9dc"
 	},
-	"cherry-scene": {
-		"title": null,
-		"description": null,
+	"cherry-tree": {
+		"title": "Cherry Tree",
+		"description": "A small scene of a cherry tree for a level of 8 Legs to Love.",
 		"date": "2017/05",
-		"image": { "name": "cherry-scene.png", "touchesEdges": true },
+		"image": { "name": "cherry-tree.png", "touchesEdges": true },
 		"backgroundColor": "#ffccaa"
 	},
 	"flower-bloom": {
-		"title": null,
-		"description": null,
+		"title": "Flower Bloom",
+		"description": "An animation midway through its creation, showing guidelines and reference curves.",
 		"date": "2017/04",
 		"image": { "name": "flower-bloom.gif", "animated": true },
+		"grid": { "scale": 1 },
 		"backgroundColor": "#ffffff"
 	},
 	"blueberry": {
-		"title": null,
-		"description": null,
+		"title": "Blueberry",
+		"description": "Quick sketch of a blueberry.",
 		"date": "2017/04",
 		"image": { "name": "blueberry.png", "touchesEdges": true },
 		"backgroundColor": "#fc8778"
 	},
 	"alabaster-giant": {
-		"title": null,
-		"description": null,
+		"title": "Alabaster Giant",
+		"description": "An unfinished piece following the results of the 2016 US presidential election.",
 		"date": "2016/11",
 		"image": { "name": "alabaster-giant.png" },
 		"backgroundColor": "#452416"
 	},
 	"phantom-dust": {
-		"title": null,
-		"description": null,
+		"title": "Phantom Dust",
+		"description": "Sketch inspired by one of my favorites cult classics, Phantom Dust.",
 		"date": "2016/09",
 		"image": { "name": "phantom-dust.png", "touchesEdges": true },
 		"backgroundColor": "#d88869"
 	},
 	"spectral-armor": {
-		"title": null,
-		"description": null,
+		"title": "Spectral Armor",
+		"description": "Inspired by <a href=\"https://twitter.com/Pixel_Dailies\">Pixel Dailies</a> prompt for #ghost.",
 		"date": "2016/09",
 		"image": { "name": "spectral-armor.png" },
 		"backgroundColor": "#2a0039"
 	},
-	"happy-tree": {
-		"title": null,
-		"description": null,
+	"super-happy-tree": {
+		"title": "Super Happy Tree",
+		"description": "Sketch of the Super Happy Tree from Yoshi's Story.",
 		"date": "2016/09",
 		"image": { "name": "happy-tree.png", "touchesEdges": true },
 		"backgroundColor": "#ffd1a2"
 	},
 	"gaudy-ladybug": {
-		"title": null,
-		"description": null,
+		"title": "Gaudy Ladybug",
+		"description": "Inspired by <a href=\"https://twitter.com/Pixel_Dailies\">Pixel Dailies</a> prompt for #luckycharm.",
 		"date": "2016/08",
 		"image": { "name": "gaudy-ladybug.png", "touchesEdges": true },
 		"backgroundColor": "#5a8751"
 	},
 	"mortimer": {
-		"title": null,
-		"description": null,
+		"title": "Mortimer",
+		"description": "Icon for a personal Slack bot named Mortimer.",
 		"date": "2016/08",
 		"image": { "name": "mortimer.png" },
 		"backgroundColor": "#fbac00"
 	},
 	"deku": {
-		"title": null,
-		"description": null,
+		"title": "Deku",
+		"description": "The Deku Butler's son from Majora's Mask.",
 		"date": "2016/08",
 		"image": { "name": "deku.png" },
 		"backgroundColor": "#0d0f1c"
 	},
 	"monolith": {
-		"title": null,
-		"description": null,
+		"title": "Monolith",
+		"description": "Inspired by <a href=\"https://twitter.com/Pixel_Dailies\">Pixel Dailies</a> prompt for #monolith.",
 		"date": "2016/07",
 		"image": { "name": "monolith.png", "touchesEdges": true },
 		"backgroundColor": "#645146"
 	},
-	"autumn-hair": {
-		"title": "Autumn Hair",
-		"description": null,
-		"date": "2016/07",
-		"image": { "name": "autumn-hair.png" },
-		"backgroundColor": "#debb37"
-	},
 	"zergling": {
-		"title": null,
-		"description": null,
+		"title": "Zergling",
+		"description": "Inspired by <a href=\"https://twitter.com/Pixel_Dailies\">Pixel Dailies</a> prompt for #zergling.",
 		"date": "2016/07",
 		"image": { "name": "zergling.gif", "animated": true },
 		"backgroundColor": "#f4e9d7"
 	},
-	"mail-angel": {
-		"title": null,
-		"description": null,
-		"date": "2016/06",
-		"image": { "name": "mail-angel.gif", "animated": true },
-		"grid": { "cols": 3, "rows": 5 },
-		"backgroundColor": "#fffe5e"
+	"autumn-hair": {
+		"title": "Autumn Hair",
+		"description": "A portrait of a dear friend.",
+		"date": "2016/07",
+		"image": { "name": "autumn-hair.png" },
+		"backgroundColor": "#debb37"
 	},
 	"traffic-knight": {
-		"title": null,
-		"description": null,
+		"title": "Traffic Knight",
+		"description": "A traffic-knight-robot for funsies.",
 		"date": "2016/06",
 		"image": { "name": "traffic-knight.png", "touchesEdges": true },
 		"grid": { "scale": 2 },
 		"backgroundColor": "#fffbd3"
 	},
+	"mail-angel": {
+		"title": "Mail Angel",
+		"description": "A mailman with envelope wings.",
+		"date": "2016/06",
+		"image": { "name": "mail-angel.gif", "animated": true },
+		"grid": { "cols": 3, "rows": 5 },
+		"backgroundColor": "#fffe5e"
+	},
 	"croc": {
-		"title": null,
-		"description": null,
+		"title": "Croc",
+		"description": "Debug sprite and animations for a fighting game.",
 		"date": "2016/04",
 		"image": { "name": "croc.gif", "animated": true, "touchesEdges": true },
 		"backgroundColor": "#b8e0e4"
 	},
 	"bonsai": {
 		"title": "Bonsai",
-		"description": "A quick sketch of a bonsai tree for a class on pixel art.",
+		"description": "Sketch of a bonsai tree for a class on pixel art.",
 		"date": "2016/03",
 		"image": { "name": "bonsai.png" },
 		"backgroundColor": "#fcff9f"
 	},
 	"froggins": {
 		"title": "Froggins",
-		"description": "A quick sketch of a frog for a class on pixel art.",
+		"description": "Sketch of a frog for a class on pixel art.",
 		"date": "2016/03",
 		"image": { "name": "froggins.png" },
 		"grid": { "scale": 2 },
@@ -144,77 +160,77 @@
 	},
 	"robo-gladiator": {
 		"title": "Robo Gladiator",
-		"description": "Animation test for a game.",
+		"description": "Attack animation for a platforming/action game.",
 		"date": "2016/02",
 		"image": { "name": "robo-gladiator.gif", "animated": true },
 		"backgroundColor": "#f2cbfc"
 	},
 	"catbug": {
-		"title": null,
-		"description": null,
+		"title": "Catbug",
+		"description": "A sadly unused cross-stitching pattern of Catbug from Bravest Warriors.",
 		"date": "2016",
 		"image": { "name": "catbug.png" },
 		"backgroundColor": "#f1f0d2"
 	},
 	"sprouts": {
-		"title": null,
-		"description": null,
+		"title": "Sprouts",
+		"description": "Concept art for a Harvest Moon-like.",
 		"date": "2016",
 		"image": { "name": "sprouts.png", "touchesEdges": true },
 		"backgroundColor": "#d7ab4f"
 	},
 	"test-tileset": {
-		"title": null,
-		"description": null,
+		"title": "Test Tileset",
+		"description": "Riffing off the tilesets of the Fire Emblem series",
 		"date": "2016",
 		"image": { "name": "test-tileset.png" },
 		"backgroundColor": "#5ece53"
 	},
-	"hammer-spider": {
-		"title": null,
-		"description": null,
+	"hammerachnid": {
+		"title": "Hammerachnid",
+		"description": "Assets for a boss of a boss rush.",
 		"date": "2016",
-		"image": { "name": "hammer-spider.png" },
+		"image": { "name": "hammerachnid.png" },
 		"backgroundColor": "#111111"
 	},
 	"tiny-face": {
-		"title": null,
-		"description": null,
+		"title": "Tiny Face",
+		"description": "A small portrait of a follower.",
 		"date": "2016",
 		"image": { "name": "tiny-face.png" },
 		"backgroundColor": "#ffffff"
 	},
 	"grapple-girl": {
 		"title": "Grapple Girl",
-		"description": "Walk cycle test of video game sprite.",
+		"description": "Walk cycle for a platformer.",
 		"date": "2015/11",
 		"image": { "name": "grapple-girl.gif", "animated": true, "touchesEdges": true },
 		"backgroundColor": "#ededd7"
 	},
 	"rocky-platforms": {
-		"title": null,
-		"description": null,
+		"title": "Rocky Platforms",
+		"description": "Progression of floating rocky platforms for a platformer.",
 		"date": "2015/11",
 		"image": { "name": "rocky-platforms.png" },
 		"backgroundColor": "#ffeedd"
 	},
 	"pillars": {
-		"title": null,
-		"description": null,
+		"title": "Pillars",
+		"description": "Progression of crumbling pillars for a platformer.",
 		"date": "2015/11",
 		"image": { "name": "pillars.png" },
 		"backgroundColor": "#ffeedd"
 	},
 	"rock-blocks": {
-		"title": null,
-		"description": null,
+		"title": "Rock Blocks",
+		"description": "Progression of rocky blocks for a platformer.",
 		"date": "2015/11",
 		"image": { "name": "rock-blocks.png" },
 		"backgroundColor": "#ffeedd"
 	},
 	"tree-progression": {
-		"title": null,
-		"description": null,
+		"title": "Tree Progression",
+		"description":  "Progression of a tree for a platformer.",
 		"date": "2015/11",
 		"image": { "name": "tree-progression.png" },
 		"backgroundColor": "#ffeedd"
@@ -227,7 +243,7 @@
 		"backgroundColor": "#e6f8f9"
 	},
 	"tree": {
-		"title": null,
+		"title": "Tree",
 		"description": "A tree painted pixel by pixel.",
 		"date": "2015/06",
 		"image": { "name": "tree.png" },
@@ -236,9 +252,95 @@
 	},
 	"gazelle-gladiator": {
 		"title": "Gazelle Gladiator",
-		"description": "One of my first pieces of pixel art.",
+		"description": "One of my first pieces of pixel art. Sprite for a gazelle gladiator boss.",
 		"date": "2012",
 		"image": { "name": "gazelle-gladiator.gif", "animated": true },
 		"backgroundColor": "#312526"
+	},
+
+
+	"loading-blob": {
+		"title": "Loading Blob",
+		"description": "A loading animation for a previous version of my portfolio.",
+		"date": null,
+		"image": { "name": "loading-blob.gif", "animated": true },
+		"backgroundColor": "#535353"
+	},
+	"scorching-queen": {
+		"title": "Scorching Queen",
+		"description": "Sprite and animations for a boss rush.",
+		"date": null,
+		"image": { "name": "scorching-queen.gif", "animated": true },
+		"backgroundColor": "#23000a"
+	},
+	"paradox-anomaly": {
+		"title": "Paradox Anomaly",
+		"description": "Mock-up for a heist-type game.",
+		"date": null,
+		"image": { "name": "paradox-anomaly.png" },
+		"backgroundColor": "#112421"
+	},
+	"west-lighting": {
+		"title": "West Lighting",
+		"description": "Testing out different lighting options for a wild west PICO-8 game.",
+		"date": null,
+		"image": { "name": "west-lighting.png" },
+		"backgroundColor": "#000000"
+	},
+	"masks": {
+		"title": "Masks",
+		"description": "Quick sketch of some 8x8 masks from Majora's Mask using the PICO-8 palette.",
+		"date": null,
+		"image": { "name": "masks.png" },
+		"backgroundColor": "#000000"
+	},
+	"grinning-frog": {
+		"title": "Grinning Frog",
+		"description": "Color test for a portrait of a grinning frog. Or a family of happy frogs, if you prefer.",
+		"date": null,
+		"image": { "name": "grinning-frog.png" },
+		"backgroundColor": "#000000"
+	},
+	"colored-pipes": {
+		"title": "Colored Pipes",
+		"description": "Some colored pipes meant as input for a wave function collapse algorithm.",
+		"date": null,
+		"image": { "name": "colored-pipes.png", "touchesEdges": true },
+		"backgroundColor": "#000000"
+	},
+	"stratos": {
+		"title": "Stratos",
+		"description": "Very quick color blocking of Stratos, the god of air from the game Sacrifice.",
+		"date": null,
+		"image": { "name": "stratos.png" },
+		"backgroundColor": "#ed5207"
+	},
+	"space": {
+		"title": "Space",
+		"description": "Mock-up for the last level of 8 Legs to Love.",
+		"date": null,
+		"image": { "name": "space.png" },
+		"backgroundColor": "#000000"
+	},
+	"snek": {
+		"title": "Snek",
+		"description": "Unfinished composition of a traveler and her giant snake companion.",
+		"date": null,
+		"image": { "name": "snek.png", "touchesEdges": true },
+		"backgroundColor": "#373737"
+	},
+	"hyuge-fun": {
+		"title": "Hyuge Fun",
+		"description": "A terrible thing.",
+		"date": null,
+		"image": { "name": "hyuge-fun.png" },
+		"backgroundColor": "#000000"
+	},
+	"skater": {
+		"title": "Skater",
+		"description": "Animation practice of a skater.",
+		"date": null,
+		"image": { "name": "skater.gif", "animated": true },
+		"backgroundColor": "#ffffdd"
 	}
 }
