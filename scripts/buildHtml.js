@@ -7,28 +7,32 @@ import pixels from '../data/pixels.json';
 let isLoaded = false;
 let templates;
 let content;
+let scripts;
 let styles;
 let siteData;
 
 async function load() {
 	isLoaded = true;
 	templates = {
-		base: await loadFile('templates/base.mustache'),
-		layout: await loadFile('templates/layout.mustache'),
-		header: await loadFile('templates/header.mustache'),
-		nav: await loadFile('templates/nav.mustache'),
-		footer: await loadFile('templates/footer.mustache'),
-		githubIcon: await loadFile('icons/github.svg'),
-		twitterIcon: await loadFile('icons/twitter.svg')
+		base: await loadFile('web-assets/templates/base.mustache'),
+		layout: await loadFile('web-assets/templates/layout.mustache'),
+		header: await loadFile('web-assets/templates/header.mustache'),
+		nav: await loadFile('web-assets/templates/nav.mustache'),
+		footer: await loadFile('web-assets/templates/footer.mustache'),
+		githubIcon: await loadFile('web-assets/icons/github.svg'),
+		twitterIcon: await loadFile('web-assets/icons/twitter.svg')
 	};
 	content = {
-		project: await loadFile('templates/project.mustache'),
-		gallery: await loadFile('templates/gallery.mustache')
+		project: await loadFile('web-assets/templates/project.mustache'),
+		gallery: await loadFile('web-assets/templates/gallery.mustache')
+	};
+	scripts = {
+		gallery: await loadFile('web-assets/scripts/gallery.js')
 	};
 	styles = {
-		universal: await loadFile('styles/universal.css'),
-		project: await loadFile('styles/project.css'),
-		gallery: await loadFile('styles/gallery.css')
+		universal: await loadFile('web-assets/styles/universal.css'),
+		project: await loadFile('web-assets/styles/project.css'),
+		gallery: await loadFile('web-assets/styles/gallery.css')
 	};
 	siteData = {
 		siteName: config.siteName,
@@ -43,6 +47,15 @@ export async function buildGalleryHtml(galleryData, projects, buildOptions) {
 	if (!isLoaded) {
 		await load();
 	}
+	let animatedProjects = Object.values(projects)
+		.filter(projectData => projectData.image.animated)
+		.map(projectData => {
+			return {
+				id: projectData.id,
+				scale: projectData.grid.scale,
+				imageUri: projectData.image.project.uri
+			};
+		});
 	let html = Mustache.render(templates.base, {
 		...siteData,
 		...buildOptions,
@@ -54,9 +67,11 @@ export async function buildGalleryHtml(galleryData, projects, buildOptions) {
 		isPixelArt: galleryData.isPixelArt,
 		minBodyWidth: 300,
 		minBodyHeight: null,
+		animatedProjects: JSON.stringify(animatedProjects)
 	}, {
 		...templates,
 		main: content.gallery,
+		script: scripts.gallery,
 		style: styles.universal + styles.gallery
 	});
 	await saveFile(`build/public/${galleryData.uri}.html`, html);
@@ -80,6 +95,7 @@ export async function buildProjectHtml(galleryData, projectData, buildOptions) {
 	}, {
 		...templates,
 		main: content.project,
+		script: null,
 		style: styles.universal + styles.project
 	});
 	await saveFile(`build/public/${galleryData.uri}/${projectData.project}.html`, html);

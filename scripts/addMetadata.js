@@ -6,25 +6,28 @@ export default async (galleryData, projects) => {
 	// gather some metadata
 	let ordered = [];
 	for (let [ project, projectData ] of Object.entries(projects)) {
+		projectData.id = `project-${project}`;
+		projectData.uri = `/${galleryData.uri}/${project}`;
 		// parse the time and human-readable date
 		let { time, dateText } = parseDate(projectData.date);
 		projectData.time = time;
 		projectData.dateText = dateText;
 		ordered.push({ project, time });
 		// add metadata about the image
-		let imagePath = `images/${galleryData.imagesUri}/${projectData.image.name}`;
+		let imagePath = `web-assets/images/${galleryData.imagesUri}/${projectData.image.name}`;
+		let imageUri = `/images/${galleryData.imagesUri}/${projectData.image.name}`;
 		let image = await loadImage(imagePath);
 		projectData.project = project;
 		projectData.image.raw = {
 			path: imagePath,
-			uri: '/' + imagePath,
+			uri: imageUri,
 			width: image.width,
 			height: image.height
 		};
 		let mult = Math.max(1, Math.min(Math.floor(Math.min(500 / image.width, 500 / image.height)), 6));
 		projectData.image.project = {
 			path: imagePath,
-			uri: '/' + imagePath,
+			uri: imageUri,
 			width: image.width * mult,
 			height: image.height * mult
 		};

@@ -23,7 +23,7 @@ export default async () => {
 	}
 
 	// requests for images
-	app.use('/images', express.static('images'));
+	app.use('/images', express.static('web-assets/images'));
 
 	// requests for all other .html pages
 	app.use(express.static('build/public', {

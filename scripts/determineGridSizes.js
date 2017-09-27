@@ -58,6 +58,6 @@ export default async projects => {
 			rows: bestFit.rows,
 			width: bestFit.gridWidth,
 			height: bestFit.gridHeight
-		}
+		};
 	}
 };
