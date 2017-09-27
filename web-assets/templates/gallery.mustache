@@ -1,9 +1,7 @@
 <div id="gallery" style="width:{{gridWidth}}px;height:{{gridHeight}}px;">
 	{{#projects}}
-		<a href="{{uri}}">
-			<div id="{{id}}" class="gallery-item" style="top:{{grid.y}}px;left:{{grid.x}}px;width:{{grid.width}}px;height:{{grid.height}}px;background-color:{{backgroundColor}};{{#isPixelArt}}image-rendering:pixelated;{{/isPixelArt}}">
-				<div class="gallery-item-image" style="width:{{image.gallery.width}}px;height:{{image.gallery.height}}px;background-image:url('{{image.gallery.uri}}');background-size:{{image.gallery.sheetWidth}}px {{image.gallery.sheetHeight}}px;background-position:-{{image.gallery.x}}px -{{image.gallery.y}}px;"></div>
-			</div>
+		<a id="{{id}}" href={{uri}} class="gallery-item" style="top:{{grid.y}}px;left:{{grid.x}}px;width:{{grid.width}}px;height:{{grid.height}}px;background-color:{{backgroundColor}};{{#isPixelArt}}image-rendering:pixelated;{{/isPixelArt}}">
+			<div class="gallery-item-image" style="width:{{image.gallery.width}}px;height:{{image.gallery.height}}px;background-image:url('{{image.gallery.uri}}');background-size:{{image.gallery.sheetWidth}}px {{image.gallery.sheetHeight}}px;background-position:-{{image.gallery.x}}px -{{image.gallery.y}}px;"></div>
 		</a>
 	{{/projects}}
 </div>

@@ -47,7 +47,23 @@ export async function buildGalleryHtml(galleryData, projects, buildOptions) {
 	if (!isLoaded) {
 		await load();
 	}
-	let animatedProjects = Object.values(projects)
+	let configJSON = {
+		cellWidth: config.grid.cellWidth,
+		cellHeight: config.grid.cellHeight,
+		cellGap: config.grid.cellGap,
+		colStep: config.grid.colStep,
+		defaultCols: config.grid.defaultCols,
+		minCols: config.grid.minCols,
+		maxCols: config.grid.maxCols
+	};
+	let projectsJSON = Object.values(projects)
+		.map(projectData => {
+			return {
+				id: projectData.id,
+				coordinates: projectData.grid.coordinates
+			};
+		});
+	let animatedProjectsJSON = Object.values(projects)
 		.filter(projectData => projectData.image.animated)
 		.map(projectData => {
 			return {
@@ -65,9 +81,12 @@ export async function buildGalleryHtml(galleryData, projects, buildOptions) {
 		navInHeader: false,
 		showFooterText: true,
 		isPixelArt: galleryData.isPixelArt,
-		minBodyWidth: 300,
+		minBodyWidth: 320,
 		minBodyHeight: null,
-		animatedProjects: JSON.stringify(animatedProjects)
+		configJSON: JSON.stringify(configJSON),
+		gridHeightsJSON: JSON.stringify(buildOptions.gridHeights),
+		projectsJSON: JSON.stringify(projectsJSON),
+		animatedProjectsJSON: JSON.stringify(animatedProjectsJSON)
 	}, {
 		...templates,
 		main: content.gallery,
@@ -89,7 +108,7 @@ export async function buildProjectHtml(galleryData, projectData, buildOptions) {
 		navInHeader: true,
 		showFooterText: false,
 		isPixelArt: galleryData.isPixelArt,
-		minBodyWidth: Math.max(projectData.image.project.width + 20, 300),
+		minBodyWidth: Math.max(projectData.image.project.width + 20, 320),
 		minBodyHeight: Math.max(projectData.image.project.height + 200, 400),
 		mainWidth: Math.max(projectData.image.project.width, 280)
 	}, {

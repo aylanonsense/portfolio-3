@@ -76,19 +76,36 @@ function calcFitness(projects, grid, numCols, numRows) {
 }
 
 export default async projects => {
-	let numCols = 24;
-	let { numRows, projectCoordinates } = repeatedlyPackProjectsIntoGrid(projects, numCols, config.grid.packAttempts);
+	let defaultNumRows;
+	let gridHeights = [];
 	for (let [ project, projectData ] of Object.entries(projects)) {
-		let { col, row } = projectCoordinates[project];
-		projectData.grid.col = col;
-		projectData.grid.row = row;
-		projectData.grid.x = (config.grid.cellWidth + config.grid.cellGap) * col;
-		projectData.grid.y = (config.grid.cellHeight + config.grid.cellGap) * row;
+		projectData.grid.coordinates = [];
+	}
+	// for each possible number of columns
+	for (let numCols = config.grid.minCols; numCols <= config.grid.maxCols; numCols += 2) {
+		// pack the projects into a grid with that many columns
+		let { numRows, projectCoordinates } = repeatedlyPackProjectsIntoGrid(projects, numCols, config.grid.packAttempts);
+		for (let [ project, projectData ] of Object.entries(projects)) {
+			// add that metadata onto each project
+			let { col, row } = projectCoordinates[project];
+			projectData.grid.coordinates.push(col, row);
+			if (numCols === config.grid.defaultCols) {
+				projectData.grid.col = col;
+				projectData.grid.row = row;
+				projectData.grid.x = (config.grid.cellWidth + config.grid.cellGap) * col;
+				projectData.grid.y = (config.grid.cellHeight + config.grid.cellGap) * row;
+			}
+		}
+		gridHeights.push(numRows * config.grid.cellHeight + Math.max(0, numRows - 1) * config.grid.cellGap);
+		if (numCols === config.grid.defaultCols) {
+			defaultNumRows = numRows;
+		}
 	}
 	return {
-		rows: numRows,
-		cols: numCols,
-		width: numCols * config.grid.cellWidth + Math.max(0, numCols - 1) * config.grid.cellGap,
-		height: numRows * config.grid.cellHeight + Math.max(0, numRows - 1) * config.grid.cellGap
+		// rows: defaultNumRows,
+		// cols: config.grid.defaultCols,
+		width: config.grid.defaultCols * config.grid.cellWidth + Math.max(0, config.grid.defaultCols - 1) * config.grid.cellGap,
+		height: defaultNumRows * config.grid.cellHeight + Math.max(0, defaultNumRows - 1) * config.grid.cellGap,
+		heights: gridHeights
 	};
 };

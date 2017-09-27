@@ -29,7 +29,10 @@
 		"cellGap": 10,
 		"colStep": 2,
 		"rowStep": 2,
-		"packAttempts": 1000
+		"defaultCols": 12,
+		"minCols": 8,
+		"maxCols": 32,
+		"packAttempts": 100
 	},
 	"nav": [ "pixels", "games", "misc" ],
 	"defaultSection": "pixels",
