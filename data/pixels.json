@@ -273,11 +273,18 @@
 		"image": { "name": "scorching-queen.gif", "animated": true },
 		"backgroundColor": "#23000a"
 	},
-	"paradox-anomaly": {
-		"title": "Paradox Anomaly",
-		"description": "Mock-up for a heist-type game.",
+	"ice-emperor": {
+		"title": "Ice Emperor",
+		"description": "Sprite and animations for a boss rush.",
 		"date": null,
-		"image": { "name": "paradox-anomaly.png" },
+		"image": { "name": "ice-emperor.gif", "animated": true },
+		"backgroundColor": "#00042d"
+	},
+	"heist-room": {
+		"title": "Heist Room",
+		"description": "Mock-up of a heist-type game.",
+		"date": null,
+		"image": { "name": "heist-room.png" },
 		"backgroundColor": "#112421"
 	},
 	"west-lighting": {
@@ -317,7 +324,7 @@
 	},
 	"space": {
 		"title": "Space",
-		"description": "Mock-up for the last level of 8 Legs to Love.",
+		"description": "Mock-up of the last level of 8 Legs to Love.",
 		"date": null,
 		"image": { "name": "space.png" },
 		"backgroundColor": "#000000"
@@ -342,5 +349,33 @@
 		"date": null,
 		"image": { "name": "skater.gif", "animated": true },
 		"backgroundColor": "#ffffdd"
+	},
+	"racquet-panic": {
+		"title": "Racquet Panic",
+		"description": "Mock-up of PICO-8 breakout/tennis game.",
+		"date": null,
+		"image": { "name": "racquet-panic.png" },
+		"backgroundColor": "#000000"
+	},
+	"splosion": {
+		"title": "Splosion",
+		"description": "An explosion for my wild west PICO-8 game.",
+		"date": null,
+		"image": { "name": "splosion.gif", "animated": true },
+		"backgroundColor": "#000000"
+	},
+	"mini-grapple-assets": {
+		"title": "Mini Grapple Assets",
+		"description": "Teensy pixel assets for a grappling hook platformer.",
+		"date": null,
+		"image": { "name": "mini-grapple-assets.png", "touchesEdges": true },
+		"backgroundColor": "#ffefdd"
+	},
+	"paradox-anomaly": {
+		"title": "Paradox Anomaly",
+		"description": "Sprite and animations for the main character of time-traveling/heist game.",
+		"date": null,
+		"image": { "name": "paradox-anomaly.gif", "animated": true },
+		"backgroundColor": "#1c394a"
 	}
 }
