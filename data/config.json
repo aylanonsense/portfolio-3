@@ -31,10 +31,10 @@
 		"rowStep": 2,
 		"defaultCols": 12,
 		"minCols": 8,
-		"maxCols": 32,
-		"packAttempts": 100
+		"maxCols": 36,
+		"packAttempts": 1000
 	},
-	"nav": [ "pixels", "games", "misc" ],
+	"nav": [],
 	"defaultSection": "pixels",
 	"links": {
 		"github": "https://github.com/bridgs",

@@ -324,6 +324,7 @@
 		"description": "Progression of rocky blocks for a platformer.",
 		"date": "2015/11",
 		"image": { "name": "rock-blocks.png" },
+		"grid": { "rows": 2, "scale": 1 },
 		"backgroundColor": "#ffeedd"
 	},
 	"tree-progression": {
