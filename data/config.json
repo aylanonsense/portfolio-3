@@ -40,6 +40,7 @@
 		"github": "https://github.com/bridgs",
 		"twitter": "https://twitter.com/bridgs_dev"
 	},
+	"minify": true,
 	"abbreviateMonths": true,
 	"dateDelimeter": "to",
 	"showDebugColors": false

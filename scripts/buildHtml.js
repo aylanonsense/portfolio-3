@@ -173,8 +173,7 @@ export async function buildGalleryHtml(galleryData, projects, buildOptions) {
 		script: scripts.gallery,
 		style: styles.fontRaleway + styles.universal + styles.gallery
 	});
-	let minifiedHtml = minify(html, minifyOptions);
-	await saveFile(`build/public/${galleryData.uri}.html`, minifiedHtml);
+	await saveFile(`build/public/${galleryData.uri}.html`, config.minify ? minify(html, minifyOptions) : html);
 }
 
 export async function buildProjectHtml(galleryData, projectData, buildOptions) {
@@ -198,6 +197,5 @@ export async function buildProjectHtml(galleryData, projectData, buildOptions) {
 		script: null,
 		style: styles.fontRaleway + styles.universal + styles.project
 	});
-	let minifiedHtml = minify(html, minifyOptions);
-	await saveFile(`build/public/${galleryData.uri}/${projectData.project}.html`, minifiedHtml);
+	await saveFile(`build/public/${galleryData.uri}/${projectData.project}.html`, config.minify ? minify(html, minifyOptions) : html);
 };
