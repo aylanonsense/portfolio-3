@@ -7,8 +7,9 @@ import pixels from '../data/pixels.json';
 
 const minifyOptions = {
 	collapseBooleanAttributes: true,
+	collapseInlineTagWhitespace: false,
 	collapseWhitespace: true,
-	conservativeCollapse: true,
+	conservativeCollapse: false,
 	minifyCSS: {
 		level: 2
 	},
