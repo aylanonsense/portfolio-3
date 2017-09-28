@@ -31,10 +31,8 @@ window.addEventListener('load', () => {
 			ele.style.left = (projectData.coordinates[colIndex] * (config.cellWidth + config.cellGap)) + 'px';
 			ele.style.top = (projectData.coordinates[rowIndex] * (config.cellHeight + config.cellGap)) + 'px';
 		}
-		// console.log('width', (numCols * config.cellWidth + (numCols - 1) * config.cellGap) + 'px');
 		galleryEle.style.width = (numCols * config.cellWidth + (numCols - 1) * config.cellGap) + 'px';
 		galleryEle.style.height = gridHeights[Math.floor((numCols - config.minCols) / config.colStep)] + 'px';
-		console.log('height', gridHeights[Math.floor((numCols - config.minCols) / config.colStep)]);
 	}
 
 	// on window resize, reposition all grid images

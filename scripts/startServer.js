@@ -25,6 +25,9 @@ export default async () => {
 	// requests for images
 	app.use('/images', express.static('web-assets/images'));
 
+	// requests for fonts
+	app.use('/fonts', express.static('web-assets/fonts'));
+
 	// requests for all other .html pages
 	app.use(express.static('build/public', {
 		extensions: [ 'html' ],

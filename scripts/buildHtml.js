@@ -32,7 +32,8 @@ async function load() {
 	styles = {
 		universal: await loadFile('web-assets/styles/universal.css'),
 		project: await loadFile('web-assets/styles/project.css'),
-		gallery: await loadFile('web-assets/styles/gallery.css')
+		gallery: await loadFile('web-assets/styles/gallery.css'),
+		fontRaleway: await loadFile('web-assets/styles/font-raleway.css')
 	};
 	siteData = {
 		siteName: config.siteName,
@@ -91,7 +92,7 @@ export async function buildGalleryHtml(galleryData, projects, buildOptions) {
 		...templates,
 		main: content.gallery,
 		script: scripts.gallery,
-		style: styles.universal + styles.gallery
+		style: styles.fontRaleway + styles.universal + styles.gallery
 	});
 	await saveFile(`build/public/${galleryData.uri}.html`, html);
 }
@@ -115,7 +116,7 @@ export async function buildProjectHtml(galleryData, projectData, buildOptions) {
 		...templates,
 		main: content.project,
 		script: null,
-		style: styles.universal + styles.project
+		style: styles.fontRaleway + styles.universal + styles.project
 	});
 	await saveFile(`build/public/${galleryData.uri}/${projectData.project}.html`, html);
 };

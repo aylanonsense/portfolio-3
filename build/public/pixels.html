@@ -2,8 +2,55 @@
 <html>
 	<head>
 		<title>Pixel Art | bridgs</title>
-		<link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway:100,200,300,400,800">
 		<style>
+/* latin-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Raleway ExtraLight'), local('Raleway-ExtraLight'), url('/fonts/raleway-200-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Raleway ExtraLight'), local('Raleway-ExtraLight'), url('/fonts/raleway-200-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), local('Raleway-Regular'), url('/fonts/raleway-400-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), local('Raleway-Regular'), url('/fonts/raleway-400-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Raleway ExtraBold'), local('Raleway-ExtraBold'), url('/fonts/raleway-800-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Raleway ExtraBold'), local('Raleway-ExtraBold'), url('/fonts/raleway-800-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
 body {
 	margin: 0;
 	padding: 0;
@@ -125,10 +172,8 @@ window.addEventListener('load', () => {
 			ele.style.left = (projectData.coordinates[colIndex] * (config.cellWidth + config.cellGap)) + 'px';
 			ele.style.top = (projectData.coordinates[rowIndex] * (config.cellHeight + config.cellGap)) + 'px';
 		}
-		// console.log('width', (numCols * config.cellWidth + (numCols - 1) * config.cellGap) + 'px');
 		galleryEle.style.width = (numCols * config.cellWidth + (numCols - 1) * config.cellGap) + 'px';
 		galleryEle.style.height = gridHeights[Math.floor((numCols - config.minCols) / config.colStep)] + 'px';
-		console.log('height', gridHeights[Math.floor((numCols - config.minCols) / config.colStep)]);
 	}
 
 	// on window resize, reposition all grid images
@@ -172,185 +217,185 @@ window.addEventListener('load', () => {
 </ul></nav>
 <main style="">
 <div id="gallery" style="width:470px;height:7030px;">
-		<a id="project-match-three" href=&#x2F;pixels&#x2F;match-three class="gallery-item" style="top:5040px;left:0px;width:310px;height:390px;background-color:#000000;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:312px;height:384px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:2427px 2343px;background-position:-735px -1086px;"></div>
+		<a id="project-match-three" href="/pixels/match-three" class="gallery-item" style="top:5040px;left:0px;width:310px;height:390px;background-color:#000000;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:312px;height:384px;background-image:url('/images/pixels-1.png');background-size:2427px 2343px;background-position:-735px -1086px;"></div>
 		</a>
-		<a id="project-west-showcase" href=&#x2F;pixels&#x2F;west-showcase class="gallery-item" style="top:6960px;left:0px;width:310px;height:70px;background-color:#000000;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:256px;height:70px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:1618px 1562px;background-position:-412px -1194px;"></div>
+		<a id="project-west-showcase" href="/pixels/west-showcase" class="gallery-item" style="top:6960px;left:0px;width:310px;height:70px;background-color:#000000;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:256px;height:70px;background-image:url('/images/pixels-1.png');background-size:1618px 1562px;background-position:-412px -1194px;"></div>
 		</a>
-		<a id="project-west-lighting" href=&#x2F;pixels&#x2F;west-lighting class="gallery-item" style="top:3200px;left:0px;width:310px;height:310px;background-color:#000000;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:272px;height:278px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:1618px 1562px;background-position:-2px -724px;"></div>
+		<a id="project-west-lighting" href="/pixels/west-lighting" class="gallery-item" style="top:3200px;left:0px;width:310px;height:310px;background-color:#000000;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:272px;height:278px;background-image:url('/images/pixels-1.png');background-size:1618px 1562px;background-position:-2px -724px;"></div>
 		</a>
-		<a id="project-splosion" href=&#x2F;pixels&#x2F;splosion class="gallery-item" style="top:240px;left:0px;width:150px;height:150px;background-color:#ffa300;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:140px;height:140px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:4045px 3905px;background-position:-3460px -1890px;"></div>
+		<a id="project-splosion" href="/pixels/splosion" class="gallery-item" style="top:240px;left:0px;width:150px;height:150px;background-color:#ffa300;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:140px;height:140px;background-image:url('/images/pixels-1.png');background-size:4045px 3905px;background-position:-3460px -1890px;"></div>
 		</a>
-		<a id="project-hyuge-fun" href=&#x2F;pixels&#x2F;hyuge-fun class="gallery-item" style="top:1840px;left:320px;width:150px;height:70px;background-color:#000000;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:152px;height:72px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:3236px 3124px;background-position:-3044px -2700px;"></div>
+		<a id="project-hyuge-fun" href="/pixels/hyuge-fun" class="gallery-item" style="top:1840px;left:320px;width:150px;height:70px;background-color:#000000;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:152px;height:72px;background-image:url('/images/pixels-1.png');background-size:3236px 3124px;background-position:-3044px -2700px;"></div>
 		</a>
-		<a id="project-snowboarding" href=&#x2F;pixels&#x2F;snowboarding class="gallery-item" style="top:6160px;left:0px;width:230px;height:390px;background-color:#fff1e8;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:228px;height:384px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:2427px 2343px;background-position:-699px -459px;"></div>
+		<a id="project-snowboarding" href="/pixels/snowboarding" class="gallery-item" style="top:6160px;left:0px;width:230px;height:390px;background-color:#fff1e8;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:228px;height:384px;background-image:url('/images/pixels-1.png');background-size:2427px 2343px;background-position:-699px -459px;"></div>
 		</a>
-		<a id="project-wave-function-collapse" href=&#x2F;pixels&#x2F;wave-function-collapse class="gallery-item" style="top:3680px;left:240px;width:230px;height:150px;background-color:#eee6d2;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:230px;height:135px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:809px 781px;background-position:-1px -153px;"></div>
+		<a id="project-wave-function-collapse" href="/pixels/wave-function-collapse" class="gallery-item" style="top:3680px;left:240px;width:230px;height:150px;background-color:#eee6d2;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:230px;height:135px;background-image:url('/images/pixels-1.png');background-size:809px 781px;background-position:-1px -153px;"></div>
 		</a>
-		<a id="project-nightmare" href=&#x2F;pixels&#x2F;nightmare class="gallery-item" style="top:2320px;left:0px;width:310px;height:150px;background-color:#1c0b20;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:310px;height:150px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:4045px 3905px;background-position:-2065px -2985px;"></div>
+		<a id="project-nightmare" href="/pixels/nightmare" class="gallery-item" style="top:2320px;left:0px;width:310px;height:150px;background-color:#1c0b20;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:310px;height:150px;background-image:url('/images/pixels-1.png');background-size:4045px 3905px;background-position:-2065px -2985px;"></div>
 		</a>
-		<a id="project-palace" href=&#x2F;pixels&#x2F;palace class="gallery-item" style="top:2160px;left:320px;width:150px;height:310px;background-color:#f7e9dc;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:150px;height:312px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:2427px 2343px;background-position:-2190px -483px;"></div>
+		<a id="project-palace" href="/pixels/palace" class="gallery-item" style="top:2160px;left:320px;width:150px;height:310px;background-color:#f7e9dc;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:150px;height:312px;background-image:url('/images/pixels-1.png');background-size:2427px 2343px;background-position:-2190px -483px;"></div>
 		</a>
-		<a id="project-cherry-tree" href=&#x2F;pixels&#x2F;cherry-tree class="gallery-item" style="top:1680px;left:320px;width:70px;height:150px;background-color:#ffccaa;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:70px;height:150px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:4045px 3905px;background-position:-3950px -2365px;"></div>
+		<a id="project-cherry-tree" href="/pixels/cherry-tree" class="gallery-item" style="top:1680px;left:320px;width:70px;height:150px;background-color:#ffccaa;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:70px;height:150px;background-image:url('/images/pixels-1.png');background-size:4045px 3905px;background-position:-3950px -2365px;"></div>
 		</a>
-		<a id="project-flower-bloom" href=&#x2F;pixels&#x2F;flower-bloom class="gallery-item" style="top:1040px;left:320px;width:70px;height:70px;background-color:#ffffff;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:70px;height:63px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:809px 781px;background-position:-730px -553px;"></div>
+		<a id="project-flower-bloom" href="/pixels/flower-bloom" class="gallery-item" style="top:1040px;left:320px;width:70px;height:70px;background-color:#ffffff;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:70px;height:63px;background-image:url('/images/pixels-1.png');background-size:809px 781px;background-position:-730px -553px;"></div>
 		</a>
-		<a id="project-blueberry" href=&#x2F;pixels&#x2F;blueberry class="gallery-item" style="top:800px;left:320px;width:150px;height:150px;background-color:#fc8778;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:152px;height:152px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:3236px 3124px;background-position:-792px -2812px;"></div>
+		<a id="project-blueberry" href="/pixels/blueberry" class="gallery-item" style="top:800px;left:320px;width:150px;height:150px;background-color:#fc8778;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:152px;height:152px;background-image:url('/images/pixels-1.png');background-size:3236px 3124px;background-position:-792px -2812px;"></div>
 		</a>
-		<a id="project-colored-pipes" href=&#x2F;pixels&#x2F;colored-pipes class="gallery-item" style="top:1200px;left:0px;width:310px;height:310px;background-color:#000000;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:312px;height:309px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:2427px 2343px;background-position:-1839px -705px;"></div>
+		<a id="project-colored-pipes" href="/pixels/colored-pipes" class="gallery-item" style="top:1200px;left:0px;width:310px;height:310px;background-color:#000000;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:312px;height:309px;background-image:url('/images/pixels-1.png');background-size:2427px 2343px;background-position:-1839px -705px;"></div>
 		</a>
-		<a id="project-snek" href=&#x2F;pixels&#x2F;snek class="gallery-item" style="top:1920px;left:0px;width:230px;height:230px;background-color:#373737;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:222px;height:230px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:1618px 1562px;background-position:-1226px -236px;"></div>
+		<a id="project-snek" href="/pixels/snek" class="gallery-item" style="top:1920px;left:0px;width:230px;height:230px;background-color:#373737;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:222px;height:230px;background-image:url('/images/pixels-1.png');background-size:1618px 1562px;background-position:-1226px -236px;"></div>
 		</a>
-		<a id="project-alabaster-giant" href=&#x2F;pixels&#x2F;alabaster-giant class="gallery-item" style="top:1520px;left:0px;width:310px;height:390px;background-color:#452416;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:282px;height:390px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:1618px 1562px;background-position:-940px -2px;"></div>
+		<a id="project-alabaster-giant" href="/pixels/alabaster-giant" class="gallery-item" style="top:1520px;left:0px;width:310px;height:390px;background-color:#452416;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:282px;height:390px;background-image:url('/images/pixels-1.png');background-size:1618px 1562px;background-position:-940px -2px;"></div>
 		</a>
-		<a id="project-racquet-panic" href=&#x2F;pixels&#x2F;racquet-panic class="gallery-item" style="top:5440px;left:0px;width:230px;height:150px;background-color:#000000;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:230px;height:150px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:1618px 1562px;background-position:-522px -1006px;"></div>
+		<a id="project-racquet-panic" href="/pixels/racquet-panic" class="gallery-item" style="top:5440px;left:0px;width:230px;height:150px;background-color:#000000;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:230px;height:150px;background-image:url('/images/pixels-1.png');background-size:1618px 1562px;background-position:-522px -1006px;"></div>
 		</a>
-		<a id="project-phantom-dust" href=&#x2F;pixels&#x2F;phantom-dust class="gallery-item" style="top:3840px;left:0px;width:310px;height:230px;background-color:#d88869;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:312px;height:232px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:3236px 3124px;background-position:-2920px -1652px;"></div>
+		<a id="project-phantom-dust" href="/pixels/phantom-dust" class="gallery-item" style="top:3840px;left:0px;width:310px;height:230px;background-color:#d88869;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:312px;height:232px;background-image:url('/images/pixels-1.png');background-size:3236px 3124px;background-position:-2920px -1652px;"></div>
 		</a>
-		<a id="project-spectral-armor" href=&#x2F;pixels&#x2F;spectral-armor class="gallery-item" style="top:1280px;left:400px;width:70px;height:70px;background-color:#2a0039;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:70px;height:70px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:809px 781px;background-position:-730px -341px;"></div>
+		<a id="project-spectral-armor" href="/pixels/spectral-armor" class="gallery-item" style="top:1280px;left:400px;width:70px;height:70px;background-color:#2a0039;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:70px;height:70px;background-image:url('/images/pixels-1.png');background-size:809px 781px;background-position:-730px -341px;"></div>
 		</a>
-		<a id="project-super-happy-tree" href=&#x2F;pixels&#x2F;super-happy-tree class="gallery-item" style="top:5440px;left:240px;width:230px;height:230px;background-color:#ffd1a2;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:230px;height:220px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:4045px 3905px;background-position:-750px -3515px;"></div>
+		<a id="project-super-happy-tree" href="/pixels/super-happy-tree" class="gallery-item" style="top:5440px;left:240px;width:230px;height:230px;background-color:#ffd1a2;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:230px;height:220px;background-image:url('/images/pixels-1.png');background-size:4045px 3905px;background-position:-750px -3515px;"></div>
 		</a>
-		<a id="project-gaudy-ladybug" href=&#x2F;pixels&#x2F;gaudy-ladybug class="gallery-item" style="top:4480px;left:240px;width:230px;height:230px;background-color:#5a8751;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:230px;height:230px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:1618px 1562px;background-position:-936px -724px;"></div>
+		<a id="project-gaudy-ladybug" href="/pixels/gaudy-ladybug" class="gallery-item" style="top:4480px;left:240px;width:230px;height:230px;background-color:#5a8751;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:230px;height:230px;background-image:url('/images/pixels-1.png');background-size:1618px 1562px;background-position:-936px -724px;"></div>
 		</a>
-		<a id="project-mortimer" href=&#x2F;pixels&#x2F;mortimer class="gallery-item" style="top:0px;left:0px;width:150px;height:150px;background-color:#fbac00;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:144px;height:144px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:3236px 3124px;background-position:-2768px -1360px;"></div>
+		<a id="project-mortimer" href="/pixels/mortimer" class="gallery-item" style="top:0px;left:0px;width:150px;height:150px;background-color:#fbac00;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:144px;height:144px;background-image:url('/images/pixels-1.png');background-size:3236px 3124px;background-position:-2768px -1360px;"></div>
 		</a>
-		<a id="project-masks" href=&#x2F;pixels&#x2F;masks class="gallery-item" style="top:1280px;left:320px;width:70px;height:70px;background-color:#000000;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:72px;height:66px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:2427px 2343px;background-position:-1839px -1416px;"></div>
+		<a id="project-masks" href="/pixels/masks" class="gallery-item" style="top:1280px;left:320px;width:70px;height:70px;background-color:#000000;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:72px;height:66px;background-image:url('/images/pixels-1.png');background-size:2427px 2343px;background-position:-1839px -1416px;"></div>
 		</a>
-		<a id="project-deku" href=&#x2F;pixels&#x2F;deku class="gallery-item" style="top:1520px;left:320px;width:150px;height:150px;background-color:#0d0f1c;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:129px;height:150px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:2427px 2343px;background-position:-315px -2109px;"></div>
+		<a id="project-deku" href="/pixels/deku" class="gallery-item" style="top:1520px;left:320px;width:150px;height:150px;background-color:#0d0f1c;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:129px;height:150px;background-image:url('/images/pixels-1.png');background-size:2427px 2343px;background-position:-315px -2109px;"></div>
 		</a>
-		<a id="project-space" href=&#x2F;pixels&#x2F;space class="gallery-item" style="top:5600px;left:0px;width:230px;height:230px;background-color:#000000;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:230px;height:230px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:1618px 1562px;background-position:-1226px -2px;"></div>
+		<a id="project-space" href="/pixels/space" class="gallery-item" style="top:5600px;left:0px;width:230px;height:230px;background-color:#000000;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:230px;height:230px;background-image:url('/images/pixels-1.png');background-size:1618px 1562px;background-position:-1226px -2px;"></div>
 		</a>
-		<a id="project-monolith" href=&#x2F;pixels&#x2F;monolith class="gallery-item" style="top:4480px;left:0px;width:230px;height:230px;background-color:#645146;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:230px;height:230px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:1618px 1562px;background-position:-702px -724px;"></div>
+		<a id="project-monolith" href="/pixels/monolith" class="gallery-item" style="top:4480px;left:0px;width:230px;height:230px;background-color:#645146;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:230px;height:230px;background-image:url('/images/pixels-1.png');background-size:1618px 1562px;background-position:-702px -724px;"></div>
 		</a>
-		<a id="project-zergling" href=&#x2F;pixels&#x2F;zergling class="gallery-item" style="top:240px;left:160px;width:310px;height:230px;background-color:#f4e9d7;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:282px;height:184px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:1618px 1562px;background-position:-2px -1006px;"></div>
+		<a id="project-zergling" href="/pixels/zergling" class="gallery-item" style="top:240px;left:160px;width:310px;height:230px;background-color:#f4e9d7;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:282px;height:184px;background-image:url('/images/pixels-1.png');background-size:1618px 1562px;background-position:-2px -1006px;"></div>
 		</a>
-		<a id="project-autumn-hair" href=&#x2F;pixels&#x2F;autumn-hair class="gallery-item" style="top:880px;left:0px;width:310px;height:310px;background-color:#debb37;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:312px;height:312px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:3236px 3124px;background-position:-2920px -324px;"></div>
+		<a id="project-autumn-hair" href="/pixels/autumn-hair" class="gallery-item" style="top:880px;left:0px;width:310px;height:310px;background-color:#debb37;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:312px;height:312px;background-image:url('/images/pixels-1.png');background-size:3236px 3124px;background-position:-2920px -324px;"></div>
 		</a>
-		<a id="project-skater" href=&#x2F;pixels&#x2F;skater class="gallery-item" style="top:5840px;left:0px;width:310px;height:310px;background-color:#ffffdd;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:312px;height:270px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:2427px 2343px;background-position:-1410px -594px;"></div>
+		<a id="project-skater" href="/pixels/skater" class="gallery-item" style="top:5840px;left:0px;width:310px;height:310px;background-color:#ffffdd;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:312px;height:270px;background-image:url('/images/pixels-1.png');background-size:2427px 2343px;background-position:-1410px -594px;"></div>
 		</a>
-		<a id="project-super-yay-train" href=&#x2F;pixels&#x2F;super-yay-train class="gallery-item" style="top:5680px;left:240px;width:230px;height:150px;background-color:#ffccaa;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:230px;height:150px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:1618px 1562px;background-position:-756px -1006px;"></div>
+		<a id="project-super-yay-train" href="/pixels/super-yay-train" class="gallery-item" style="top:5680px;left:240px;width:230px;height:150px;background-color:#ffccaa;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:230px;height:150px;background-image:url('/images/pixels-1.png');background-size:1618px 1562px;background-position:-756px -1006px;"></div>
 		</a>
-		<a id="project-traffic-knight" href=&#x2F;pixels&#x2F;traffic-knight class="gallery-item" style="top:480px;left:0px;width:310px;height:390px;background-color:#fffbd3;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:310px;height:390px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:1618px 1562px;background-position:-626px -2px;"></div>
+		<a id="project-traffic-knight" href="/pixels/traffic-knight" class="gallery-item" style="top:480px;left:0px;width:310px;height:390px;background-color:#fffbd3;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:310px;height:390px;background-image:url('/images/pixels-1.png');background-size:1618px 1562px;background-position:-626px -2px;"></div>
 		</a>
-		<a id="project-mail-angel" href=&#x2F;pixels&#x2F;mail-angel class="gallery-item" style="top:2880px;left:0px;width:310px;height:310px;background-color:#fffe5e;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:312px;height:312px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:3236px 3124px;background-position:-2920px -4px;"></div>
+		<a id="project-mail-angel" href="/pixels/mail-angel" class="gallery-item" style="top:2880px;left:0px;width:310px;height:310px;background-color:#fffe5e;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:312px;height:312px;background-image:url('/images/pixels-1.png');background-size:3236px 3124px;background-position:-2920px -4px;"></div>
 		</a>
-		<a id="project-croc" href=&#x2F;pixels&#x2F;croc class="gallery-item" style="top:3520px;left:240px;width:230px;height:150px;background-color:#b8e0e4;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:230px;height:150px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:1618px 1562px;background-position:-288px -1006px;"></div>
+		<a id="project-croc" href="/pixels/croc" class="gallery-item" style="top:3520px;left:240px;width:230px;height:150px;background-color:#b8e0e4;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:230px;height:150px;background-image:url('/images/pixels-1.png');background-size:1618px 1562px;background-position:-288px -1006px;"></div>
 		</a>
-		<a id="project-bonsai" href=&#x2F;pixels&#x2F;bonsai class="gallery-item" style="top:160px;left:80px;width:70px;height:70px;background-color:#fcff9f;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:72px;height:72px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:3236px 3124px;background-position:-3128px -980px;"></div>
+		<a id="project-bonsai" href="/pixels/bonsai" class="gallery-item" style="top:160px;left:80px;width:70px;height:70px;background-color:#fcff9f;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:72px;height:72px;background-image:url('/images/pixels-1.png');background-size:3236px 3124px;background-position:-3128px -980px;"></div>
 		</a>
-		<a id="project-froggins" href=&#x2F;pixels&#x2F;froggins class="gallery-item" style="top:1680px;left:400px;width:70px;height:70px;background-color:#62dbaf;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:58px;height:48px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:1618px 1562px;background-position:-1460px -1350px;"></div>
+		<a id="project-froggins" href="/pixels/froggins" class="gallery-item" style="top:1680px;left:400px;width:70px;height:70px;background-color:#62dbaf;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:58px;height:48px;background-image:url('/images/pixels-1.png');background-size:1618px 1562px;background-position:-1460px -1350px;"></div>
 		</a>
-		<a id="project-stratos" href=&#x2F;pixels&#x2F;stratos class="gallery-item" style="top:3520px;left:0px;width:230px;height:310px;background-color:#ed5207;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:232px;height:312px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:3236px 3124px;background-position:-2920px -1892px;"></div>
+		<a id="project-stratos" href="/pixels/stratos" class="gallery-item" style="top:3520px;left:0px;width:230px;height:310px;background-color:#ed5207;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:232px;height:312px;background-image:url('/images/pixels-1.png');background-size:3236px 3124px;background-position:-2920px -1892px;"></div>
 		</a>
-		<a id="project-robo-gladiator" href=&#x2F;pixels&#x2F;robo-gladiator class="gallery-item" style="top:0px;left:160px;width:310px;height:230px;background-color:#f2cbfc;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:312px;height:220px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:3236px 3124px;background-position:-2920px -2472px;"></div>
+		<a id="project-robo-gladiator" href="/pixels/robo-gladiator" class="gallery-item" style="top:0px;left:160px;width:310px;height:230px;background-color:#f2cbfc;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:312px;height:220px;background-image:url('/images/pixels-1.png');background-size:3236px 3124px;background-position:-2920px -2472px;"></div>
 		</a>
-		<a id="project-catbug" href=&#x2F;pixels&#x2F;catbug class="gallery-item" style="top:4720px;left:0px;width:310px;height:310px;background-color:#f1f0d2;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:310px;height:310px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:4045px 3905px;background-position:-2725px -1450px;"></div>
+		<a id="project-catbug" href="/pixels/catbug" class="gallery-item" style="top:4720px;left:0px;width:310px;height:310px;background-color:#f1f0d2;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:310px;height:310px;background-image:url('/images/pixels-1.png');background-size:4045px 3905px;background-position:-2725px -1450px;"></div>
 		</a>
-		<a id="project-sprouts" href=&#x2F;pixels&#x2F;sprouts class="gallery-item" style="top:400px;left:0px;width:150px;height:70px;background-color:#d7ab4f;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:150px;height:70px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:1618px 1562px;background-position:-672px -1194px;"></div>
+		<a id="project-sprouts" href="/pixels/sprouts" class="gallery-item" style="top:400px;left:0px;width:150px;height:70px;background-color:#d7ab4f;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:150px;height:70px;background-image:url('/images/pixels-1.png');background-size:1618px 1562px;background-position:-672px -1194px;"></div>
 		</a>
-		<a id="project-test-tileset" href=&#x2F;pixels&#x2F;test-tileset class="gallery-item" style="top:2160px;left:0px;width:310px;height:150px;background-color:#5ece53;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:310px;height:150px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:809px 781px;background-position:-1px -1px;"></div>
+		<a id="project-test-tileset" href="/pixels/test-tileset" class="gallery-item" style="top:2160px;left:0px;width:310px;height:150px;background-color:#5ece53;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:310px;height:150px;background-image:url('/images/pixels-1.png');background-size:809px 781px;background-position:-1px -1px;"></div>
 		</a>
-		<a id="project-hammerachnid" href=&#x2F;pixels&#x2F;hammerachnid class="gallery-item" style="top:6640px;left:240px;width:230px;height:150px;background-color:#111111;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:230px;height:142px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:1618px 1562px;background-position:-990px -1006px;"></div>
+		<a id="project-hammerachnid" href="/pixels/hammerachnid" class="gallery-item" style="top:6640px;left:240px;width:230px;height:150px;background-color:#111111;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:230px;height:142px;background-image:url('/images/pixels-1.png');background-size:1618px 1562px;background-position:-990px -1006px;"></div>
 		</a>
-		<a id="project-tiny-face" href=&#x2F;pixels&#x2F;tiny-face class="gallery-item" style="top:1040px;left:400px;width:70px;height:70px;background-color:#ffffff;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:69px;height:69px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:2427px 2343px;background-position:-2076px -1302px;"></div>
+		<a id="project-tiny-face" href="/pixels/tiny-face" class="gallery-item" style="top:1040px;left:400px;width:70px;height:70px;background-color:#ffffff;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:69px;height:69px;background-image:url('/images/pixels-1.png');background-size:2427px 2343px;background-position:-2076px -1302px;"></div>
 		</a>
-		<a id="project-grapple-world" href=&#x2F;pixels&#x2F;grapple-world class="gallery-item" style="top:6160px;left:240px;width:230px;height:390px;background-color:#ffeedd;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:231px;height:390px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:2427px 2343px;background-position:-1839px -1020px;"></div>
+		<a id="project-grapple-world" href="/pixels/grapple-world" class="gallery-item" style="top:6160px;left:240px;width:230px;height:390px;background-color:#ffeedd;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:231px;height:390px;background-image:url('/images/pixels-1.png');background-size:2427px 2343px;background-position:-1839px -1020px;"></div>
 		</a>
-		<a id="project-grapple-girl" href=&#x2F;pixels&#x2F;grapple-girl class="gallery-item" style="top:160px;left:0px;width:70px;height:70px;background-color:#ededd7;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:72px;height:72px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:2427px 2343px;background-position:-2076px -1224px;"></div>
+		<a id="project-grapple-girl" href="/pixels/grapple-girl" class="gallery-item" style="top:160px;left:0px;width:70px;height:70px;background-color:#ededd7;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:72px;height:72px;background-image:url('/images/pixels-1.png');background-size:2427px 2343px;background-position:-2076px -1224px;"></div>
 		</a>
-		<a id="project-rocky-platforms" href=&#x2F;pixels&#x2F;rocky-platforms class="gallery-item" style="top:560px;left:320px;width:150px;height:230px;background-color:#ffeedd;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:150px;height:231px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:2427px 2343px;background-position:-3px -2109px;"></div>
+		<a id="project-rocky-platforms" href="/pixels/rocky-platforms" class="gallery-item" style="top:560px;left:320px;width:150px;height:230px;background-color:#ffeedd;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:150px;height:231px;background-image:url('/images/pixels-1.png');background-size:2427px 2343px;background-position:-3px -2109px;"></div>
 		</a>
-		<a id="project-pillars" href=&#x2F;pixels&#x2F;pillars class="gallery-item" style="top:2640px;left:320px;width:150px;height:70px;background-color:#ffeedd;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:150px;height:67px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:809px 781px;background-position:-313px -198px;"></div>
+		<a id="project-pillars" href="/pixels/pillars" class="gallery-item" style="top:2640px;left:320px;width:150px;height:70px;background-color:#ffeedd;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:150px;height:67px;background-image:url('/images/pixels-1.png');background-size:809px 781px;background-position:-313px -198px;"></div>
 		</a>
-		<a id="project-rock-blocks" href=&#x2F;pixels&#x2F;rock-blocks class="gallery-item" style="top:960px;left:320px;width:150px;height:70px;background-color:#ffeedd;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:124px;height:52px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:809px 781px;background-position:-80px -597px;"></div>
+		<a id="project-rock-blocks" href="/pixels/rock-blocks" class="gallery-item" style="top:960px;left:320px;width:150px;height:70px;background-color:#ffeedd;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:124px;height:52px;background-image:url('/images/pixels-1.png');background-size:809px 781px;background-position:-80px -597px;"></div>
 		</a>
-		<a id="project-tree-progression" href=&#x2F;pixels&#x2F;tree-progression class="gallery-item" style="top:1920px;left:240px;width:230px;height:70px;background-color:#ffeedd;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:230px;height:70px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:809px 781px;background-position:-313px -290px;"></div>
+		<a id="project-tree-progression" href="/pixels/tree-progression" class="gallery-item" style="top:1920px;left:240px;width:230px;height:70px;background-color:#ffeedd;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:230px;height:70px;background-image:url('/images/pixels-1.png');background-size:809px 781px;background-position:-313px -290px;"></div>
 		</a>
-		<a id="project-ghus" href=&#x2F;pixels&#x2F;ghus class="gallery-item" style="top:1120px;left:320px;width:150px;height:150px;background-color:#e6f8f9;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:150px;height:150px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:2427px 2343px;background-position:-159px -2109px;"></div>
+		<a id="project-ghus" href="/pixels/ghus" class="gallery-item" style="top:1120px;left:320px;width:150px;height:150px;background-color:#e6f8f9;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:150px;height:150px;background-image:url('/images/pixels-1.png');background-size:2427px 2343px;background-position:-159px -2109px;"></div>
 		</a>
-		<a id="project-tree" href=&#x2F;pixels&#x2F;tree class="gallery-item" style="top:2480px;left:0px;width:310px;height:390px;background-color:#faf6ea;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:312px;height:390px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:2427px 2343px;background-position:-417px -1086px;"></div>
+		<a id="project-tree" href="/pixels/tree" class="gallery-item" style="top:2480px;left:0px;width:310px;height:390px;background-color:#faf6ea;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:312px;height:390px;background-image:url('/images/pixels-1.png');background-size:2427px 2343px;background-position:-417px -1086px;"></div>
 		</a>
-		<a id="project-loading-blob" href=&#x2F;pixels&#x2F;loading-blob class="gallery-item" style="top:2480px;left:320px;width:150px;height:150px;background-color:#535353;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:142px;height:144px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:1618px 1562px;background-position:-1460px -534px;"></div>
+		<a id="project-loading-blob" href="/pixels/loading-blob" class="gallery-item" style="top:2480px;left:320px;width:150px;height:150px;background-color:#535353;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:142px;height:144px;background-image:url('/images/pixels-1.png');background-size:1618px 1562px;background-position:-1460px -534px;"></div>
 		</a>
-		<a id="project-mini-grapple-assets" href=&#x2F;pixels&#x2F;mini-grapple-assets class="gallery-item" style="top:6560px;left:0px;width:310px;height:70px;background-color:#ffefdd;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:310px;height:70px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:809px 781px;background-position:-1px -290px;"></div>
+		<a id="project-mini-grapple-assets" href="/pixels/mini-grapple-assets" class="gallery-item" style="top:6560px;left:0px;width:310px;height:70px;background-color:#ffefdd;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:310px;height:70px;background-image:url('/images/pixels-1.png');background-size:809px 781px;background-position:-1px -290px;"></div>
 		</a>
-		<a id="project-grinning-frog" href=&#x2F;pixels&#x2F;grinning-frog class="gallery-item" style="top:6800px;left:240px;width:230px;height:150px;background-color:#000000;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:228px;height:152px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:3236px 3124px;background-position:-576px -2604px;"></div>
+		<a id="project-grinning-frog" href="/pixels/grinning-frog" class="gallery-item" style="top:6800px;left:240px;width:230px;height:150px;background-color:#000000;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:228px;height:152px;background-image:url('/images/pixels-1.png');background-size:3236px 3124px;background-position:-576px -2604px;"></div>
 		</a>
-		<a id="project-heist-room" href=&#x2F;pixels&#x2F;heist-room class="gallery-item" style="top:6640px;left:0px;width:230px;height:310px;background-color:#112421;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:231px;height:312px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:2427px 2343px;background-position:-3px -1791px;"></div>
+		<a id="project-heist-room" href="/pixels/heist-room" class="gallery-item" style="top:6640px;left:0px;width:230px;height:310px;background-color:#112421;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:231px;height:312px;background-image:url('/images/pixels-1.png');background-size:2427px 2343px;background-position:-3px -1791px;"></div>
 		</a>
-		<a id="project-paradox-anomaly" href=&#x2F;pixels&#x2F;paradox-anomaly class="gallery-item" style="top:480px;left:320px;width:70px;height:70px;background-color:#1c394a;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:72px;height:72px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:2427px 2343px;background-position:-2346px -579px;"></div>
+		<a id="project-paradox-anomaly" href="/pixels/paradox-anomaly" class="gallery-item" style="top:480px;left:320px;width:70px;height:70px;background-color:#1c394a;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:72px;height:72px;background-image:url('/images/pixels-1.png');background-size:2427px 2343px;background-position:-2346px -579px;"></div>
 		</a>
-		<a id="project-scorching-queen" href=&#x2F;pixels&#x2F;scorching-queen class="gallery-item" style="top:4080px;left:0px;width:310px;height:150px;background-color:#23000a;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:276px;height:132px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:2427px 2343px;background-position:-1836px -1509px;"></div>
+		<a id="project-scorching-queen" href="/pixels/scorching-queen" class="gallery-item" style="top:4080px;left:0px;width:310px;height:150px;background-color:#23000a;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:276px;height:132px;background-image:url('/images/pixels-1.png');background-size:2427px 2343px;background-position:-1836px -1509px;"></div>
 		</a>
-		<a id="project-ice-emperor" href=&#x2F;pixels&#x2F;ice-emperor class="gallery-item" style="top:4240px;left:0px;width:310px;height:230px;background-color:#00042d;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:310px;height:230px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:4045px 3905px;background-position:-400px -3255px;"></div>
+		<a id="project-ice-emperor" href="/pixels/ice-emperor" class="gallery-item" style="top:4240px;left:0px;width:310px;height:230px;background-color:#00042d;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:310px;height:230px;background-image:url('/images/pixels-1.png');background-size:4045px 3905px;background-position:-400px -3255px;"></div>
 		</a>
-		<a id="project-gazelle-gladiator" href=&#x2F;pixels&#x2F;gazelle-gladiator class="gallery-item" style="top:480px;left:400px;width:70px;height:70px;background-color:#312526;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:72px;height:72px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:2427px 2343px;background-position:-2346px -657px;"></div>
+		<a id="project-gazelle-gladiator" href="/pixels/gazelle-gladiator" class="gallery-item" style="top:480px;left:400px;width:70px;height:70px;background-color:#312526;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:72px;height:72px;background-image:url('/images/pixels-1.png');background-size:2427px 2343px;background-position:-2346px -657px;"></div>
 		</a>
-		<a id="project-beevoobaa" href=&#x2F;pixels&#x2F;beevoobaa class="gallery-item" style="top:2720px;left:320px;width:150px;height:150px;background-color:#2d1501;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:130px;height:150px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:4045px 3905px;background-position:-3910px -805px;"></div>
+		<a id="project-beevoobaa" href="/pixels/beevoobaa" class="gallery-item" style="top:2720px;left:320px;width:150px;height:150px;background-color:#2d1501;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:130px;height:150px;background-image:url('/images/pixels-1.png');background-size:4045px 3905px;background-position:-3910px -805px;"></div>
 		</a>
-		<a id="project-grapple-anims" href=&#x2F;pixels&#x2F;grapple-anims class="gallery-item" style="top:1360px;left:320px;width:150px;height:150px;background-color:#fdfb35;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:152px;height:152px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:3236px 3124px;background-position:-952px -2812px;"></div>
+		<a id="project-grapple-anims" href="/pixels/grapple-anims" class="gallery-item" style="top:1360px;left:320px;width:150px;height:150px;background-color:#fdfb35;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:152px;height:152px;background-image:url('/images/pixels-1.png');background-size:3236px 3124px;background-position:-952px -2812px;"></div>
 		</a>
-		<a id="project-vampire-dolphin" href=&#x2F;pixels&#x2F;vampire-dolphin class="gallery-item" style="top:2000px;left:240px;width:230px;height:150px;background-color:#fdfb35;image-rendering:pixelated;">
-			<div class="gallery-item-image" style="width:232px;height:148px;background-image:url('&#x2F;images&#x2F;pixels-1.png');background-size:3236px 3124px;background-position:-812px -2604px;"></div>
+		<a id="project-vampire-dolphin" href="/pixels/vampire-dolphin" class="gallery-item" style="top:2000px;left:240px;width:230px;height:150px;background-color:#000000;image-rendering:pixelated;">
+			<div class="gallery-item-image" style="width:232px;height:148px;background-image:url('/images/pixels-1.png');background-size:3236px 3124px;background-position:-812px -2604px;"></div>
 		</a>
 </div></main>
 <footer>

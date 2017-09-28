@@ -379,7 +379,7 @@
 	},
 	"paradox-anomaly": {
 		"title": "Paradox Anomaly",
-		"description": "Sprite and animations for the main character of time-traveling/heist game.",
+		"description": "Sprite and animations for the main character of a time-traveling heist game.",
 		"date": "2014/12",
 		"image": { "name": "paradox-anomaly.gif", "animated": true },
 		"backgroundColor": "#1c394a"
@@ -425,6 +425,6 @@
 		"description": "Concept for a boss for a PICO-8 boss rush game. Vampire dolphin: yes please.",
 		"date": null,
 		"image": { "name": "vampire-dolphin.gif", "animated": true },
-		"backgroundColor": "#fdfb35"
+		"backgroundColor": "#000000"
 	}
 }
