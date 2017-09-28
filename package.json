@@ -43,9 +43,11 @@
     "canvas": "^1.6.7",
     "gif-frames": "^0.3.0",
     "gm": "^1.23.0",
+    "html-minifier": "^3.5.5",
     "mustache": "^2.3.0",
     "nodemon": "^1.12.1",
     "random-seed": "^0.3.0",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "uglify-js": "^3.1.2"
   }
 }
