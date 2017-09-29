@@ -110,6 +110,7 @@ async function load() {
 		header: await loadFile('web-assets/templates/header.mustache'),
 		nav: await loadFile('web-assets/templates/nav.mustache'),
 		footer: await loadFile('web-assets/templates/footer.mustache'),
+		analytics: await loadFile('web-assets/templates/google-analytics.mustache'),
 		githubIcon: await loadFile('web-assets/icons/github.svg'),
 		twitterIcon: await loadFile('web-assets/icons/twitter.svg')
 	};

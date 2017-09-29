@@ -37,14 +37,15 @@
 		"maxCols": 18,
 		"maxItemCols": 4,
 		"maxItemRows": 6,
-		"packAttempts": 1000
+		"packAttempts": 10
 	},
 	"nav": [],
 	"defaultSection": "pixels",
 	"external": {
 		"githubUri": "https://github.com/bridgs",
 		"twitterUri": "https://twitter.com/bridgs_dev",
-		"twitterAccountName": "bridgs_dev"
+		"twitterAccountName": "bridgs_dev",
+		"googleAnalyticsTrackingId": "UA-107280031-1"
 	},
 	"minify": true,
 	"abbreviateMonths": true,
