@@ -45,7 +45,7 @@
 		"githubUri": "https://github.com/bridgs",
 		"twitterUri": "https://twitter.com/bridgs_dev",
 		"twitterAccountName": "bridgs_dev",
-		"googleAnalyticsTrackingId": "UA-107280031-1"
+		"googleTagManagerId": "GTM-TPMZL3J"
 	},
 	"minify": true,
 	"abbreviateMonths": true,

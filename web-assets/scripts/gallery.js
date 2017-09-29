@@ -26,7 +26,6 @@ window.addEventListener('load', function() {
 		}
 	}
 	function adjustGrid(numCols) {
-		console.log('adjusting grid to ' + numCols);
 		var colIndex = Math.floor(2 * (numCols - config.minCols) / config.colStep);
 		var rowIndex = colIndex + 1;
 		for (var project in projects) {

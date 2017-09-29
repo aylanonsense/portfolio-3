@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		{{> analytics}}
+		{{> analyticsHead }}
 		<title>{{#title}}{{.}} | {{/title}}{{siteName}}</title>
 		<meta name="description" content="{{siteDescription}}" />
 		<meta property="og:title" content="{{siteName}}" />
@@ -23,6 +23,7 @@
 		</script>
 	</head>
 	<body style="{{#minBodyWidth}}min-width:{{minBodyWidth}}px;{{/minBodyWidth}}{{#minBodyHeight}}min-height:{{minBodyHeight}}px;{{/minBodyHeight}}">
+		{{> analyticsBody }}
 		<div id="wrapper">
 			{{> layout}}
 		</div>
