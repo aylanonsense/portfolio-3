@@ -1,5 +1,7 @@
 {
 	"siteName": "bridgs",
+	"siteDescription": "Pixel art and indie games created by Ayla Myers a.k.a bridgs.",
+	"domainUri": "http://brid.gs/",
 	"sections": {
 		"pixels": {
 			"title": "Pixel Art",
@@ -40,7 +42,8 @@
 	"defaultSection": "pixels",
 	"links": {
 		"github": "https://github.com/bridgs",
-		"twitter": "https://twitter.com/bridgs_dev"
+		"twitter": "https://twitter.com/bridgs_dev",
+		"twitterAccountName": "bridgs_dev"
 	},
 	"minify": true,
 	"abbreviateMonths": true,

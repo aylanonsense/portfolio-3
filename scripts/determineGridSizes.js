@@ -1,6 +1,6 @@
 import config from '../data/config.json';
 
-const SCALE_PENALTY = [ 0.1, 0.03, 0, 0, 0.05, 0.2 ];
+const SCALE_PENALTY = [ 0.1, 0.03, 0, 0, 0.05, 0.2, 0.6, 0.9 ];
 
 export default async projects => {
 	for (let [ project, projectData ] of Object.entries(projects)) {
@@ -10,7 +10,7 @@ export default async projects => {
 			let gridWidth = config.grid.cellWidth * cols + config.grid.cellGap * (cols - 1);
 			for (let rows = config.grid.rowStep; rows <= config.grid.maxItemRows; rows += config.grid.rowStep) {
 				let gridHeight = config.grid.cellHeight * rows + config.grid.cellGap * (rows - 1);
-				for (let scale = 1; scale <= 6; scale++) {
+				for (let scale = 1; scale <= 8; scale++) {
 					let imageWidth = scale * image.width;
 					let imageHeight = scale * image.height;
 					let unusedGridArea = 0;
