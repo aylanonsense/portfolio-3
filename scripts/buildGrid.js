@@ -82,7 +82,7 @@ export default async projects => {
 		projectData.grid.coordinates = [];
 	}
 	// for each possible number of columns
-	for (let numCols = config.grid.minCols; numCols <= config.grid.maxCols; numCols += 2) {
+	for (let numCols = config.grid.minCols; numCols <= config.grid.maxCols; numCols += config.grid.colStep) {
 		// pack the projects into a grid with that many columns
 		let { numRows, projectCoordinates } = repeatedlyPackProjectsIntoGrid(projects, numCols, config.grid.packAttempts);
 		for (let [ project, projectData ] of Object.entries(projects)) {

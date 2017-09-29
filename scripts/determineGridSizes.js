@@ -6,9 +6,9 @@ export default async projects => {
 	for (let [ project, projectData ] of Object.entries(projects)) {
 		let image = projectData.image.raw;
 		let bestFit = null;
-		for (let cols = config.grid.colStep; cols <= 8; cols += config.grid.colStep) {
+		for (let cols = config.grid.colStep; cols <= config.grid.maxItemCols; cols += config.grid.colStep) {
 			let gridWidth = config.grid.cellWidth * cols + config.grid.cellGap * (cols - 1);
-			for (let rows = config.grid.rowStep; rows <= 10; rows += config.grid.rowStep) {
+			for (let rows = config.grid.rowStep; rows <= config.grid.maxItemRows; rows += config.grid.rowStep) {
 				let gridHeight = config.grid.cellHeight * rows + config.grid.cellGap * (rows - 1);
 				for (let scale = 1; scale <= 6; scale++) {
 					let imageWidth = scale * image.width;

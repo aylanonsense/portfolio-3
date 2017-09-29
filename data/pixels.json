@@ -11,7 +11,7 @@
 		"description": "Showcase of some gameplay mechanics for a wild west PICO-8 game.",
 		"date": "2017/09",
 		"image": { "name": "west-showcase.gif", "animated": true },
-		"grid": { "cols": 8, "rows": 2, "scale": 2 },
+		"grid": { "cols": 4, "rows": 1, "scale": 2 },
 		"backgroundColor": "#000000"
 	},
 	"west-lighting": {
@@ -217,7 +217,6 @@
 		"description": "A mailman with envelope wings.",
 		"date": "2016/06",
 		"image": { "name": "mail-angel.gif", "animated": true },
-		"grid": { "cols": 3, "rows": 5 },
 		"backgroundColor": "#fffe5e"
 	},
 	"croc": {
@@ -324,7 +323,7 @@
 		"description": "Progression of rocky blocks for a platformer.",
 		"date": "2015/11",
 		"image": { "name": "rock-blocks.png" },
-		"grid": { "rows": 2, "scale": 1 },
+		"grid": { "rows": 1, "scale": 1 },
 		"backgroundColor": "#ffeedd"
 	},
 	"tree-progression": {
