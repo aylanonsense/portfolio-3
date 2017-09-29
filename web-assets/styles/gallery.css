@@ -19,7 +19,7 @@ footer {
 #gallery {
 	position: relative;
 }
-#gallery .gallery-item {
+.gallery-item {
 	position: absolute;
 	display: block;
 	background-color: #ccc;

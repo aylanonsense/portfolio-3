@@ -1,3 +1,4 @@
+import striptags from 'striptags';
 import parseDate from './parseDate';
 import loadImage from './helper/loadImage';
 import saveDeanimatedImage from './helper/saveDeanimatedImage';
@@ -8,6 +9,7 @@ export default async (galleryData, projects) => {
 	for (let [ project, projectData ] of Object.entries(projects)) {
 		projectData.id = `project-${project}`;
 		projectData.uri = `/${galleryData.uri}/${project}`;
+		projectData.descriptionStripped = projectData.description ? striptags(projectData.description) : null;
 		// parse the time and human-readable date
 		let { time, dateText } = parseDate(projectData.date);
 		projectData.time = time;

@@ -52,20 +52,27 @@ window.addEventListener('load', function() {
 	}, false);
 
 	// on pageload, load all animated images
+	function loadAnimatedImage(projectData) {
+		var id = projectData[0];
+		var scale = projectData[1];
+		var img = new Image();
+		img.onload = function() {
+			var width = img.width * scale;
+			var height = img.height * scale;
+			var projectImageEle = projectEles[id].getElementsByClassName('gallery-item-image')[0];
+			if (!projectImageEle) {
+				console.log(id, projectEles[id]);
+			}
+			projectImageEle.style.backgroundImage = "url('" + projectData[2] + "')";
+			projectImageEle.style.width = width + 'px';
+			projectImageEle.style.height = height + 'px';
+			projectImageEle.style.backgroundPosition = 'center';
+			projectImageEle.style.backgroundSize = width + 'px ' + height + 'px';
+		};
+		img.src = projectData[2];
+	}
 	for (project in animatedProjects) {
-		(function(projectData) {
-			var id = projectData[0];
-			var scale = projectData[1];
-			var img = new Image();
-			img.onload = function() {
-				img.width *= scale;
-				img.height *= scale;
-				var projectImageEle = projectEles[id].getElementsByClassName('gallery-item-image');
-				projectEles[id].removeChild(projectImageEle[0]);
-				projectEles[id].appendChild(img);
-			};
-			img.src = projectData[2];
-		})(animatedProjects[project]);
+		loadAnimatedImage(animatedProjects[project]);
 	}
 
 	// consider adjusting the grid immediately on pageload
