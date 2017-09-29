@@ -127,11 +127,8 @@ async function load() {
 		fontRaleway: await loadFile('web-assets/styles/font-raleway.css')
 	};
 	siteData = {
-		siteName: config.siteName,
-		sections: config.nav.map(section => config.sections[section]),
-		githubUri: config.links.github,
-		twitterUri: config.links.twitter,
-		showDebugColors: config.showDebugColors
+		...config,
+		sections: config.nav.map(section => config.sections[section])
 	};
 }
 

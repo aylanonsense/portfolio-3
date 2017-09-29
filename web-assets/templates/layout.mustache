@@ -7,11 +7,11 @@
 	{{/navInHeader}}
 </header>
 {{^navInHeader}}
-<nav>
+<nav aria-label="Site navigation">
 	{{> nav}}
 </nav>
 {{/navInHeader}}
-<main style="{{#mainWidth}}width:{{mainWidth}}px;{{/mainWidth}}">
+<main aria-label="Page content" style="{{#mainWidth}}width:{{mainWidth}}px;{{/mainWidth}}">
 	{{> main}}
 </main>
 <footer>
