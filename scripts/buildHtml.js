@@ -135,7 +135,7 @@ async function load() {
 	};
 }
 
-export async function buildGalleryHtml(galleryData, projects, buildOptions) {
+export async function buildGalleryHtml(galleryData, projects) {
 	if (!isLoaded) {
 		await load();
 	}
@@ -155,7 +155,6 @@ export async function buildGalleryHtml(galleryData, projects, buildOptions) {
 		.map(projectData => [ projectData.id, projectData.grid.scale, projectData.image.project.uri ]);
 	let html = Mustache.render(templates.base, {
 		...siteData,
-		...buildOptions,
 		projects: Object.values(projects),
 		title: galleryData.title,
 		showSubheading: true,
@@ -165,7 +164,6 @@ export async function buildGalleryHtml(galleryData, projects, buildOptions) {
 		minBodyWidth: 320,
 		minBodyHeight: null,
 		configJSON: JSON.stringify(configJSON),
-		gridHeightsJSON: JSON.stringify(buildOptions.gridHeights),
 		projectsJSON: JSON.stringify(projectsJSON),
 		animatedProjectsJSON: JSON.stringify(animatedProjectsJSON)
 	}, {
@@ -177,14 +175,13 @@ export async function buildGalleryHtml(galleryData, projects, buildOptions) {
 	await saveFile(`build/public/${galleryData.uri}.html`, config.minify ? minify(html, minifyOptions) : html);
 }
 
-export async function buildProjectHtml(galleryData, projectData, buildOptions) {
+export async function buildProjectHtml(galleryData, projectData) {
 	if (!isLoaded) {
 		await load();
 	}
 	let html = Mustache.render(templates.base, {
 		...siteData,
 		...projectData,
-		...buildOptions,
 		showSubheading: false,
 		navInHeader: true,
 		showFooterText: false,

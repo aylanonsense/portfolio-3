@@ -17,12 +17,14 @@ footer {
 	padding: 15px 0 30px;
 }
 #gallery {
-	position: relative;
+	display: grid;
+	grid-template-columns: 70px 70px 70px 70px;
+	grid-template-rows: 70px;
+	grid-auto-columns: 70px;
+	grid-auto-rows: 70px;
+	grid-gap: 10px 10px;
 }
 .gallery-item {
-	position: absolute;
-	display: block;
-	background-color: #ccc;
 	overflow: hidden;
 	display: flex;
 	justify-content: center;

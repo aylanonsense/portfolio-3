@@ -195,7 +195,7 @@
 		"description": "Animation practice of an ice skater.",
 		"date": "2016/07",
 		"image": { "name": "skater.gif", "animated": true },
-		"backgroundColor": "#ffffdd"
+		"backgroundColor": "#a2faff"
 	},
 	"super-yay-train": {
 		"title": "Super Yay Train",

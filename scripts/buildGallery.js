@@ -13,16 +13,12 @@ export default async (galleryData, projects) => {
 	console.log('  Building spritesheet...');
 	await buildSpriteSheet(galleryData, projects);
 	console.log('  Building grid...');
-	let { width, height, heights } = await buildGrid(projects);
+	await buildGrid(projects);
 	console.log('  Building gallery html...');
-	await buildGalleryHtml(galleryData, projects, {
-		gridWidth: width,
-		gridHeight: height,
-		gridHeights: heights
-	});
+	await buildGalleryHtml(galleryData, projects);
 	console.log('  Building project html...');
 	for (let [ project, projectData ] of Object.entries(projects)) {
-		await buildProjectHtml(galleryData, projectData, {});
+		await buildProjectHtml(galleryData, projectData);
 	}
 	console.log(`  Done building ${galleryData.title}!`);
 };
