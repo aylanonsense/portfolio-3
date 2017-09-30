@@ -45,7 +45,7 @@
 		"twitterAccountName": "bridgs_dev",
 		"googleTagManagerId": "GTM-TPMZL3J"
 	},
-	"minify": false,
+	"minify": true,
 	"abbreviateMonths": true,
 	"dateDelimeter": "to",
 	"showDebugColors": false
