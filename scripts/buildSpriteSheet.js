@@ -8,8 +8,8 @@ export default async (galleryData, projects) => {
 	// figure out how to pack all the projects images together
 	let { bins, width, height } = packProjectImages(projects);
 	// create a new spritesheet
-	let spriteSheetPath = `build/public/images/${galleryData.imagesUri}-1.png`;
-	let spriteSheetUri = `/images/${galleryData.imagesUri}-1.png`;
+	let spriteSheetPath = `build/public/${galleryData.uri}/sprite-sheet-1.png`;
+	let spriteSheetUri = `/${galleryData.uri}/sprite-sheet-1.png`;
 	let canvas = new Canvas(width, height);
 	let ctx = canvas.getContext('2d');
 	// for each project

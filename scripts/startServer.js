@@ -23,12 +23,12 @@ export default async () => {
 	}
 
 	// requests for images
-	app.use('/images', express.static('web-assets/images'));
+	app.use(express.static('web-assets/images'));
 
 	// requests for fonts
-	app.use('/fonts', express.static('web-assets/fonts'));
+	app.use(express.static('web-assets/fonts'));
 
-	// requests for all other .html pages
+	// requests for all other built files (.html pages, sprite sheets)
 	app.use(express.static('build/public', {
 		extensions: [ 'html' ],
 		index: `${config.sections[config.defaultSection].uri}.html`

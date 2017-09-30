@@ -7,6 +7,14 @@ export default async (galleryData, projects) => {
 	// gather some metadata
 	let ordered = [];
 	for (let [ project, projectData ] of Object.entries(projects)) {
+		if (galleryData.projectDefaults) {
+			for (let [ prop, value ] of Object.entries(galleryData.projectDefaults)) {
+				if (!projectData.hasOwnProperty(prop)) {
+					projectData[prop] = value;
+				}
+			}
+		}
+		projectData.project = project;
 		projectData.id = `project-${project}`;
 		projectData.uri = `/${galleryData.uri}/${project}`;
 		projectData.descriptionStripped = projectData.description ? striptags(projectData.description) : null;
@@ -16,28 +24,29 @@ export default async (galleryData, projects) => {
 		projectData.dateText = dateText;
 		ordered.push({ project, time });
 		// add metadata about the image
-		let imagePath = `web-assets/images/${galleryData.imagesUri}/${projectData.image.name}`;
-		let imageUri = `/images/${galleryData.imagesUri}/${projectData.image.name}`;
-		let image = await loadImage(imagePath);
-		projectData.project = project;
-		projectData.image.raw = {
-			path: imagePath,
-			uri: imageUri,
-			width: image.width,
-			height: image.height
-		};
-		let mult = Math.max(2, Math.min(Math.floor(Math.min(550 / image.width, 600 / image.height)), 6));
-		projectData.image.project = {
-			path: imagePath,
-			uri: imageUri,
-			width: image.width * mult,
-			height: image.height * mult
-		};
-		// if it's an animated image, we need to create a non-animated one
-		if (projectData.image.animated) {
-			let deanimatedImagePath = `build/deanimated/${galleryData.imagesUri}/${projectData.image.name}`;
-			await saveDeanimatedImage(imagePath, deanimatedImagePath);
-			projectData.image.raw.deanimatedPath = deanimatedImagePath;
+		if (projectData.type === 'image') {
+			let imagePath = `web-assets/images/${galleryData.uri}/${projectData.image.name}`;
+			let imageUri = `/${galleryData.uri}/${projectData.image.name}`;
+			let image = await loadImage(imagePath);
+			projectData.image.raw = {
+				path: imagePath,
+				uri: imageUri,
+				width: image.width,
+				height: image.height
+			};
+			let mult = Math.max(2, Math.min(Math.floor(Math.min(550 / image.width, 600 / image.height)), 6));
+			projectData.image.project = {
+				path: imagePath,
+				uri: imageUri,
+				width: image.width * mult,
+				height: image.height * mult
+			};
+			// if it's an animated image, we need to create a non-animated one
+			if (projectData.image.animated) {
+				let deanimatedImagePath = `build/deanimated/${projectData.image.name}`;
+				await saveDeanimatedImage(imagePath, deanimatedImagePath);
+				projectData.image.raw.deanimatedPath = deanimatedImagePath;
+			}
 		}
 	}
 

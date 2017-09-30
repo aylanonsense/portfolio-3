@@ -8,7 +8,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-TPMZL3J');</script>
 <!-- End Google Tag Manager -->
-		<title>Beevoobaa | bridgs</title>
+		<title>8 Legs to Love | bridgs</title>
 		<meta name="description" content="Pixel art and indie games created by Ayla Myers a.k.a bridgs." />
 		<meta property="og:title" content="bridgs" />
 		<meta property="og:description" content="Pixel art and indie games created by Ayla Myers a.k.a bridgs." />
@@ -197,11 +197,51 @@ footer {
   src: local('Raleway ExtraBold'), local('Raleway-ExtraBold'), url('/raleway-800-latin.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
 }
-		</style>
+
+body {
+	background-color: #303030;
+}
+canvas#canvas {
+	width: 512px;
+	height: 512px;
+}
+.pico8_el {
+	float: left;
+	width: 92px;
+	display: inline-block;
+	margin: 1px;
+	padding: 4px;
+	text-align: center;
+	color: #ffffff;
+	background-color: #777777;
+	font-family : verdana;
+	font-size: 9pt;
+	cursor: pointer;
+	cursor: hand;
+}
+.pico8_el a {
+	text-decoration: none;
+	color: #ffffff;
+}
+.pico8_el:hover {
+	background-color: #aaaaaa;
+}
+.pico8_el:link {
+	background-color: #aaaaaa;
+}
+canvas {
+	image-rendering: optimizeSpeed;
+	image-rendering: -moz-crisp-edges;
+	image-rendering: -webkit-optimize-contrast;
+	image-rendering: optimize-contrast;
+	image-rendering: pixelated;
+	-ms-interpolation-mode: nearest-neighbor;
+	border: 0px
+}		</style>
 		<script>
 		</script>
 	</head>
-	<body style="min-width:320px;min-height:400px;">
+	<body style="min-width:600px;min-height:600px;">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TPMZL3J"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -213,10 +253,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <ul>
 </ul>	</nav>
 </header>
-<main aria-label="Page content" style="width:280px;">
-<div id="project-pane" style="width:156px;height:180px;background-image:url('&#x2F;pixels&#x2F;beevoobaa.gif');background-size:156px 180px;image-rendering:pixelated;background-color:#2d1501;"></div>
-	<p>Player sprite for a beach volleyball game.</p>
-</main>
+<main aria-label="Page content" style="width:512px;">
+<canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()"></canvas>
+
+<br>
+
+<div class=pico8_el onclick="Module.pico8Reset();">
+
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAaklEQVR4Ae2dOwoAMQhE15A+rfc/3bZ7AlMnQfywCkKsfcgMM9ZP+QHtIn0vLeBAFduiFdQ/0DmvtR5LXJ6CPSXe2ZXcFNlTxFbemKrbZPs35XogeS9xeQr+anT6LzoOwEDwZJ7jwhXUnwkTTiDQ2Ja34AAAABB0RVh0TG9kZVBORwAyMDExMDIyMeNZtsEAAAAASUVORK5CYII=" alt="Reset" width=12 height=	12/>
+
+Reset</div>
+
+<div class=pico8_el onclick="Module.pico8TogglePaused();">
+
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAPUlEQVR4Ae3doQ0AIAxEUWABLPtPh2WCq26DwFSU/JPNT166QSu/Hg86W9dwLte+diP7AwAAAAAAgD+A+jM2ZAgo84I0PgAAABB0RVh0TG9kZVBORwAyMDExMDIyMeNZtsEAAAAASUVORK5CYII=" alt="Pause" width=12 height=12/>
+
+Pause</div>
+<div class=pico8_el onclick="Module.requestFullScreen(true, false);">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAaklEQVR4Ae2dsQ1AIQhExfze1v2ns3UCrfgFhmgUUAoGgHscp21wX9BqaZoDojbB96OkDJKNcTN2BHTyYNYmoT2BlPL7BKgcPfHjAVXKKadkHOn9K1r16N0czN6a95N8mnA7Aq2fTZ3Af3UKmCSMazL8HwAAABB0RVh0TG9kZVBORwAyMDExMDIyMeNZtsEAAAAASUVORK5CYII=" alt="Fullscreen" width=12 height=12/>
+
+Fullscreen</div>
+<div class=pico8_el onclick="Module.pico8ToggleSound();">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAXklEQVR4Ae2doQ4AIQxD4YLH8v9fh+ULhjpxxSwLg2uyapr1JRu1iV5Z+1BGl4+xNpX38SYo2uRvYiT5LwEmt+ocgXVLrhPEgBiw8Q5w7/kueSkK+D2tJO4E/I3GrwkqQCBabEj/4QAAABB0RVh0TG9kZVBORwAyMDExMDIyMeNZtsEAAAAASUVORK5CYII=" alt="Toggle Sound" width=12 height=12/>
+
+Sound</div>
+<div class=pico8_el ><a target="_new" href="http://www.lexaloffle.com/bbs/?cat=7&sub=2">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAlElEQVR4Ae2dMQ5FQBCGh6jcwAkkateg3DiAa+iQUGqVKi95FQfAJRQOoHeBUf8JyQqKjZ1uMzuz2e/LTE3KhyF7kSlgLOykas23f6D+A9Yp84aAOYU15pcJnfji0Il2ID8HzC4y38ZrnfIBGxeRoR3c3EWrACdsV5BOsx7OSRnrOXh4F5HzA6bevwUn8wlz7eCDsQM99B3ks0s/4QAAABB0RVh0TG9kZVBORwAyMDExMDIyMeNZtsEAAAAASUVORK5CYII=" alt="More Carts" width=12 height=12/>
+
+Carts</a></div>
+
+<br></main>
 <footer>
 <p>
 	

@@ -7,10 +7,10 @@ header {
 	text-align: center;
 	{{#showDebugColors}}background-color: #f88;{{/showDebugColors}}
 }
-header h1 {
+h1 {
 	margin: 0;
 }
-header h1 a {
+h1 a {
 	text-decoration: none;
 	color: #000;
 }

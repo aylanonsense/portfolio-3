@@ -7,23 +7,21 @@
 		"pixels": {
 			"title": "Pixel Art",
 			"uri": "pixels",
-			"imagesUri": "pixels",
 			"isGallery": true,
-			"isPixelArt": true
+			"projectDefaults": {
+				"type": "image",
+				"isPixelArt": true
+			}
 		},
 		"games": {
 			"title": "Games",
 			"uri": "games",
-			"imagesUri": "games",
-			"isGallery": true,
-			"isPixelArt": false
+			"isGallery": true
 		},
 		"misc": {
 			"title": "Misc",
 			"uri": "misc",
-			"imagesUri": "misc",
-			"isGallery": true,
-			"isPixelArt": false
+			"isGallery": true
 		}
 	},
 	"grid": {
@@ -47,7 +45,7 @@
 		"twitterAccountName": "bridgs_dev",
 		"googleTagManagerId": "GTM-TPMZL3J"
 	},
-	"minify": true,
+	"minify": false,
 	"abbreviateMonths": true,
 	"dateDelimeter": "to",
 	"showDebugColors": false

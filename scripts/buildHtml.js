@@ -5,13 +5,27 @@ import saveFile from './helper/saveFile';
 import config from '../data/config.json';
 import pixels from '../data/pixels.json';
 
+const configJSON = JSON.stringify({
+	cellWidth: config.grid.cellWidth,
+	cellHeight: config.grid.cellHeight,
+	cellGap: config.grid.cellGap,
+	colStep: config.grid.colStep,
+	defaultCols: config.grid.defaultCols,
+	minCols: config.grid.minCols,
+	maxCols: config.grid.maxCols
+});
 const minifyOptions = {
 	collapseBooleanAttributes: true,
 	collapseInlineTagWhitespace: false,
 	collapseWhitespace: true,
 	conservativeCollapse: false,
 	minifyCSS: {
-		level: 2
+		level: {
+			1: {
+				removeEmpty: false,
+				tidySelectors: false
+			}
+		}
 	},
 	minifyJS: {
 		compress: {
@@ -94,105 +108,112 @@ const minifyOptions = {
 	sortClassName: true,
 	useShortDoctype: true,
 };
+const siteData = {
+	...config,
+	sections: config.nav.map(section => config.sections[section])
+};
 
-let isLoaded = false;
-let templates;
-let content;
-let scripts;
-let styles;
-let siteData;
+let hasLoadedAssets = false;
+let assets;
 
-async function load() {
-	isLoaded = true;
-	templates = {
-		base: await loadFile('web-assets/templates/base.mustache'),
-		layout: await loadFile('web-assets/templates/layout.mustache'),
-		header: await loadFile('web-assets/templates/header.mustache'),
-		nav: await loadFile('web-assets/templates/nav.mustache'),
-		footer: await loadFile('web-assets/templates/footer.mustache'),
-		analyticsHead: await loadFile('web-assets/templates/google-analytics-head.mustache'),
-		analyticsBody: await loadFile('web-assets/templates/google-analytics-body.mustache'),
-		githubIcon: await loadFile('web-assets/icons/github.svg'),
-		twitterIcon: await loadFile('web-assets/icons/twitter.svg')
-	};
-	content = {
-		project: await loadFile('web-assets/templates/project.mustache'),
-		gallery: await loadFile('web-assets/templates/gallery.mustache')
-	};
-	scripts = {
-		gallery: await loadFile('web-assets/scripts/gallery.js')
-	};
-	styles = {
-		universal: await loadFile('web-assets/styles/universal.css'),
-		project: await loadFile('web-assets/styles/project.css'),
-		gallery: await loadFile('web-assets/styles/gallery.css'),
-		fontRaleway: await loadFile('web-assets/styles/font-raleway.css')
-	};
-	siteData = {
-		...config,
-		sections: config.nav.map(section => config.sections[section])
+async function loadAssets() {
+	hasLoadedAssets = true;
+	assets = {
+		templates: {
+			base: await loadFile('web-assets/templates/base.mustache'),
+			layout: await loadFile('web-assets/templates/layout.mustache'),
+			header: await loadFile('web-assets/templates/header.mustache'),
+			nav: await loadFile('web-assets/templates/nav.mustache'),
+			footer: await loadFile('web-assets/templates/footer.mustache'),
+			analyticsHead: await loadFile('web-assets/templates/google-analytics-head.mustache'),
+			analyticsBody: await loadFile('web-assets/templates/google-analytics-body.mustache'),
+			githubIcon: await loadFile('web-assets/icons/github.svg'),
+			twitterIcon: await loadFile('web-assets/icons/twitter.svg')
+		},
+		content: {
+			projectImage: await loadFile('web-assets/templates/project-image.mustache'),
+			projectPico8: await loadFile('web-assets/templates/project-pico8.mustache'),
+			gallery: await loadFile('web-assets/templates/gallery.mustache')
+		},
+		scripts: {
+			gallery: await loadFile('web-assets/scripts/gallery.js')
+		},
+		styles: {
+			universal: await loadFile('web-assets/styles/universal.css'),
+			project: await loadFile('web-assets/styles/project.css'),
+			gallery: await loadFile('web-assets/styles/gallery.css'),
+			pico8: await loadFile('web-assets/styles/pico8.css'),
+			fontRaleway: await loadFile('web-assets/styles/font-raleway.css'),
+		},
 	};
 }
 
 export async function buildGalleryHtml(galleryData, projects) {
-	if (!isLoaded) {
-		await load();
+	if (!hasLoadedAssets) {
+		await loadAssets();
 	}
-	let configJSON = {
-		cellWidth: config.grid.cellWidth,
-		cellHeight: config.grid.cellHeight,
-		cellGap: config.grid.cellGap,
-		colStep: config.grid.colStep,
-		defaultCols: config.grid.defaultCols,
-		minCols: config.grid.minCols,
-		maxCols: config.grid.maxCols
-	};
-	let projectsJSON = Object.values(projects)
-		.map(projectData => [ projectData.id, projectData.grid.coordinates ]);
-	let animatedProjectsJSON = Object.values(projects)
-		.filter(projectData => projectData.image.animated)
-		.map(projectData => [ projectData.id, projectData.grid.scale, projectData.image.project.uri ]);
-	let html = Mustache.render(templates.base, {
-		...siteData,
+	let view = {
+		...galleryData,
 		projects: Object.values(projects),
-		title: galleryData.title,
 		showSubheading: true,
 		navInHeader: false,
 		showFooterText: true,
-		isPixelArt: galleryData.isPixelArt,
 		minBodyWidth: 320,
 		minBodyHeight: null,
-		configJSON: JSON.stringify(configJSON),
-		projectsJSON: JSON.stringify(projectsJSON),
-		animatedProjectsJSON: JSON.stringify(animatedProjectsJSON)
-	}, {
-		...templates,
-		main: content.gallery,
-		script: scripts.gallery,
-		style: styles.fontRaleway + styles.universal + styles.gallery
-	});
-	await saveFile(`build/public/${galleryData.uri}.html`, config.minify ? minify(html, minifyOptions) : html);
+		mainWidth: null,
+		projectsJSON: JSON.stringify(Object.values(projects)
+			.map(projectData => [ projectData.id, projectData.grid.coordinates ])),
+		animatedProjectsJSON: JSON.stringify(Object.values(projects)
+			.filter(projectData => projectData.image.animated)
+			.map(projectData => [ projectData.id, projectData.grid.scale, projectData.image.project.uri ]))
+	};
+	let content = assets.content.gallery;
+	let scripts = [ assets.scripts.gallery ];
+	let styles = [ assets.styles.universal, assets.styles.gallery, assets.styles.fontRaleway ];
+	await buildHtml(`build/public/${galleryData.uri}.html`, view, content, scripts, styles);
 }
 
 export async function buildProjectHtml(galleryData, projectData) {
-	if (!isLoaded) {
-		await load();
+	if (!hasLoadedAssets) {
+		await loadAssets();
 	}
-	let html = Mustache.render(templates.base, {
-		...siteData,
+	// set up default build options for a project
+	let view = {
 		...projectData,
 		showSubheading: false,
 		navInHeader: true,
-		showFooterText: false,
-		isPixelArt: galleryData.isPixelArt,
-		minBodyWidth: Math.max(projectData.image.project.width + 20, 320),
-		minBodyHeight: Math.max(projectData.image.project.height + 200, 400),
-		mainWidth: Math.max(projectData.image.project.width, 280)
-	}, {
-		...templates,
-		main: content.project,
-		script: null,
-		style: styles.fontRaleway + styles.universal + styles.project
-	});
-	await saveFile(`build/public/${galleryData.uri}/${projectData.project}.html`, config.minify ? minify(html, minifyOptions) : html);
+		showFooterText: false
+	};
+	let content = null;
+	let scripts = [];
+	let styles = [ assets.styles.universal, assets.styles.project, assets.styles.fontRaleway ];
+	// change project defaults for each project type
+	if (projectData.type === "image") {
+		content = assets.content.projectImage;
+		view.minBodyWidth = Math.max(projectData.image.project.width + 20, 320);
+		view.minBodyHeight = Math.max(projectData.image.project.height + 200, 400);
+		view.mainWidth = Math.max(projectData.image.project.width, 280);
+	}
+	else if (projectData.type === "pico8") {
+		content = assets.content.projectPico8;
+		styles.push(assets.styles.pico8);
+		view.minBodyWidth = 600;
+		view.minBodyHeight = 600;
+		view.mainWidth = 512;
+	}
+	await buildHtml(`build/public/${galleryData.uri}/${projectData.project}.html`, view, content, scripts, styles);
 };
+
+async function buildHtml(uri, view, content, scripts, styles) {
+	let html = Mustache.render(assets.templates.base, {
+		...siteData,
+		...view,
+		configJSON: configJSON
+	}, {
+		...assets.templates,
+		main: content,
+		scripts: scripts.join('\n'),
+		styles: styles.join('\n')
+	});
+	await saveFile(uri, config.minify ? minify(html, minifyOptions) : html);
+}
