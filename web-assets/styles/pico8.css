@@ -1,7 +1,4 @@
-body {
-	background-color: #303030;
-}
-canvas#canvas {
+#pico8-canvas {
 	width: 512px;
 	height: 512px;
 }

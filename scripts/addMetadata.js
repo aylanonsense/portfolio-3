@@ -1,5 +1,6 @@
 import striptags from 'striptags';
 import parseDate from './parseDate';
+import loadFile from './helper/loadFile';
 import loadImage from './helper/loadImage';
 import saveDeanimatedImage from './helper/saveDeanimatedImage';
 
@@ -25,8 +26,8 @@ export default async (galleryData, projects) => {
 		ordered.push({ project, time });
 		// add metadata about the image
 		if (projectData.type === 'image') {
-			let imagePath = `web-assets/images/${galleryData.uri}/${projectData.image.name}`;
-			let imageUri = `/${galleryData.uri}/${projectData.image.name}`;
+			let imagePath = `web-assets/images/${galleryData.uri}/${projectData.image.fileName}`;
+			let imageUri = `/${galleryData.uri}/${projectData.image.fileName}`;
 			let image = await loadImage(imagePath);
 			projectData.image.raw = {
 				path: imagePath,
@@ -43,10 +44,14 @@ export default async (galleryData, projects) => {
 			};
 			// if it's an animated image, we need to create a non-animated one
 			if (projectData.image.animated) {
-				let deanimatedImagePath = `build/deanimated/${projectData.image.name}`;
+				let deanimatedImagePath = `build/deanimated/${projectData.image.fileName}`;
 				await saveDeanimatedImage(imagePath, deanimatedImagePath);
 				projectData.image.raw.deanimatedPath = deanimatedImagePath;
 			}
+		}
+		else if (projectData.type === 'pico8') {
+			projectData.code.path = `web-assets/pico-8/${projectData.code.fileName}`;
+			projectData.code.content = await loadFile(projectData.code.path);
 		}
 	}
 

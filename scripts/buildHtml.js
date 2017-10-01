@@ -125,18 +125,20 @@ async function loadAssets() {
 			header: await loadFile('web-assets/templates/header.mustache'),
 			nav: await loadFile('web-assets/templates/nav.mustache'),
 			footer: await loadFile('web-assets/templates/footer.mustache'),
+			projectDescription: await loadFile('web-assets/templates/project-description.mustache'),
 			analyticsHead: await loadFile('web-assets/templates/google-analytics-head.mustache'),
 			analyticsBody: await loadFile('web-assets/templates/google-analytics-body.mustache'),
 			githubIcon: await loadFile('web-assets/icons/github.svg'),
 			twitterIcon: await loadFile('web-assets/icons/twitter.svg')
 		},
 		content: {
-			projectImage: await loadFile('web-assets/templates/project-image.mustache'),
-			projectPico8: await loadFile('web-assets/templates/project-pico8.mustache'),
+			image: await loadFile('web-assets/templates/image.mustache'),
+			pico8: await loadFile('web-assets/templates/pico8.mustache'),
 			gallery: await loadFile('web-assets/templates/gallery.mustache')
 		},
 		scripts: {
-			gallery: await loadFile('web-assets/scripts/gallery.js')
+			gallery: await loadFile('web-assets/scripts/gallery.js'),
+			pico8: await loadFile('web-assets/scripts/pico8.js')
 		},
 		styles: {
 			universal: await loadFile('web-assets/styles/universal.css'),
@@ -189,17 +191,19 @@ export async function buildProjectHtml(galleryData, projectData) {
 	let styles = [ assets.styles.universal, assets.styles.project, assets.styles.fontRaleway ];
 	// change project defaults for each project type
 	if (projectData.type === "image") {
-		content = assets.content.projectImage;
+		content = assets.content.image;
 		view.minBodyWidth = Math.max(projectData.image.project.width + 20, 320);
 		view.minBodyHeight = Math.max(projectData.image.project.height + 200, 400);
 		view.mainWidth = Math.max(projectData.image.project.width, 280);
 	}
 	else if (projectData.type === "pico8") {
-		content = assets.content.projectPico8;
+		content = assets.content.pico8;
+		scripts.push(assets.scripts.pico8);
 		styles.push(assets.styles.pico8);
 		view.minBodyWidth = 600;
 		view.minBodyHeight = 600;
 		view.mainWidth = 512;
+		view.pico8Code = projectData.code.content;
 	}
 	await buildHtml(`build/public/${galleryData.uri}/${projectData.project}.html`, view, content, scripts, styles);
 };
