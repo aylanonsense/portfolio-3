@@ -1,7 +1,11 @@
+#wrapper {
+	{{#showDebugColors}}background-color: #fdf;{{/showDebugColors}}
+}
 body {
 	margin: 0;
 	padding: 0;
 	font-family: 'Raleway',sans-serif;
+	background-color: {{{siteBackgroundColor}}};
 }
 header {
 	text-align: center;
@@ -14,11 +18,9 @@ h1 a {
 	text-decoration: none;
 	color: #000;
 }
-{{#showDebugColors}}
 nav {
-	background-color: #8e8;
+	{{#showDebugColors}}background-color: #8e8;{{/showDebugColors}}
 }
-{{/showDebugColors}}
 nav ul {
 	margin: 0;
 	padding: 0;
@@ -40,9 +42,12 @@ nav a:hover {
 	text-decoration: underline;
 }
 main {
-	padding: 15px 0;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	text-align: center;
 	{{#showDebugColors}}background-color: #88f;{{/showDebugColors}}
 }
 footer {
@@ -54,8 +59,6 @@ footer p {
 	padding: 0;
 }
 footer a {
-	position: relative;
-	top: 3px;
 	text-decoration: none;
 }
 .screen-reader-only {

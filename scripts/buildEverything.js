@@ -8,6 +8,5 @@ import { buildProjectHtml } from './buildHtml';
 
 export default async () => {
 	await buildGallery(config.sections.pixels, pixels);
-	await addMetadata(config.sections.games, games);
-	await buildProjectHtml(config.sections.games, games['8-legs-to-love']);
+	await buildGallery(config.sections.games, games);
 };

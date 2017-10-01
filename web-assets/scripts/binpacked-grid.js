@@ -7,7 +7,6 @@ window.addEventListener('load', function() {
 	var animatedProjects = ({{{animatedProjectsJSON}}});
 
 	// get elements
-	var galleryEle = document.getElementById('gallery');
 	var projectEles = {};
 	for (project in projects) {
 		id = projects[project][0];
@@ -56,7 +55,7 @@ window.addEventListener('load', function() {
 		img.onload = function() {
 			var width = img.width * scale;
 			var height = img.height * scale;
-			var projectImageEle = projectEles[id].getElementsByClassName('gallery-item-image')[0];
+			var projectImageEle = projectEles[id].getElementsByClassName('grid-item-image')[0];
 			projectImageEle.style.backgroundImage = "url('" + projectData[2] + "')";
 			projectImageEle.style.width = width + 'px';
 			projectImageEle.style.height = height + 'px';

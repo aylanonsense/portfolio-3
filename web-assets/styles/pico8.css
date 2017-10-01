@@ -2,6 +2,10 @@
 	width: 512px;
 	height: 512px;
 }
+.pico8-wrapper {
+	width: 512px;
+	height: 512px;
+}
 .pico8_el {
 	float: left;
 	width: 92px;

@@ -1,19 +1,21 @@
-<header>
-	{{> header}}
-	{{#navInHeader}}
-	<nav>
+<div id="wrapper">
+	<header>
+		{{> header}}
+		{{#navInHeader}}
+		<nav>
+			{{> nav}}
+		</nav>
+		{{/navInHeader}}
+	</header>
+	{{^navInHeader}}
+	<nav aria-label="Site navigation">
 		{{> nav}}
 	</nav>
 	{{/navInHeader}}
-</header>
-{{^navInHeader}}
-<nav aria-label="Site navigation">
-	{{> nav}}
-</nav>
-{{/navInHeader}}
-<main aria-label="Page content" style="{{#mainWidth}}width:{{mainWidth}}px;{{/mainWidth}}">
-	{{> main}}
-</main>
-<footer>
-	{{> footer}}
-</footer>
+	<main aria-label="Page content" style="{{#mainWidth}}width:{{mainWidth}}px;{{/mainWidth}}">
+		{{> main}}
+	</main>
+	<footer>
+		{{> footer}}
+	</footer>
+</div>

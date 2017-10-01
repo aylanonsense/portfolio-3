@@ -1,10 +1,5 @@
-<canvas id="pico8-canvas" oncontextmenu="event.preventDefault()"></canvas>
-
-<ul class="game-controls">
-	<li><a id="control-reset" href="#">Reset</a></li>
-	<li><a id="control-pause" href="#">Pause</a></li>
-	<li><a id="control-fullscreen" href="#">Fullsreen</a></li>
-	<li><a id="control-sound" href="#">Mute</a></li>
-</ul>
-
+<div class="pico8-wrapper">
+	<canvas id="pico8-canvas" oncontextmenu="event.preventDefault()"></canvas>
+</div>
+{{> gameControls}}
 {{> projectDescription}}

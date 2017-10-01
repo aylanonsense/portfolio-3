@@ -1,0 +1,22 @@
+.game-controls {
+	margin: 0 -5px 0 0;
+	padding: 3px 0 0;
+	display: flex;
+	align-self: flex-end;
+	list-style-type: none;
+	justify-content: flex-end;
+	font-size: 80%;
+	{{#showDebugColors}}background-color: #fb8;{{/showDebugColors}}
+}
+.game-controls li {
+	margin: 0;
+	padding: 0 5px
+}
+.game-controls a {
+	color: #888;
+	text-decoration: none;
+}
+.game-controls a:hover {
+	color: #333;
+	text-decoration: underline;
+}

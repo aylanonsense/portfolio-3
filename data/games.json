@@ -4,6 +4,123 @@
 		"description": "Spin a web, eat bugs, earn points, and have fun!",
 		"date": "2017/06",
 		"type": "pico8",
+		"code": { "fileName": "8-legs-to-love.js" },
+		"isComplete": true
+	},
+	"snowboarding": {
+		"title": "Snowboarding",
+		"description": null,
+		"date": null,
+		"type": "pico8",
+		"code": { "fileName": "snowboarding.js" }
+	},
+
+
+	"test-complete-1": {
+		"description": "test-complete-1",
+		"type": "pico8",
+		"code": { "fileName": "8-legs-to-love.js" },
+		"isComplete": true
+	},
+
+	"test-incomplete-1": {
+		"description": "test-incomplete-1",
+		"type": "pico8",
+		"code": { "fileName": "8-legs-to-love.js" }
+	},
+	"test-incomplete-2": {
+		"description": "test-incomplete-2",
+		"type": "pico8",
+		"code": { "fileName": "8-legs-to-love.js" }
+	},
+	"test-incomplete-3": {
+		"description": "test-incomplete-3",
+		"type": "pico8",
+		"code": { "fileName": "8-legs-to-love.js" }
+	},
+	"test-incomplete-4": {
+		"description": "test-incomplete-4",
+		"type": "pico8",
+		"code": { "fileName": "8-legs-to-love.js" }
+	},
+	"test-incomplete-5": {
+		"description": "test-incomplete-5",
+		"type": "pico8",
+		"code": { "fileName": "8-legs-to-love.js" }
+	},
+	"test-incomplete-6": {
+		"description": "test-incomplete-6",
+		"type": "pico8",
+		"code": { "fileName": "8-legs-to-love.js" }
+	},
+	"test-incomplete-7": {
+		"description": "test-incomplete-7",
+		"type": "pico8",
+		"code": { "fileName": "8-legs-to-love.js" }
+	},
+	"test-incomplete-8": {
+		"description": "test-incomplete-8",
+		"type": "pico8",
+		"code": { "fileName": "8-legs-to-love.js" }
+	},
+	"test-incomplete-9": {
+		"description": "test-incomplete-9",
+		"type": "pico8",
+		"code": { "fileName": "8-legs-to-love.js" }
+	},
+	"test-incomplete-10": {
+		"description": "test-incomplete-10",
+		"type": "pico8",
+		"code": { "fileName": "8-legs-to-love.js" }
+	},
+	"test-incomplete-11": {
+		"description": "test-incomplete-11",
+		"type": "pico8",
+		"code": { "fileName": "8-legs-to-love.js" }
+	},
+	"test-incomplete-12": {
+		"description": "test-incomplete-12",
+		"type": "pico8",
+		"code": { "fileName": "8-legs-to-love.js" }
+	},
+	"test-incomplete-13": {
+		"description": "test-incomplete-13",
+		"type": "pico8",
+		"code": { "fileName": "8-legs-to-love.js" }
+	},
+	"test-incomplete-14": {
+		"description": "test-incomplete-14",
+		"type": "pico8",
+		"code": { "fileName": "8-legs-to-love.js" }
+	},
+	"test-incomplete-15": {
+		"description": "test-incomplete-15",
+		"type": "pico8",
+		"code": { "fileName": "8-legs-to-love.js" }
+	},
+	"test-incomplete-16": {
+		"description": "test-incomplete-16",
+		"type": "pico8",
+		"code": { "fileName": "8-legs-to-love.js" }
+	},
+	"test-incomplete-17": {
+		"description": "test-incomplete-17",
+		"type": "pico8",
+		"code": { "fileName": "8-legs-to-love.js" }
+	},
+	"test-incomplete-18": {
+		"description": "test-incomplete-18",
+		"type": "pico8",
+		"code": { "fileName": "8-legs-to-love.js" }
+	},
+	"test-incomplete-19": {
+		"description": "test-incomplete-19",
+		"type": "pico8",
+		"code": { "fileName": "8-legs-to-love.js" }
+	},
+	"test-incomplete-20": {
+		"description": "test-incomplete-20",
+		"type": "pico8",
 		"code": { "fileName": "8-legs-to-love.js" }
 	}
 }

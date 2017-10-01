@@ -1,0 +1,22 @@
+<ul id="list-complete">
+	{{#projects}}
+		{{#isComplete}}
+			<li>
+				<a href="{{{uri}}}">
+					<span class="screen-reader-only">{{{descriptionStripped}}}</span>
+				</a>
+			</li>
+		{{/isComplete}}
+	{{/projects}}
+</ul>
+<ul id="grid-incomplete">
+	{{#projects}}
+		{{^isComplete}}
+			<li>
+				<a href="{{{uri}}}">
+					<span class="screen-reader-only">{{{descriptionStripped}}}</span>
+				</a>
+			</li>
+		{{/isComplete}}
+	{{/projects}}
+</ul>

@@ -8,6 +8,7 @@
 			"title": "Pixel Art",
 			"uri": "pixels",
 			"isGallery": true,
+			"galleryType": "binpacked-grid",
 			"projectDefaults": {
 				"type": "image",
 				"isPixelArt": true
@@ -16,12 +17,8 @@
 		"games": {
 			"title": "Games",
 			"uri": "games",
-			"isGallery": true
-		},
-		"misc": {
-			"title": "Misc",
-			"uri": "misc",
-			"isGallery": true
+			"isGallery": true,
+			"galleryType": "uniform-grid"
 		}
 	},
 	"grid": {
@@ -37,7 +34,7 @@
 		"maxItemRows": 6,
 		"packAttempts": 1000
 	},
-	"nav": [],
+	"nav": [ "pixels", "games" ],
 	"defaultSection": "pixels",
 	"external": {
 		"githubUri": "https://github.com/bridgs",
@@ -48,5 +45,6 @@
 	"minify": true,
 	"abbreviateMonths": true,
 	"dateDelimeter": "to",
+	"siteBackgroundColor": "#fff",
 	"showDebugColors": false
 }
