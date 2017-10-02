@@ -10,9 +10,16 @@
 	"snowboarding": {
 		"title": "Snowboarding",
 		"description": null,
-		"date": null,
+		"date": "2017/06",
 		"type": "pico8",
 		"code": { "fileName": "snowboarding.js" }
+	},
+	"racquet-panic": {
+		"title": "Racquet Panic",
+		"description": null,
+		"date": "2016/10",
+		"type": "pico8",
+		"code": { "fileName": "racquet-panic.js" }
 	},
 
 
