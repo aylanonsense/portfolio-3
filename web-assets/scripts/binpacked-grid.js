@@ -6,16 +6,6 @@ window.addEventListener('load', function() {
 	var projects = ({{{projectsJSON}}})
 	var animatedProjects = ({{{animatedProjectsJSON}}});
 
-	function getParameterByName(name, url) {
-		if (!url) url = window.location.href;
-		name = name.replace(/[\[\]]/g, "\\$&");
-		var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-			results = regex.exec(url);
-		if (!results) return null;
-		if (!results[2]) return '';
-		return decodeURIComponent(results[2].replace(/\+/g, " "));
-	}
-
 	// get elements
 	var projectEles = {};
 	for (project in projects) {
@@ -79,12 +69,5 @@ window.addEventListener('load', function() {
 	}
 
 	// consider adjusting the grid immediately on pageload
-	if (getParameterByName('experiment') === '2') {
-		setTimeout(function() {
-			considerAdjustingGrid();
-		}, 1000);
-	}
-	else if (getParameterByName('experiment') !== '1') {
-		considerAdjustingGrid();
-	}
+	considerAdjustingGrid();
 }, false);

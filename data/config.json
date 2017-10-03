@@ -32,7 +32,7 @@
 		"cellGap": 10,
 		"colStep": 1,
 		"rowStep": 1,
-		"defaultCols": 6,
+		"defaultCols": 4,
 		"minCols": 4,
 		"maxCols": 18,
 		"maxItemCols": 4,
