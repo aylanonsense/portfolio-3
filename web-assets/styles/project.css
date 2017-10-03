@@ -35,6 +35,9 @@ footer {
 	width: 100%;
 	padding: 10px 0;
 }
+.date-text {
+	white-space: nowrap;
+}
 @media (max-width: 475px) {
 	nav li {
 		min-width: 0px;

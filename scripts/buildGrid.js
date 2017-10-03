@@ -18,7 +18,14 @@ function repeatedlyPackProjectsIntoGrid(projects, numCols, numAttempts) {
 function packProjectsIntoGrid(projects, numCols) {
 	// randomly sort projects
 	let projectArr = Object.values(projects);
-	projectArr.sort(() => rand.random() - 0.5); // ((a, b) => b.time - a.time);
+	projectArr.sort((a, b) => {
+		if (a.priority === b.priority) {
+			return rand.random() - 0.5
+		}
+		else {
+			return b.priority - a.priority;
+		}
+	});
 	// create a grid (accessed with grid[col][row])
 	let numRows = 0;
 	let grid = [];

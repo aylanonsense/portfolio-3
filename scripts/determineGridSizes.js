@@ -1,6 +1,19 @@
 import config from '../data/config.json';
 
-const SCALE_PENALTY = [ 0.1, 0.03, 0, 0, 0.05, 0.2, 0.6, 0.9 ];
+const SCALES = [
+	{ scale: 1 / 16,	penalty: 0.2,	pixelArtPenalty: 0.9 },
+	{ scale: 1 / 8,		penalty: 0,		pixelArtPenalty: 0.8 },
+	{ scale: 1 / 4,		penalty: 0,		pixelArtPenalty: 0.6 },
+	{ scale: 1 / 2,		penalty: 0,		pixelArtPenalty: 0.3 },
+	{ scale: 1,			penalty: 0.6,	pixelArtPenalty: 0.1 },
+	{ scale: 2,			penalty: 0.8,	pixelArtPenalty: 0.03 },
+	{ scale: 3,			penalty: 0.9,	pixelArtPenalty: 0 },
+	{ scale: 4,			penalty: 0.9,	pixelArtPenalty: 0 },
+	{ scale: 5,			penalty: 0.9,	pixelArtPenalty: 0.05 },
+	{ scale: 6,			penalty: 0.9,	pixelArtPenalty: 0.2 },
+	{ scale: 7,			penalty: 0.9,	pixelArtPenalty: 0.6 },
+	{ scale: 8,			penalty: 0.9,	pixelArtPenalty: 0.9 }
+]
 
 function calcUnusedSpace(imageWidth, imageHeight, gridWidth, gridHeight) {
 	let unusedGridArea = 0;
@@ -31,7 +44,7 @@ export default async (galleryData, projects) => {
 				let gridWidth = config.grid.cellWidth * cols + config.grid.cellGap * (cols - 1);
 				for (let rows = config.grid.rowStep; rows <= config.grid.maxItemRows; rows += config.grid.rowStep) {
 					let gridHeight = config.grid.cellHeight * rows + config.grid.cellGap * (rows - 1);
-					for (let scale = 1; scale <= 8; scale++) {
+					for (let { scale, penalty, pixelArtPenalty } of SCALES) {
 						let imageWidth = scale * image.width;
 						let imageHeight = scale * image.height;
 						let { unusedGridPercentage, unusedImagePercentage } = calcUnusedSpace(imageWidth, imageHeight, gridWidth, gridHeight);
@@ -40,7 +53,7 @@ export default async (galleryData, projects) => {
 						let fitness = 0
 							- unusedGridMult * unusedGridPercentage
 							- unusedImageMult * unusedImagePercentage
-							- SCALE_PENALTY[scale - 1];
+							- (projectData.isPixelArt ? pixelArtPenalty : penalty);
 						if (projectData.grid) {
 							if (projectData.grid.cols && cols === projectData.grid.cols) {
 								fitness += 1;

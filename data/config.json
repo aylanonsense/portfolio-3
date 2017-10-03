@@ -18,7 +18,12 @@
 			"title": "Games",
 			"uri": "games",
 			"isGallery": true,
-			"galleryType": "uniform-grid"
+			"galleryType": "binpacked-grid",
+			"projectDefaults": {
+				"grid": {
+					"cols": 2, "rows": 2
+				}
+			}
 		}
 	},
 	"grid": {
@@ -42,7 +47,7 @@
 		"twitterAccountName": "bridgs_dev",
 		"googleTagManagerId": "GTM-TPMZL3J"
 	},
-	"minify": false,
+	"minify": true,
 	"abbreviateMonths": true,
 	"dateDelimeter": "to",
 	"siteBackgroundColor": "#fff",

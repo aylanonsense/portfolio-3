@@ -2,6 +2,7 @@ import striptags from 'striptags';
 import parseDate from './parseDate';
 import loadFile from './helper/loadFile';
 import loadImage from './helper/loadImage';
+import applyDefaults from './helper/applyDefaults';
 import saveDeanimatedImage from './helper/saveDeanimatedImage';
 
 export default async (galleryData, projects) => {
@@ -9,11 +10,7 @@ export default async (galleryData, projects) => {
 	let ordered = [];
 	for (let [ project, projectData ] of Object.entries(projects)) {
 		if (galleryData.projectDefaults) {
-			for (let [ prop, value ] of Object.entries(galleryData.projectDefaults)) {
-				if (!projectData.hasOwnProperty(prop)) {
-					projectData[prop] = value;
-				}
-			}
+			applyDefaults(galleryData.projectDefaults, projectData);
 		}
 		projectData.project = project;
 		projectData.id = `project-${project}`;
@@ -21,6 +18,7 @@ export default async (galleryData, projects) => {
 		if (!projectData.shortDescription) {
 			projectData.shortDescription = projectData.description;
 		}
+		projectData.priority = projectData.priority || 0;
 		projectData.descriptionStripped = projectData.description ? striptags(projectData.description) : null;
 		projectData.shortDescriptionStripped = projectData.shortDescription ? striptags(projectData.shortDescription) : null;
 		projectData.includeScreenReadableText = !projectData.isComplete;

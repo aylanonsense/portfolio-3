@@ -6,209 +6,45 @@
 		"type": "pico-8",
 		"code": { "fileName": "8-legs-to-love.js" },
 		"image": { "fileName": "8-legs-to-love.gif", "animated": true, "touchesEdges": true },
+		"grid": { "cols": 4, "rows": 4 },
+		"priority": 10,
 		"isPixelArt": true,
 		"isComplete": true
 	},
 	"snowboarding": {
 		"title": "Snowboarding",
-		"description": null,
+		"description": "Downhill snowboarding simulation. Left/Right to turn, Z to jump.",
 		"date": "2017/06",
 		"type": "pico-8",
 		"code": { "fileName": "snowboarding.js" },
 		"image": { "fileName": "snowboarding.gif", "animated": true, "touchesEdges": true },
+		"grid": { "rows": 4 },
+		"priority": 5,
 		"isPixelArt": true,
 		"isPlayable": true
 	},
 	"racquet-panic": {
 		"title": "Racquet Panic",
-		"description": null,
+		"description": "Breakout but with a tennis player. Left/Right to move, Z to forehand, Up + Z to spike, Down + Z to lob.",
 		"date": "2016/10",
 		"type": "pico-8",
 		"code": { "fileName": "racquet-panic.js" },
 		"image": { "fileName": "racquet-panic.gif", "animated": true, "touchesEdges": true },
+		"grid": { "cols": 4, "rows": 3 },
+		"priority": 5,
 		"isPixelArt": true,
 		"isPlayable": true
 	},
 	"minepick-platformer": {
 		"title": "Minepick Platformer",
-		"description": null,
+		"description": "Test for a platformer where you can lodge a minepike into walls. Left/Right to move, X to jump, Z to swing.",
 		"date": "2017/07",
 		"type": "pico-8",
 		"code": { "fileName": "minepick-platformer.js" },
 		"image": { "fileName": "minepick-platformer.gif", "animated": true, "touchesEdges": true },
+		"grid": { "rows": 4 },
+		"priority": 5,
 		"isPixelArt": true,
 		"isPlayable": true
-	},
-	"super-yay-train": {
-		"title": "Super Yay Train",
-		"description": null,
-		"date": "2016/08",
-		"type": "pico-8",
-		"code": { "fileName": "minepick-platformer.js" },
-		"image": { "fileName": "minepick-platformer.gif", "animated": true, "touchesEdges": true },
-		"isPixelArt": true,
-		"isPlayable": true
-	},
-
-
-	"beevoobaa": {
-		"title": "beevoobaa",
-		"description": "A multiplayer beach volleyball simulation.",
-		"date": { "start": "2015/04", "end": "2015/05" },
-		"type": "image",
-		"image": { "fileName": "beevoobaa.gif", "animated": true, "touchesEdges": true },
-		"backgroundColor": "#222"
-	},
-	"sketch-world": {
-		"title": "Sketch World",
-		"description": "A multiplayer 2D platformer with a persistent player-created world.",
-		"date": "2015/03",
-		"type": "image",
-		"image": { "fileName": "sketch-world.gif", "animated": true, "touchesEdges": true },
-		"backgroundColor": "#ff0"
-	},
-	"grapple-game": {
-		"title": "Grapple game",
-		"description": "A platformer featuring grappling hooks.",
-		"date": { "start": "2014/06", "end": "2015/03" },
-		"type": "image",
-		"image": { "fileName": "grapple-game.gif", "animated": true, "touchesEdges": true },
-		"backgroundColor": "#222"
-	},
-	"processing-sketchbook": {
-		"title": "Processing sketchbook",
-		"description": "Some doodles to get acquainted with Processing.",
-		"date": "2015/02",
-		"type": "image",
-		"image": { "fileName": "processing-sketchbook.gif", "animated": true },
-		"backgroundColor": "#f5fff5"
-	},
-	"breakout-ball": {
-		"title": "Breakout Ball",
-		"description": "Testing frame-by-frame hitboxes to see how that would feel.",
-		"date": "2015/01",
-		"type": "image",
-		"image": { "fileName": "breakout-ball.gif", "animated": true },
-		"backgroundColor": "#222"
-	},
-	"paradox-anomaly": {
-		"title": "Paradox: Anomaly",
-		"description": "A tile-based puzzle game invovling time travel. The final product would revolve around solving puzzles while avoiding paradoxes that would be caused by interfering with your past self.",
-		"date": "2014/12",
-		"type": "image",
-		"image": { "fileName": "paradox-anomaly.gif", "animated": true, "touchesEdges": true },
-		"backgroundColor": "#37494e"
-	},
-	"boss-rush": {
-		"title": "Boss rush game",
-		"description": "A platformer intended to be a sequence of boss fights. Only one was fully programmed (with another, a fire queen, in development).",
-		"date": { "start": "2014/08", "end": "2014/11" },
-		"type": "image",
-		"image": { "fileName": "boss-rush.gif", "animated": true, "touchesEdges": true },
-		"backgroundColor": "#222"
-	},
-	"space-team-galaxy-explorer": {
-		"title": "Space Team: Galaxy Explorer",
-		"description": "A multiplayer spaceship simulator. The end product would give each player their own dashboard and controls for specific parts of the ship as it hurtled through space.",
-		"date": "2014/11",
-		"type": "image",
-		"image": { "fileName": "space-team-galaxy-explorer.gif", "animated": true },
-		"backgroundColor": "#222"
-	},
-	"minisnake": {
-		"title": "minisnake",
-		"description": "An exercise in <a href=\"http://en.wikipedia.org/wiki/Code_golf\" target=\"_blank\">code golf</a>. The goal was to implement a minimalist version of Snake in the fewest characters possible. The version above is 623 characters minified.",
-		"date": "2014/09",
-		"type": "image",
-		"image": { "fileName": "minisnake.gif", "animated": true },
-		"backgroundColor": "#e5ffdb"
-	},
-	"spider-game": {
-		"title": "Spider game",
-		"description": "A simple spider web simulation thrown together during a family vacation.",
-		"date": "2014/09",
-		"type": "image",
-		"image": { "fileName": "spider-game.gif", "animated": true },
-		"backgroundColor": "#000"
-	},
-	"archery": {
-		"title": "Archery game",
-		"description": "First foray into WebGL, the cylindrical player model is able to shoot arrows at varying speeds and distances.",
-		"date": "2014/05",
-		"type": "image",
-		"image": { "fileName": "archery.gif", "animated": true, "touchesEdges": true },
-		"backgroundColor": "#b8ac6f"
-	},
-	"sticky-wiki": {
-		"title": "Sticky Wiki",
-		"description": "A virtual message board.",
-		"date": "2013/09",
-		"type": "image",
-		"image": { "fileName": "sticky-wiki.gif", "animated": true },
-		"backgroundColor": "#fff"
-	},
-	"alchemy-drop": {
-		"title": "Alchemy Drop",
-		"description": "Non-interactive concepts for a block puzzler. The goal was to make a game where as soon as you cleared any tiles, new tiles would be added in such a way that the combo would continue forever.",
-		"date": "2013/09",
-		"type": "image",
-		"image": { "fileName": "alchemy-drop.gif", "animated": true, "touchesEdges": true },
-		"backgroundColor": "#feac87"
-	},
-	"zombie-aflockalypse": {
-		"title": "Zombie Aflockalypse",
-		"description": "College submission for a flocking simulation. The zombies (green dots) are programmed to seek out humans (blue dots) while the humans are programmed to stick together and avoid zombies.",
-		"date": "2009",
-		"type": "image",
-		"image": { "fileName": "zombie-aflockalypse.gif", "animated": true, "touchesEdges": true },
-		"backgroundColor": "#b37c1b"
-	},
-	"hex-world": {
-		"title": "Hex World",
-		"description": "A little hex world with customizable terrain.",
-		"date": "2009",
-		"type": "image",
-		"image": { "fileName": "hex-world.gif", "animated": true, "touchesEdges": true },
-		"backgroundColor": "#92692c"
-	},
-	"nebulaic": {
-		"title": "Nebulaic",
-		"description": "College project. Simple Flash game with gravitating particles.",
-		"date": "2008",
-		"type": "image",
-		"image": { "fileName": "nebulaic.gif", "animated": true },
-		"backgroundColor": "#000"
-	},
-	"physics-engine": {
-		"title": "Untitled",
-		"description": "The beginnings of my first ever physics engine.",
-		"date": "2006",
-		"type": "image",
-		"image": { "fileName": "physics-engine.gif", "animated": true },
-		"backgroundColor": "#fff"
-	},
-	"efflorescence": {
-		"title": "Efflorescence",
-		"description": "An extremely esoteric math game.",
-		"date": "2005",
-		"type": "image",
-		"image": { "fileName": "efflorescence.gif", "animated": true, "touchesEdges": true },
-		"backgroundColor": "#74efdc"
-	},
-	"mindsweeper": {
-		"title": "Mindsweeper",
-		"description": "An experimental take on Minesweeper for <a href=\"http://playwithyourmind.com/\" target=\"_blank\">Play With Your Mind</a>.",
-		"date": "2005",
-		"type": "image",
-		"image": { "fileName": "mindsweeper.gif", "animated": true, "touchesEdges": true },
-		"backgroundColor": "#000"
-	},
-	"virtual-pet": {
-		"title": "Virtual Pet",
-		"description": "Animation test for a virtual pet game.",
-		"date": "2004",
-		"type": "image",
-		"image": { "fileName": "virtual-pet.gif", "animated": true, "touchesEdges": true },
-		"backgroundColor": "#fff"
 	}
 }

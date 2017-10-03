@@ -4,6 +4,7 @@
 		"description": "Concept art for a hypothetical game. Inspired by <a href=\"https://twitter.com/Pixel_Dailies\">Pixel Dailies</a> prompt for #MatchThree.",
 		"date": "2017/09",
 		"image": { "fileName": "match-three.gif", "animated": true },
+		"priority": 10,
 		"backgroundColor": "#000000"
 	},
 	"west-showcase": {
@@ -12,6 +13,7 @@
 		"date": "2017/09",
 		"image": { "fileName": "west-showcase.gif", "animated": true },
 		"grid": { "cols": 4, "rows": 1, "scale": 2 },
+		"priority": 5,
 		"backgroundColor": "#000000"
 	},
 	"west-lighting": {
