@@ -3,131 +3,212 @@
 		"title": "8 Legs to Love",
 		"description": "Spin a web, eat bugs, earn points, and have fun!",
 		"date": "2017/06",
-		"type": "pico8",
+		"type": "pico-8",
 		"code": { "fileName": "8-legs-to-love.js" },
+		"image": { "fileName": "8-legs-to-love.gif", "animated": true, "touchesEdges": true },
+		"isPixelArt": true,
 		"isComplete": true
 	},
 	"snowboarding": {
 		"title": "Snowboarding",
 		"description": null,
 		"date": "2017/06",
-		"type": "pico8",
-		"code": { "fileName": "snowboarding.js" }
+		"type": "pico-8",
+		"code": { "fileName": "snowboarding.js" },
+		"image": { "fileName": "snowboarding.gif", "animated": true, "touchesEdges": true },
+		"isPixelArt": true,
+		"isPlayable": true
 	},
 	"racquet-panic": {
 		"title": "Racquet Panic",
 		"description": null,
 		"date": "2016/10",
-		"type": "pico8",
-		"code": { "fileName": "racquet-panic.js" }
+		"type": "pico-8",
+		"code": { "fileName": "racquet-panic.js" },
+		"image": { "fileName": "racquet-panic.gif", "animated": true, "touchesEdges": true },
+		"isPixelArt": true,
+		"isPlayable": true
+	},
+	"minepick-platformer": {
+		"title": "Minepick Platformer",
+		"description": null,
+		"date": "2017/07",
+		"type": "pico-8",
+		"code": { "fileName": "minepick-platformer.js" },
+		"image": { "fileName": "minepick-platformer.gif", "animated": true, "touchesEdges": true },
+		"isPixelArt": true,
+		"isPlayable": true
+	},
+	"super-yay-train": {
+		"title": "Super Yay Train",
+		"description": null,
+		"date": "2016/08",
+		"type": "pico-8",
+		"code": { "fileName": "minepick-platformer.js" },
+		"image": { "fileName": "minepick-platformer.gif", "animated": true, "touchesEdges": true },
+		"isPixelArt": true,
+		"isPlayable": true
 	},
 
 
-	"test-complete-1": {
-		"description": "test-complete-1",
-		"type": "pico8",
-		"code": { "fileName": "8-legs-to-love.js" },
-		"isComplete": true
+	"beevoobaa": {
+		"title": "beevoobaa",
+		"description": "A multiplayer beach volleyball simulation.",
+		"date": { "start": "2015/04", "end": "2015/05" },
+		"type": "image",
+		"image": { "fileName": "beevoobaa.gif", "animated": true, "touchesEdges": true },
+		"backgroundColor": "#222"
 	},
-
-	"test-incomplete-1": {
-		"description": "test-incomplete-1",
-		"type": "pico8",
-		"code": { "fileName": "8-legs-to-love.js" }
+	"sketch-world": {
+		"title": "Sketch World",
+		"description": "A multiplayer 2D platformer with a persistent player-created world.",
+		"date": "2015/03",
+		"type": "image",
+		"image": { "fileName": "sketch-world.gif", "animated": true, "touchesEdges": true },
+		"backgroundColor": "#ff0"
 	},
-	"test-incomplete-2": {
-		"description": "test-incomplete-2",
-		"type": "pico8",
-		"code": { "fileName": "8-legs-to-love.js" }
+	"grapple-game": {
+		"title": "Grapple game",
+		"description": "A platformer featuring grappling hooks.",
+		"date": { "start": "2014/06", "end": "2015/03" },
+		"type": "image",
+		"image": { "fileName": "grapple-game.gif", "animated": true, "touchesEdges": true },
+		"backgroundColor": "#222"
 	},
-	"test-incomplete-3": {
-		"description": "test-incomplete-3",
-		"type": "pico8",
-		"code": { "fileName": "8-legs-to-love.js" }
+	"processing-sketchbook": {
+		"title": "Processing sketchbook",
+		"description": "Some doodles to get acquainted with Processing.",
+		"date": "2015/02",
+		"type": "image",
+		"image": { "fileName": "processing-sketchbook.gif", "animated": true },
+		"backgroundColor": "#f5fff5"
 	},
-	"test-incomplete-4": {
-		"description": "test-incomplete-4",
-		"type": "pico8",
-		"code": { "fileName": "8-legs-to-love.js" }
+	"breakout-ball": {
+		"title": "Breakout Ball",
+		"description": "Testing frame-by-frame hitboxes to see how that would feel.",
+		"date": "2015/01",
+		"type": "image",
+		"image": { "fileName": "breakout-ball.gif", "animated": true },
+		"backgroundColor": "#222"
 	},
-	"test-incomplete-5": {
-		"description": "test-incomplete-5",
-		"type": "pico8",
-		"code": { "fileName": "8-legs-to-love.js" }
+	"paradox-anomaly": {
+		"title": "Paradox: Anomaly",
+		"description": "A tile-based puzzle game invovling time travel. The final product would revolve around solving puzzles while avoiding paradoxes that would be caused by interfering with your past self.",
+		"date": "2014/12",
+		"type": "image",
+		"image": { "fileName": "paradox-anomaly.gif", "animated": true, "touchesEdges": true },
+		"backgroundColor": "#37494e"
 	},
-	"test-incomplete-6": {
-		"description": "test-incomplete-6",
-		"type": "pico8",
-		"code": { "fileName": "8-legs-to-love.js" }
+	"boss-rush": {
+		"title": "Boss rush game",
+		"description": "A platformer intended to be a sequence of boss fights. Only one was fully programmed (with another, a fire queen, in development).",
+		"date": { "start": "2014/08", "end": "2014/11" },
+		"type": "image",
+		"image": { "fileName": "boss-rush.gif", "animated": true, "touchesEdges": true },
+		"backgroundColor": "#222"
 	},
-	"test-incomplete-7": {
-		"description": "test-incomplete-7",
-		"type": "pico8",
-		"code": { "fileName": "8-legs-to-love.js" }
+	"space-team-galaxy-explorer": {
+		"title": "Space Team: Galaxy Explorer",
+		"description": "A multiplayer spaceship simulator. The end product would give each player their own dashboard and controls for specific parts of the ship as it hurtled through space.",
+		"date": "2014/11",
+		"type": "image",
+		"image": { "fileName": "space-team-galaxy-explorer.gif", "animated": true },
+		"backgroundColor": "#222"
 	},
-	"test-incomplete-8": {
-		"description": "test-incomplete-8",
-		"type": "pico8",
-		"code": { "fileName": "8-legs-to-love.js" }
+	"minisnake": {
+		"title": "minisnake",
+		"description": "An exercise in <a href=\"http://en.wikipedia.org/wiki/Code_golf\" target=\"_blank\">code golf</a>. The goal was to implement a minimalist version of Snake in the fewest characters possible. The version above is 623 characters minified.",
+		"date": "2014/09",
+		"type": "image",
+		"image": { "fileName": "minisnake.gif", "animated": true },
+		"backgroundColor": "#e5ffdb"
 	},
-	"test-incomplete-9": {
-		"description": "test-incomplete-9",
-		"type": "pico8",
-		"code": { "fileName": "8-legs-to-love.js" }
+	"spider-game": {
+		"title": "Spider game",
+		"description": "A simple spider web simulation thrown together during a family vacation.",
+		"date": "2014/09",
+		"type": "image",
+		"image": { "fileName": "spider-game.gif", "animated": true },
+		"backgroundColor": "#000"
 	},
-	"test-incomplete-10": {
-		"description": "test-incomplete-10",
-		"type": "pico8",
-		"code": { "fileName": "8-legs-to-love.js" }
+	"archery": {
+		"title": "Archery game",
+		"description": "First foray into WebGL, the cylindrical player model is able to shoot arrows at varying speeds and distances.",
+		"date": "2014/05",
+		"type": "image",
+		"image": { "fileName": "archery.gif", "animated": true, "touchesEdges": true },
+		"backgroundColor": "#b8ac6f"
 	},
-	"test-incomplete-11": {
-		"description": "test-incomplete-11",
-		"type": "pico8",
-		"code": { "fileName": "8-legs-to-love.js" }
+	"sticky-wiki": {
+		"title": "Sticky Wiki",
+		"description": "A virtual message board.",
+		"date": "2013/09",
+		"type": "image",
+		"image": { "fileName": "sticky-wiki.gif", "animated": true },
+		"backgroundColor": "#fff"
 	},
-	"test-incomplete-12": {
-		"description": "test-incomplete-12",
-		"type": "pico8",
-		"code": { "fileName": "8-legs-to-love.js" }
+	"alchemy-drop": {
+		"title": "Alchemy Drop",
+		"description": "Non-interactive concepts for a block puzzler. The goal was to make a game where as soon as you cleared any tiles, new tiles would be added in such a way that the combo would continue forever.",
+		"date": "2013/09",
+		"type": "image",
+		"image": { "fileName": "alchemy-drop.gif", "animated": true, "touchesEdges": true },
+		"backgroundColor": "#feac87"
 	},
-	"test-incomplete-13": {
-		"description": "test-incomplete-13",
-		"type": "pico8",
-		"code": { "fileName": "8-legs-to-love.js" }
+	"zombie-aflockalypse": {
+		"title": "Zombie Aflockalypse",
+		"description": "College submission for a flocking simulation. The zombies (green dots) are programmed to seek out humans (blue dots) while the humans are programmed to stick together and avoid zombies.",
+		"date": "2009",
+		"type": "image",
+		"image": { "fileName": "zombie-aflockalypse.gif", "animated": true, "touchesEdges": true },
+		"backgroundColor": "#b37c1b"
 	},
-	"test-incomplete-14": {
-		"description": "test-incomplete-14",
-		"type": "pico8",
-		"code": { "fileName": "8-legs-to-love.js" }
+	"hex-world": {
+		"title": "Hex World",
+		"description": "A little hex world with customizable terrain.",
+		"date": "2009",
+		"type": "image",
+		"image": { "fileName": "hex-world.gif", "animated": true, "touchesEdges": true },
+		"backgroundColor": "#92692c"
 	},
-	"test-incomplete-15": {
-		"description": "test-incomplete-15",
-		"type": "pico8",
-		"code": { "fileName": "8-legs-to-love.js" }
+	"nebulaic": {
+		"title": "Nebulaic",
+		"description": "College project. Simple Flash game with gravitating particles.",
+		"date": "2008",
+		"type": "image",
+		"image": { "fileName": "nebulaic.gif", "animated": true },
+		"backgroundColor": "#000"
 	},
-	"test-incomplete-16": {
-		"description": "test-incomplete-16",
-		"type": "pico8",
-		"code": { "fileName": "8-legs-to-love.js" }
+	"physics-engine": {
+		"title": "Untitled",
+		"description": "The beginnings of my first ever physics engine.",
+		"date": "2006",
+		"type": "image",
+		"image": { "fileName": "physics-engine.gif", "animated": true },
+		"backgroundColor": "#fff"
 	},
-	"test-incomplete-17": {
-		"description": "test-incomplete-17",
-		"type": "pico8",
-		"code": { "fileName": "8-legs-to-love.js" }
+	"efflorescence": {
+		"title": "Efflorescence",
+		"description": "An extremely esoteric math game.",
+		"date": "2005",
+		"type": "image",
+		"image": { "fileName": "efflorescence.gif", "animated": true, "touchesEdges": true },
+		"backgroundColor": "#74efdc"
 	},
-	"test-incomplete-18": {
-		"description": "test-incomplete-18",
-		"type": "pico8",
-		"code": { "fileName": "8-legs-to-love.js" }
+	"mindsweeper": {
+		"title": "Mindsweeper",
+		"description": "An experimental take on Minesweeper for <a href=\"http://playwithyourmind.com/\" target=\"_blank\">Play With Your Mind</a>.",
+		"date": "2005",
+		"type": "image",
+		"image": { "fileName": "mindsweeper.gif", "animated": true, "touchesEdges": true },
+		"backgroundColor": "#000"
 	},
-	"test-incomplete-19": {
-		"description": "test-incomplete-19",
-		"type": "pico8",
-		"code": { "fileName": "8-legs-to-love.js" }
-	},
-	"test-incomplete-20": {
-		"description": "test-incomplete-20",
-		"type": "pico8",
-		"code": { "fileName": "8-legs-to-love.js" }
+	"virtual-pet": {
+		"title": "Virtual Pet",
+		"description": "Animation test for a virtual pet game.",
+		"date": "2004",
+		"type": "image",
+		"image": { "fileName": "virtual-pet.gif", "animated": true, "touchesEdges": true },
+		"backgroundColor": "#fff"
 	}
 }

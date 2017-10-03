@@ -1,22 +1,17 @@
-<ul id="list-complete">
+<h3 class="screen-reader-only">Games</h3>
+<ul id="grid-complete" class="grid">
 	{{#projects}}
 		{{#isComplete}}
-			<li>
-				<a href="{{{uri}}}">
-					<span class="screen-reader-only">{{{descriptionStripped}}}</span>
-				</a>
-			</li>
+			{{> uniformGridItem}}
 		{{/isComplete}}
 	{{/projects}}
 </ul>
-<ul id="grid-incomplete">
+
+<h3>Other Random Schtuff</h3>
+<ul id="grid-playable" class="grid">
 	{{#projects}}
 		{{^isComplete}}
-			<li>
-				<a href="{{{uri}}}">
-					<span class="screen-reader-only">{{{descriptionStripped}}}</span>
-				</a>
-			</li>
+			{{> uniformGridItem}}
 		{{/isComplete}}
 	{{/projects}}
 </ul>

@@ -126,6 +126,8 @@ async function loadAssets() {
 			nav: await loadFile('web-assets/templates/nav.mustache'),
 			footer: await loadFile('web-assets/templates/footer.mustache'),
 			projectDescription: await loadFile('web-assets/templates/project-description.mustache'),
+			uniformGridItem: await loadFile('web-assets/templates/uniform-grid-item.mustache'),
+			gridItemImage: await loadFile('web-assets/templates/grid-item-image.mustache'),
 			gameControls: await loadFile('web-assets/templates/game-controls.mustache'),
 			analyticsHead: await loadFile('web-assets/templates/google-analytics-head.mustache'),
 			analyticsBody: await loadFile('web-assets/templates/google-analytics-body.mustache'),
@@ -134,13 +136,13 @@ async function loadAssets() {
 		},
 		content: {
 			image: await loadFile('web-assets/templates/image.mustache'),
-			pico8: await loadFile('web-assets/templates/pico8.mustache'),
+			pico8: await loadFile('web-assets/templates/pico-8.mustache'),
 			binpackedGrid: await loadFile('web-assets/templates/binpacked-grid.mustache'),
 			uniformGrid: await loadFile('web-assets/templates/uniform-grid.mustache')
 		},
 		scripts: {
 			binpackedGrid: await loadFile('web-assets/scripts/binpacked-grid.js'),
-			pico8: await loadFile('web-assets/scripts/pico8.js')
+			pico8: await loadFile('web-assets/scripts/pico-8.js')
 		},
 		styles: {
 			universal: await loadFile('web-assets/styles/universal.css'),
@@ -149,7 +151,7 @@ async function loadAssets() {
 			binpackedGrid: await loadFile('web-assets/styles/binpacked-grid.css'),
 			uniformGrid: await loadFile('web-assets/styles/uniform-grid.css'),
 			game: await loadFile('web-assets/styles/game.css'),
-			pico8: await loadFile('web-assets/styles/pico8.css'),
+			pico8: await loadFile('web-assets/styles/pico-8.css'),
 			fontRaleway: await loadFile('web-assets/styles/font-raleway.css'),
 		},
 	};
@@ -210,7 +212,7 @@ export async function buildProjectHtml(galleryData, projectData) {
 		view.minBodyHeight = Math.max(projectData.image.project.height + 200, 400);
 		view.mainWidth = Math.max(projectData.image.project.width, 280);
 	}
-	else if (projectData.type === "pico8") {
+	else if (projectData.type === "pico-8") {
 		content = assets.content.pico8;
 		scripts.push(assets.scripts.pico8);
 		styles.push(assets.styles.game);

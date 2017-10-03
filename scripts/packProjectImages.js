@@ -10,8 +10,8 @@ export default projects => {
 		let spriteSheetImageHeight = Math.min(imageHeight, gridHeight);
 		return {
 			project: project,
-			width: spriteSheetImageWidth + 2,
-			height: spriteSheetImageHeight + 2,
+			width: spriteSheetImageWidth + 6,
+			height: spriteSheetImageHeight + 6,
 			offsetX: Math.ceil((imageWidth - spriteSheetImageWidth) / 2),
 			offsetY: Math.ceil((imageHeight - spriteSheetImageHeight) / 2)
 		};
@@ -20,10 +20,10 @@ export default projects => {
 	bins = bins.map(bin => {
 		return {
 			project: bin.project,
-			x: bin.x + 1,
-			y: bin.y + 1,
-			width: bin.width - 2,
-			height: bin.height - 2,
+			x: bin.x + 3,
+			y: bin.y + 3,
+			width: bin.width - 6,
+			height: bin.height - 6,
 			offsetX: bin.offsetX,
 			offsetY: bin.offsetY
 		};

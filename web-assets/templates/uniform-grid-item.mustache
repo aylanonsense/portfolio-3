@@ -1,0 +1,9 @@
+<li id="{{id}}" class="grid-item" style="background-color:{{backgroundColor}};{{#isPixelArt}}image-rendering:pixelated;{{/isPixelArt}}">
+	{{> gridItemImage}}
+	{{#isComplete}}
+		<div class="screen-reader-only">
+			{{#title}}<h4>{{title}}</h4>{{/title}}
+			{{#shortDescription}}<p>{{{shortDescription}}}</p>{{/shortDescription}}
+		</div>
+	{{/isComplete}}
+</li>

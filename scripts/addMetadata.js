@@ -18,14 +18,19 @@ export default async (galleryData, projects) => {
 		projectData.project = project;
 		projectData.id = `project-${project}`;
 		projectData.uri = `/${galleryData.uri}/${project}`;
+		if (!projectData.shortDescription) {
+			projectData.shortDescription = projectData.description;
+		}
 		projectData.descriptionStripped = projectData.description ? striptags(projectData.description) : null;
+		projectData.shortDescriptionStripped = projectData.shortDescription ? striptags(projectData.shortDescription) : null;
+		projectData.includeScreenReadableText = !projectData.isComplete;
 		// parse the time and human-readable date
 		let { time, dateText } = parseDate(projectData.date);
 		projectData.time = time;
 		projectData.dateText = dateText;
 		ordered.push({ project, time });
 		// add metadata about the image
-		if (projectData.type === 'image') {
+		if (projectData.image) {
 			let imagePath = `web-assets/images/${galleryData.uri}/${projectData.image.fileName}`;
 			let imageUri = `/${galleryData.uri}/${projectData.image.fileName}`;
 			let image = await loadImage(imagePath);
@@ -35,12 +40,18 @@ export default async (galleryData, projects) => {
 				width: image.width,
 				height: image.height
 			};
-			let mult = Math.max(2, Math.min(Math.floor(Math.min(550 / image.width, 600 / image.height)), 6));
+			let scale = Math.max(1, Math.min(Math.floor(Math.min(550 / image.width, 600 / image.height)), 6));
+			if (projectData.isPixelArt) {
+				scale = Math.max(2, scale);
+			}
+			else {
+				scale = Math.min(1, scale);
+			}
 			projectData.image.project = {
 				path: imagePath,
 				uri: imageUri,
-				width: image.width * mult,
-				height: image.height * mult
+				width: image.width * scale,
+				height: image.height * scale
 			};
 			// if it's an animated image, we need to create a non-animated one
 			if (projectData.image.animated) {
@@ -49,7 +60,7 @@ export default async (galleryData, projects) => {
 				projectData.image.raw.deanimatedPath = deanimatedImagePath;
 			}
 		}
-		else if (projectData.type === 'pico8') {
+		if (projectData.type === 'pico-8') {
 			projectData.code.path = `web-assets/pico-8/${projectData.code.fileName}`;
 			projectData.code.content = await loadFile(projectData.code.path);
 		}

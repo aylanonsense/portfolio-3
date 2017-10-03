@@ -15,7 +15,7 @@
 	padding: 0;
 	overflow: hidden;
 }
-.grid-item a {
+.grid-item-link {
 	width: 100%;
 	height: 100%;
 	display: flex;

@@ -20,7 +20,7 @@ export default async (galleryData, projects) => {
 		let imagePath = projectData.image.animated ? projectData.image.raw.deanimatedPath : projectData.image.raw.path;
 		let image = await loadImage(imagePath);
 		ctx.fillStyle = projectData.backgroundColor;
-		ctx.fillRect(bin.x - 1, bin.y - 1, bin.width + 2, bin.height + 2);
+		ctx.fillRect(bin.x - 3, bin.y - 3, bin.width + 6, bin.height + 6);
 		ctx.drawImage(image, bin.offsetX, bin.offsetY, bin.width, bin.height, bin.x, bin.y, bin.width, bin.height);
 		// save the metadata to the project
 		projectData.image.spriteSheet = {

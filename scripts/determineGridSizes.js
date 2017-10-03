@@ -2,62 +2,97 @@ import config from '../data/config.json';
 
 const SCALE_PENALTY = [ 0.1, 0.03, 0, 0, 0.05, 0.2, 0.6, 0.9 ];
 
-export default async projects => {
+function calcUnusedSpace(imageWidth, imageHeight, gridWidth, gridHeight) {
+	let unusedGridArea = 0;
+	let unusedImageArea = 0;
+	if (gridWidth > imageWidth) {
+		unusedGridArea += (gridWidth - imageWidth) * Math.min(gridHeight, (gridHeight + imageHeight) / 2);
+	}
+	else {
+		unusedImageArea += (imageWidth - gridWidth) * Math.min(imageHeight, (gridHeight + imageHeight) / 2);
+	}
+	if (gridHeight > imageHeight) {
+		unusedGridArea += (gridHeight - imageHeight) * Math.min(gridWidth, (gridWidth + imageWidth) / 2);
+	}
+	else {
+		unusedImageArea += (imageHeight - gridHeight) * Math.min(imageWidth, (gridWidth + imageWidth) / 2);
+	}
+	let unusedGridPercentage = unusedGridArea / (gridWidth * gridHeight);
+	let unusedImagePercentage = unusedImageArea / (imageWidth * imageHeight);
+	return { unusedGridPercentage, unusedImagePercentage };
+}
+
+export default async (galleryData, projects) => {
 	for (let [ project, projectData ] of Object.entries(projects)) {
 		let image = projectData.image.raw;
 		let bestFit = null;
-		for (let cols = config.grid.colStep; cols <= config.grid.maxItemCols; cols += config.grid.colStep) {
-			let gridWidth = config.grid.cellWidth * cols + config.grid.cellGap * (cols - 1);
-			for (let rows = config.grid.rowStep; rows <= config.grid.maxItemRows; rows += config.grid.rowStep) {
-				let gridHeight = config.grid.cellHeight * rows + config.grid.cellGap * (rows - 1);
-				for (let scale = 1; scale <= 8; scale++) {
-					let imageWidth = scale * image.width;
-					let imageHeight = scale * image.height;
-					let unusedGridArea = 0;
-					let unusedImageArea = 0;
-					if (gridWidth > imageWidth) {
-						unusedGridArea += (gridWidth - imageWidth) * Math.min(gridHeight, (gridHeight + imageHeight) / 2);
-					}
-					else {
-						unusedImageArea += (imageWidth - gridWidth) * Math.min(imageHeight, (gridHeight + imageHeight) / 2);
-					}
-					if (gridHeight > imageHeight) {
-						unusedGridArea += (gridHeight - imageHeight) * Math.min(gridWidth, (gridWidth + imageWidth) / 2);
-					}
-					else {
-						unusedImageArea += (imageHeight - gridHeight) * Math.min(imageWidth, (gridWidth + imageWidth) / 2);
-					}
-					let unusedGridPercentage = unusedGridArea / (gridWidth * gridHeight);
-					let unusedImagePercentage = unusedImageArea / (imageWidth * imageHeight);
-					let unusedGridMult = projectData.image.touchesEdges ? 3 : 1;
-					let unusedImageMult = 1;
-					let fitness = 0
-						- unusedGridMult * unusedGridPercentage
-						- unusedImageMult * unusedImagePercentage
-						- SCALE_PENALTY[scale - 1];
-					if (projectData.grid) {
-						if (projectData.grid.cols && cols === projectData.grid.cols) {
-							fitness += 1;
+		if (galleryData.galleryType === 'binpacked-grid') {
+			for (let cols = config.grid.colStep; cols <= config.grid.maxItemCols; cols += config.grid.colStep) {
+				let gridWidth = config.grid.cellWidth * cols + config.grid.cellGap * (cols - 1);
+				for (let rows = config.grid.rowStep; rows <= config.grid.maxItemRows; rows += config.grid.rowStep) {
+					let gridHeight = config.grid.cellHeight * rows + config.grid.cellGap * (rows - 1);
+					for (let scale = 1; scale <= 8; scale++) {
+						let imageWidth = scale * image.width;
+						let imageHeight = scale * image.height;
+						let { unusedGridPercentage, unusedImagePercentage } = calcUnusedSpace(imageWidth, imageHeight, gridWidth, gridHeight);
+						let unusedGridMult = projectData.image.touchesEdges ? 3 : 1;
+						let unusedImageMult = 1;
+						let fitness = 0
+							- unusedGridMult * unusedGridPercentage
+							- unusedImageMult * unusedImagePercentage
+							- SCALE_PENALTY[scale - 1];
+						if (projectData.grid) {
+							if (projectData.grid.cols && cols === projectData.grid.cols) {
+								fitness += 1;
+							}
+							if (projectData.grid.rows && rows === projectData.grid.rows) {
+								fitness += 1;
+							}
+							if (projectData.grid.scale && scale === projectData.grid.scale) {
+								fitness += 1;
+							}
 						}
-						if (projectData.grid.rows && rows === projectData.grid.rows) {
-							fitness += 1;
+						if (!bestFit || bestFit.fitness < fitness) {
+							bestFit = { scale, cols, rows, fitness, gridWidth, gridHeight };
 						}
-						if (projectData.grid.scale && scale === projectData.grid.scale) {
-							fitness += 1;
-						}
-					}
-					if (!bestFit || bestFit.fitness < fitness) {
-						bestFit = { scale, cols, rows, fitness, gridWidth, gridHeight };
 					}
 				}
 			}
+			projectData.grid = {
+				scale: bestFit.scale,
+				cols: bestFit.cols,
+				rows: bestFit.rows,
+				width: bestFit.gridWidth,
+				height: bestFit.gridHeight
+			};
 		}
-		projectData.grid = {
-			scale: bestFit.scale,
-			cols: bestFit.cols,
-			rows: bestFit.rows,
-			width: bestFit.gridWidth,
-			height: bestFit.gridHeight
-		};
+		else if (galleryData.galleryType === 'uniform-grid') {
+			let gridWidth = (projectData.isComplete ? 250 : 120);
+			let gridHeight = gridWidth;
+			let scales = [ 1 / 16, 1 / 8, 1 / 4, 1 / 2, 1, 2, 3, 4, 5, 6 ];
+			for (let scale of scales) {
+				let imageWidth = scale * image.width;
+				let imageHeight = scale * image.height;
+				let { unusedGridPercentage, unusedImagePercentage } = calcUnusedSpace(imageWidth, imageHeight, gridWidth, gridHeight);
+				let unusedGridMult = projectData.image.touchesEdges ? 10 : 1;
+				let unusedImageMult = 1;
+				let fitness = 0
+					- unusedGridMult * unusedGridPercentage
+					- unusedImageMult * unusedImagePercentage;
+				if (projectData.grid) {
+					if (projectData.grid.scale && scale === projectData.grid.scale) {
+						fitness += 1;
+					}
+				}
+				if (!bestFit || bestFit.fitness < fitness) {
+					bestFit = { scale, fitness };
+				}
+			}
+			projectData.grid = {
+				scale: bestFit.scale,
+				width: gridWidth,
+				height: gridHeight
+			};
+		}
 	}
 };

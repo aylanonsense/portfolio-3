@@ -7,6 +7,6 @@ import addMetadata from './addMetadata';
 import { buildProjectHtml } from './buildHtml';
 
 export default async () => {
-	await buildGallery(config.sections.pixels, pixels);
+	// await buildGallery(config.sections.pixels, pixels);
 	await buildGallery(config.sections.games, games);
 };
