@@ -217,9 +217,6 @@ export async function buildProjectHtml(galleryData, projectData) {
 		scripts.push(assets.scripts.pico8);
 		styles.push(assets.styles.game);
 		styles.push(assets.styles.pico8);
-		view.minBodyWidth = 532;
-		view.minBodyHeight = 705;
-		view.mainWidth = 512;
 		view.pico8Code = projectData.code.content;
 	}
 	await buildHtml(`build/public/${galleryData.uri}/${projectData.project}.html`, view, content, scripts, styles);
