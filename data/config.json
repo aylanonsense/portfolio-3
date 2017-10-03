@@ -37,7 +37,7 @@
 		"maxCols": 18,
 		"maxItemCols": 4,
 		"maxItemRows": 6,
-		"packAttempts": 10
+		"packAttempts": 1000
 	},
 	"nav": [ "pixels", "games" ],
 	"defaultSection": "pixels",
