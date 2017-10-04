@@ -59,8 +59,11 @@ export default async (galleryData, projects) => {
 			}
 		}
 		if (projectData.type === 'pico-8') {
-			projectData.code.path = `web-assets/pico-8/${projectData.code.fileName}`;
+			projectData.code.path = `web-assets/pico-8/${galleryData.uri}/${projectData.code.fileName}`;
 			projectData.code.content = await loadFile(projectData.code.path);
+		}
+		else if (projectData.type === 'flash') {
+			projectData.code.uri = `/${galleryData.uri}/${projectData.code.fileName}`;
 		}
 	}
 

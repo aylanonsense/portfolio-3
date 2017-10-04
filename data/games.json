@@ -1,4 +1,16 @@
 {
+	"minepick-platformer": {
+		"title": "Minepick Platformer",
+		"description": "Test for a platformer where you can lodge a minepike into walls. Left/Right to move, X to jump, Z to swing.",
+		"date": "2017/07",
+		"type": "pico-8",
+		"code": { "fileName": "minepick-platformer.js" },
+		"image": { "fileName": "minepick-platformer.gif", "animated": true, "touchesEdges": true },
+		"grid": { "rows": 4 },
+		"priority": 5,
+		"isPixelArt": true,
+		"isPlayable": true
+	},
 	"8-legs-to-love": {
 		"title": "8 Legs to Love",
 		"description": "Spin a web, eat bugs, earn points, and have fun!",
@@ -35,16 +47,67 @@
 		"isPixelArt": true,
 		"isPlayable": true
 	},
-	"minepick-platformer": {
-		"title": "Minepick Platformer",
-		"description": "Test for a platformer where you can lodge a minepike into walls. Left/Right to move, X to jump, Z to swing.",
-		"date": "2017/07",
-		"type": "pico-8",
-		"code": { "fileName": "minepick-platformer.js" },
-		"image": { "fileName": "minepick-platformer.gif", "animated": true, "touchesEdges": true },
-		"grid": { "rows": 4 },
-		"priority": 5,
-		"isPixelArt": true,
-		"isPlayable": true
+	"zombie-aflockalypse": {
+		"title": "Zombie Aflockalypse",
+		"description": "A flocking simulation. The zombies (green dots) are programmed to seek out humans (blue dots) while the humans are programmed to stick together and avoid zombies.",
+		"date": "2009",
+		"type": "flash",
+		"code": { "fileName": "zombie-aflockalypse.swf", "width": 600, "height": 450 },
+		"image": { "fileName": "zombie-aflockalypse.gif", "animated": true, "touchesEdges": true },
+		"backgroundColor": "#b37c1b"
+	},
+	"hex-world": {
+		"title": "Hex World",
+		"description": "A little hex world with customizable terrain.",
+		"date": "2009",
+		"type": "flash",
+		"code": { "fileName": "hex-world.swf", "width": 500, "height": 400 },
+		"image": { "fileName": "hex-world.gif", "animated": true, "touchesEdges": true },
+		"backgroundColor": "#92692c"
+	},
+	"nebulaic": {
+		"title": "Nebulaic",
+		"description": "A Flash game built around gravity. The red particles follow your mouse, try to turn all the particles red!",
+		"date": "2008",
+		"type": "flash",
+		"code": { "fileName": "nebulaic.swf", "width": 600, "height": 600 },
+		"image": { "fileName": "nebulaic.gif", "animated": true },
+		"backgroundColor": "#000"
+	},
+	"physics-engine": {
+		"title": "Physics Engine",
+		"description": "The beginnings of my first ever physics engine.",
+		"date": "2006",
+		"type": "flash",
+		"code": { "fileName": "physics-engine.swf", "width": 550, "height": 400 },
+		"image": { "fileName": "physics-engine.gif", "animated": true, "touchesEdges": true },
+		"backgroundColor": "#fff"
+	},
+	"efflorescence": {
+		"title": "Efflorescence",
+		"description": "An extremely esoteric math game. Click the stems of plants to make them fall to the ground.",
+		"date": "2005",
+		"type": "flash",
+		"code": { "fileName": "efflorescence.swf", "width": 800, "height": 400 },
+		"image": { "fileName": "efflorescence.gif", "animated": true, "touchesEdges": true },
+		"backgroundColor": "#74efdc"
+	},
+	"mindsweeper": {
+		"title": "Mindsweeper",
+		"description": "An experimental take on Minesweeper for <a href=\"http://playwithyourmind.com/\" target=\"_blank\">Play With Your Mind</a>.",
+		"date": "2005",
+		"type": "flash",
+		"code": { "fileName": "mindsweeper.swf", "width": 575, "height": 525 },
+		"image": { "fileName": "mindsweeper.gif", "animated": true, "touchesEdges": true },
+		"backgroundColor": "#000"
+	},
+	"virtual-pet": {
+		"title": "Virtual Pet",
+		"description": "Animation test for a virtual pet game.",
+		"date": "2004",
+		"type": "flash",
+		"code": { "fileName": "virtual-pet.swf", "width": 550, "height": 400 },
+		"image": { "fileName": "virtual-pet.gif", "animated": true, "touchesEdges": true },
+		"backgroundColor": "#fff"
 	}
 }

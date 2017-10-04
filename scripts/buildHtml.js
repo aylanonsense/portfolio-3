@@ -137,12 +137,14 @@ async function loadAssets() {
 		content: {
 			image: await loadFile('web-assets/templates/image.mustache'),
 			pico8: await loadFile('web-assets/templates/pico-8.mustache'),
+			flash: await loadFile('web-assets/templates/flash.mustache'),
 			binpackedGrid: await loadFile('web-assets/templates/binpacked-grid.mustache'),
 			uniformGrid: await loadFile('web-assets/templates/uniform-grid.mustache')
 		},
 		scripts: {
 			binpackedGrid: await loadFile('web-assets/scripts/binpacked-grid.js'),
-			pico8: await loadFile('web-assets/scripts/pico-8.js')
+			pico8: await loadFile('web-assets/scripts/pico-8.js'),
+			flash: await loadFile('web-assets/scripts/flash.js')
 		},
 		styles: {
 			universal: await loadFile('web-assets/styles/universal.css'),
@@ -152,6 +154,7 @@ async function loadAssets() {
 			uniformGrid: await loadFile('web-assets/styles/uniform-grid.css'),
 			game: await loadFile('web-assets/styles/game.css'),
 			pico8: await loadFile('web-assets/styles/pico-8.css'),
+			flash: await loadFile('web-assets/styles/flash.css'),
 			fontRaleway: await loadFile('web-assets/styles/font-raleway.css'),
 		},
 	};
@@ -218,6 +221,15 @@ export async function buildProjectHtml(galleryData, projectData) {
 		styles.push(assets.styles.game);
 		styles.push(assets.styles.pico8);
 		view.pico8Code = projectData.code.content;
+	}
+	else if (projectData.type === "flash") {
+		content = assets.content.flash;
+		scripts.push(assets.scripts.flash);
+		styles.push(assets.styles.game);
+		styles.push(assets.styles.flash);
+		view.minBodyWidth = Math.max(projectData.code.width + 20, 320);
+		view.minBodyHeight = Math.max(projectData.code.height + 200, 400);
+		view.mainWidth = Math.max(projectData.code.width, 280);
 	}
 	await buildHtml(`build/public/${galleryData.uri}/${projectData.project}.html`, view, content, scripts, styles);
 };

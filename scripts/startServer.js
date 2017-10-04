@@ -28,6 +28,9 @@ export default async () => {
 	// requests for fonts
 	app.use(express.static('web-assets/fonts'));
 
+	// requests for Flash files
+	app.use(express.static('web-assets/flash'));
+
 	// requests for all other built files (.html pages, sprite sheets)
 	app.use(express.static('build/public', {
 		extensions: [ 'html' ],
