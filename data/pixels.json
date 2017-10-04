@@ -1,7 +1,7 @@
 {
 	"match-three": {
 		"title": "Match Three",
-		"description": "Concept art for a hypothetical game. Inspired by <a href=\"https://twitter.com/Pixel_Dailies\">Pixel Dailies</a> prompt for #MatchThree.",
+		"description": "Concept art for a hypothetical game. Inspired by <a href=\"https://twitter.com/Pixel_Dailies\" target=\"_blank\">Pixel Dailies</a> prompt for #MatchThree.",
 		"date": "2017/09",
 		"image": { "fileName": "match-three.gif", "animated": true },
 		"priority": 10,
@@ -53,14 +53,14 @@
 	},
 	"nightmare": {
 		"title": "Nightmare",
-		"description": "Animation inspired by <a href=\"https://twitter.com/Pixel_Dailies\">Pixel Dailies</a> prompt for #nightmare.",
+		"description": "Animation inspired by <a href=\"https://twitter.com/Pixel_Dailies\" target=\"_blank\">Pixel Dailies</a> prompt for #nightmare.",
 		"date": "2017/06",
 		"image": { "fileName": "nightmare.gif", "animated": true, "touchesEdges": true },
 		"backgroundColor": "#1c0b20"
 	},
 	"palace": {
 		"title": "Palace",
-		"description": "Inspired by <a href=\"https://twitter.com/Pixel_Dailies\">Pixel Dailies</a> prompt for #palace.",
+		"description": "Inspired by <a href=\"https://twitter.com/Pixel_Dailies\" target=\"_blank\">Pixel Dailies</a> prompt for #palace.",
 		"date": "2017/05",
 		"image": { "fileName": "palace.png", "touchesEdges": true },
 		"backgroundColor": "#f7e9dc"
@@ -124,7 +124,7 @@
 	},
 	"spectral-armor": {
 		"title": "Spectral Armor",
-		"description": "Inspired by <a href=\"https://twitter.com/Pixel_Dailies\">Pixel Dailies</a> prompt for #ghost.",
+		"description": "Inspired by <a href=\"https://twitter.com/Pixel_Dailies\" target=\"_blank\">Pixel Dailies</a> prompt for #ghost.",
 		"date": "2016/09",
 		"image": { "fileName": "spectral-armor.png" },
 		"backgroundColor": "#2a0039"
@@ -138,7 +138,7 @@
 	},
 	"gaudy-ladybug": {
 		"title": "Gaudy Ladybug",
-		"description": "Inspired by <a href=\"https://twitter.com/Pixel_Dailies\">Pixel Dailies</a> prompt for #luckycharm.",
+		"description": "Inspired by <a href=\"https://twitter.com/Pixel_Dailies\" target=\"_blank\">Pixel Dailies</a> prompt for #luckycharm.",
 		"date": "2016/08",
 		"image": { "fileName": "gaudy-ladybug.png", "touchesEdges": true },
 		"backgroundColor": "#5a8751"
@@ -173,14 +173,14 @@
 	},
 	"monolith": {
 		"title": "Monolith",
-		"description": "Inspired by <a href=\"https://twitter.com/Pixel_Dailies\">Pixel Dailies</a> prompt for #monolith.",
+		"description": "Inspired by <a href=\"https://twitter.com/Pixel_Dailies\" target=\"_blank\">Pixel Dailies</a> prompt for #monolith.",
 		"date": "2016/07",
 		"image": { "fileName": "monolith.png", "touchesEdges": true },
 		"backgroundColor": "#645146"
 	},
 	"zergling": {
 		"title": "Zergling",
-		"description": "Inspired by <a href=\"https://twitter.com/Pixel_Dailies\">Pixel Dailies</a> prompt for #zergling.",
+		"description": "Inspired by <a href=\"https://twitter.com/Pixel_Dailies\" target=\"_blank\">Pixel Dailies</a> prompt for #zergling.",
 		"date": "2016/07",
 		"image": { "fileName": "zergling.gif", "animated": true },
 		"backgroundColor": "#f4e9d7"

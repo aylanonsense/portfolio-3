@@ -9,7 +9,7 @@ window.addEventListener('load', function() {
 	Module.canvas = canvas;
 
 	// run the PICO-8 code
-	{{{pico8Code}}}
+	{{{code.content}}}
 
 	// prevent keypresses from scrolling through the page
 	function onKeyDown_blocker(event) {

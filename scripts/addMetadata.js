@@ -65,6 +65,10 @@ export default async (galleryData, projects) => {
 		else if (projectData.type === 'flash') {
 			projectData.code.uri = `/${galleryData.uri}/${projectData.code.fileName}`;
 		}
+		else if (projectData.type === 'raw-js') {
+			projectData.code.path = `web-assets/scripts/${galleryData.uri}/${projectData.code.fileName}`;
+			projectData.code.content = await loadFile(projectData.code.path);
+		}
 	}
 
 	// add metadata about which projects comes next/prev in the order

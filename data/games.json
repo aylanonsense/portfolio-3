@@ -47,6 +47,15 @@
 		"isPixelArt": true,
 		"isPlayable": true
 	},
+	"minisnake": {
+		"title": "minisnake",
+		"description": "An exercise in <a href=\"https://en.wikipedia.org/wiki/Code_golf\" target=\"_blank\">code golf</a>. The goal was to implement a minimalist version of Snake in the fewest characters possible. The version above is 623 characters minified.",
+		"date": "2014/09",
+		"type": "raw-js",
+		"code": { "fileName": "minisnake.js", "width": 400, "height": 400 },
+		"image": { "fileName": "minisnake.gif", "animated": true },
+		"backgroundColor": "#e5ffdb"
+	},
 	"zombie-aflockalypse": {
 		"title": "Zombie Aflockalypse",
 		"description": "A flocking simulation. The zombies (green dots) are programmed to seek out humans (blue dots) while the humans are programmed to stick together and avoid zombies.",
