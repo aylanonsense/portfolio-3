@@ -52,14 +52,6 @@
 		"image": { "fileName": "breakout-ball.gif", "animated": true },
 		"backgroundColor": "#222"
 	},
-	"boss-rush": {
-		"title": "Boss rush game",
-		"description": "A platformer intended to be a sequence of boss fights. Only one was fully programmed (with another, a fire queen, in development).",
-		"date": { "start": "2014/08", "end": "2014/11" },
-		"type": "image",
-		"image": { "fileName": "boss-rush.gif", "animated": true, "touchesEdges": true },
-		"backgroundColor": "#222"
-	},
 	"space-team-galaxy-explorer": {
 		"title": "Space Team: Galaxy Explorer",
 		"description": "A multiplayer spaceship simulator. The end product would give each player their own dashboard and controls for specific parts of the ship as it hurtled through space.",

@@ -57,6 +57,15 @@
 		"backgroundColor": "#222",
 		"isPixelArt": true
 	},
+	"3d-blocks": {
+		"title": "3D Blocks",
+		"description": "Just me messing around with WebGL. Mouse to control camera, WASD to move, Space to ascend, Ctrl to descend, Shift to speed up.",
+		"date": "2016/03",
+		"type": "proxy",
+		"proxy": { "port": 3005, "width": 500, "height": 375 },
+		"image": { "fileName": "3d-blocks.gif", "animated": true },
+		"backgroundColor": "#000"
+	},
 	"grapple-game": {
 		"title": "Grapple Game",
 		"description": "Debug playground for a platformer featuring a grappling hook. WASD to move, Space to jump, Click and hold to grapple, Shift to pull grapple.",
@@ -64,8 +73,7 @@
 		"type": "proxy",
 		"proxy": { "port": 3004, "width": 500, "height": 500 },
 		"image": { "fileName": "grapple-game.gif", "animated": true },
-		"backgroundColor": "#fff7ef",
-		"isPixelArt": true
+		"backgroundColor": "#fff7ef"
 	},
 	"breakout-ball": {
 		"title": "Breakout Ball",
@@ -84,6 +92,15 @@
 		"proxy": { "port": 3002, "width": 432, "height": 324 },
 		"image": { "fileName": "paradox-anomaly.gif", "animated": true, "touchesEdges": true },
 		"backgroundColor": "#666"
+	},
+	"boss-rush": {
+		"title": "Boss rush game",
+		"description": "A platformer intended to be a sequence of boss fights. Only one was fully programmed (with another, a fire queen, in development).",
+		"date": { "start": "2014/08", "end": "2014/11" },
+		"type": "proxy",
+		"proxy": { "port": 3006, "width": 400, "height": 300 },
+		"image": { "fileName": "boss-rush.gif", "animated": true, "touchesEdges": true },
+		"backgroundColor": "#222"
 	},
 	"minisnake": {
 		"title": "minisnake",
