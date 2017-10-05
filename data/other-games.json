@@ -52,14 +52,6 @@
 		"image": { "fileName": "breakout-ball.gif", "animated": true },
 		"backgroundColor": "#222"
 	},
-	"paradox-anomaly": {
-		"title": "Paradox: Anomaly",
-		"description": "A tile-based puzzle game invovling time travel. The final product would revolve around solving puzzles while avoiding paradoxes that would be caused by interfering with your past self.",
-		"date": "2014/12",
-		"type": "image",
-		"image": { "fileName": "paradox-anomaly.gif", "animated": true, "touchesEdges": true },
-		"backgroundColor": "#37494e"
-	},
 	"boss-rush": {
 		"title": "Boss rush game",
 		"description": "A platformer intended to be a sequence of boss fights. Only one was fully programmed (with another, a fire queen, in development).",

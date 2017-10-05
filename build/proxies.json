@@ -1,3 +1,6 @@
 {
-	"/games/breakout-ball/proxy": 3001
+	"/games/smash-game/proxy": 3003,
+	"/games/grapple-game/proxy": 3004,
+	"/games/breakout-ball/proxy": 3001,
+	"/games/paradox-anomaly/proxy": 3002
 }
