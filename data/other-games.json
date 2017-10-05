@@ -93,5 +93,5 @@
 		"image": { "fileName": "alchemy-drop.gif", "animated": true, "touchesEdges": true },
 		"grid": { "cols": 1, "rows": 1 },
 		"backgroundColor": "#feac87"
-	},
+	}
 }
