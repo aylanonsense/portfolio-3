@@ -6,6 +6,7 @@ import applyDefaults from './helper/applyDefaults';
 import saveDeanimatedImage from './helper/saveDeanimatedImage';
 
 export default async (galleryData, projects) => {
+	let proxies = {};
 	// gather some metadata
 	let ordered = [];
 	for (let [ project, projectData ] of Object.entries(projects)) {
@@ -69,6 +70,10 @@ export default async (galleryData, projects) => {
 			projectData.code.path = `web-assets/scripts/${galleryData.uri}/${projectData.code.fileName}`;
 			projectData.code.content = await loadFile(projectData.code.path);
 		}
+		else if (projectData.type === 'proxy') {
+			projectData.proxy.uri = `/${galleryData.uri}/${project}/proxy`;
+			proxies[projectData.proxy.uri] = projectData.proxy.port;
+		}
 	}
 
 	// add metadata about which projects comes next/prev in the order
@@ -81,4 +86,6 @@ export default async (galleryData, projects) => {
 		projectData.nextProject = ordered[nextProjectIndex].project;
 		projectData.prevProject = ordered[prevProjectIndex].project;
 	}
+
+	return proxies;
 };

@@ -139,13 +139,15 @@ async function loadAssets() {
 			pico8: await loadFile('web-assets/templates/pico-8.mustache'),
 			flash: await loadFile('web-assets/templates/flash.mustache'),
 			rawJS: await loadFile('web-assets/templates/raw-js.mustache'),
+			proxy: await loadFile('web-assets/templates/proxy.mustache'),
 			binpackedGrid: await loadFile('web-assets/templates/binpacked-grid.mustache'),
 			uniformGrid: await loadFile('web-assets/templates/uniform-grid.mustache')
 		},
 		scripts: {
 			binpackedGrid: await loadFile('web-assets/scripts/binpacked-grid.js'),
 			pico8: await loadFile('web-assets/scripts/pico-8.js'),
-			rawJS: await loadFile('web-assets/scripts/raw-js.js')
+			rawJS: await loadFile('web-assets/scripts/raw-js.js'),
+			proxy: await loadFile('web-assets/scripts/proxy.js')
 		},
 		styles: {
 			universal: await loadFile('web-assets/styles/universal.css'),
@@ -155,6 +157,7 @@ async function loadAssets() {
 			uniformGrid: await loadFile('web-assets/styles/uniform-grid.css'),
 			game: await loadFile('web-assets/styles/game.css'),
 			pico8: await loadFile('web-assets/styles/pico-8.css'),
+			proxy: await loadFile('web-assets/styles/proxy.css'),
 			fontRaleway: await loadFile('web-assets/styles/font-raleway.css'),
 		},
 	};
@@ -218,12 +221,10 @@ export async function buildProjectHtml(galleryData, projectData) {
 	else if (projectData.type === "pico-8") {
 		content = assets.content.pico8;
 		scripts.push(assets.scripts.pico8);
-		styles.push(assets.styles.game);
-		styles.push(assets.styles.pico8);
+		styles.push(assets.styles.game, assets.styles.pico8);
 	}
 	else if (projectData.type === "flash") {
 		content = assets.content.flash;
-		styles.push(assets.styles.game);
 		view.minBodyWidth = Math.max(projectData.code.width + 20, 320);
 		view.minBodyHeight = Math.max(projectData.code.height + 200, 400);
 		view.mainWidth = Math.max(projectData.code.width, 280);
@@ -231,10 +232,17 @@ export async function buildProjectHtml(galleryData, projectData) {
 	else if (projectData.type === "raw-js") {
 		content = assets.content.rawJS;
 		scripts.push(assets.scripts.rawJS);
-		styles.push(assets.styles.game);
 		view.minBodyWidth = Math.max(projectData.code.width + 20, 320);
 		view.minBodyHeight = Math.max(projectData.code.height + 200, 400);
 		view.mainWidth = Math.max(projectData.code.width, 280);
+	}
+	else if (projectData.type === "proxy") {
+		content = assets.content.proxy;
+		scripts.push(assets.scripts.proxy);
+		styles.push(assets.styles.proxy);
+		view.minBodyWidth = Math.max(projectData.proxy.width + 20, 320);
+		view.minBodyHeight = Math.max(projectData.proxy.height + 200, 400);
+		view.mainWidth = Math.max(projectData.proxy.width, 280);
 	}
 	await buildHtml(`build/public/${galleryData.uri}/${projectData.project}.html`, view, content, scripts, styles);
 };

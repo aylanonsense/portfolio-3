@@ -1,6 +1,8 @@
 import path from 'path';
 import express from 'express';
+import proxy from 'express-http-proxy';
 import config from '../data/config.json';
+import proxies from '../build/proxies.json';
 
 function send404(res) {
 	res.status(404);
@@ -30,6 +32,11 @@ export default async () => {
 
 	// requests for Flash files
 	app.use(express.static('web-assets/flash'));
+
+	// proxy some requests to other local servers
+	for (let [ uri, port ] of Object.entries(proxies)) {
+		app.use(uri, proxy(`localhost:${port}`));
+	}
 
 	// requests for all other built files (.html pages, sprite sheets)
 	app.use(express.static('build/public', {

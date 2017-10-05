@@ -36,7 +36,8 @@
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.0",
-    "express": "^4.15.4"
+    "express": "^4.15.4",
+    "express-http-proxy": "^1.0.7"
   },
   "devDependencies": {
     "bin-pack": "^1.0.2",
