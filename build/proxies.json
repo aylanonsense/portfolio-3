@@ -3,7 +3,9 @@
 	"/games/smash-game/proxy": 3003,
 	"/games/3d-blocks/proxy": 3005,
 	"/games/grapple-game/proxy": 3004,
+	"/games/processing-sketchbook/proxy": 3009,
 	"/games/breakout-ball/proxy": 3001,
 	"/games/paradox-anomaly/proxy": 3002,
-	"/games/boss-rush/proxy": 3006
+	"/games/boss-rush/proxy": 3006,
+	"/games/spider-game/proxy": 3008
 }

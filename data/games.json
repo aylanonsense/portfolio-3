@@ -81,6 +81,15 @@
 		"image": { "fileName": "grapple-game.gif", "animated": true },
 		"backgroundColor": "#fff7ef"
 	},
+	"processing-sketchbook": {
+		"title": "Processing sketchbook",
+		"description": "Some doodles to get acquainted with Processing.",
+		"date": "2015/02",
+		"type": "proxy",
+		"proxy": { "port": 3009, "width": 450, "height": 475 },
+		"image": { "fileName": "processing-sketchbook.gif", "animated": true },
+		"backgroundColor": "#f5fff5"
+	},
 	"breakout-ball": {
 		"title": "Breakout Ball",
 		"description": "Testing frame-by-frame hitboxes to see how that would feel. Left/Right to move, Z to swing.",
@@ -107,6 +116,15 @@
 		"proxy": { "port": 3006, "width": 400, "height": 300 },
 		"image": { "fileName": "boss-rush.gif", "animated": true, "touchesEdges": true },
 		"backgroundColor": "#222"
+	},
+	"spider-game": {
+		"title": "Spider game",
+		"description": "A simple spider web simulation. WASD to move, Shift to start and release a new strand.",
+		"date": "2014/09",
+		"type": "proxy",
+		"proxy": { "port": 3008, "width": 450, "height": 450 },
+		"image": { "fileName": "spider-game.gif", "animated": true },
+		"backgroundColor": "#000"
 	},
 	"minisnake": {
 		"title": "minisnake",
@@ -155,7 +173,7 @@
 	},
 	"efflorescence": {
 		"title": "Efflorescence",
-		"description": "An extremely esoteric math game. Click the stems of plants to make them fall to the ground.",
+		"description": "An extremely esoteric math game. Click the stems of fruits to make them fall to the ground.",
 		"date": "2005",
 		"type": "flash",
 		"code": { "fileName": "efflorescence.swf", "width": 800, "height": 400 },

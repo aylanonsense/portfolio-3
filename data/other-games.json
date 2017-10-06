@@ -60,14 +60,6 @@
 		"image": { "fileName": "space-team-galaxy-explorer.gif", "animated": true },
 		"backgroundColor": "#222"
 	},
-	"spider-game": {
-		"title": "Spider game",
-		"description": "A simple spider web simulation thrown together during a family vacation.",
-		"date": "2014/09",
-		"type": "image",
-		"image": { "fileName": "spider-game.gif", "animated": true },
-		"backgroundColor": "#000"
-	},
 	"archery": {
 		"title": "Archery game",
 		"description": "First foray into WebGL, the cylindrical player model is able to shoot arrows at varying speeds and distances.",
