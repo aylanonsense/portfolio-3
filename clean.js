@@ -7,11 +7,14 @@ console.log('  Removing all build files...');
 rimraf('build', () => {
 	console.log('  Making new blank directories...');
 	fs.mkdirSync('build');
-	fs.mkdirSync('build/public');
-	fs.mkdirSync('build/deanimated');
+	fs.mkdirSync('build/html');
+	fs.mkdirSync('build/sprite-sheets');
+	fs.mkdirSync('build/rescaled-images');
 	for (let [ section, sectionData ] of Object.entries(config.sections)) {
 		if (sectionData.isGallery) {
-			fs.mkdirSync(`build/public/${sectionData.uri}`);
+			fs.mkdirSync(`build/html/${sectionData.uri}`);
+			fs.mkdirSync(`build/sprite-sheets/${sectionData.uri}`);
+			fs.mkdirSync(`build/rescaled-images/${sectionData.uri}`);
 		}
 	}
 	console.log('  Done!');

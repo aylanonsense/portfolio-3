@@ -8,7 +8,6 @@
 			"title": "Pixel Art",
 			"uri": "pixels",
 			"isGallery": true,
-			"galleryType": "binpacked-grid",
 			"projectDefaults": {
 				"type": "image",
 				"isPixelArt": true
@@ -18,7 +17,6 @@
 			"title": "Games",
 			"uri": "games",
 			"isGallery": true,
-			"galleryType": "binpacked-grid",
 			"projectDefaults": {
 				"grid": {
 					"cols": 2, "rows": 2
@@ -51,5 +49,6 @@
 	"abbreviateMonths": true,
 	"dateDelimeter": "to",
 	"siteBackgroundColor": "#fff",
+	"showVerboseLogging": false,
 	"showDebugColors": false
 }

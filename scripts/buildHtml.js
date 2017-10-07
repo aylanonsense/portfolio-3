@@ -126,7 +126,6 @@ async function loadAssets() {
 			nav: await loadFile('web-assets/templates/nav.mustache'),
 			footer: await loadFile('web-assets/templates/footer.mustache'),
 			projectDescription: await loadFile('web-assets/templates/project-description.mustache'),
-			uniformGridItem: await loadFile('web-assets/templates/uniform-grid-item.mustache'),
 			gridItemImage: await loadFile('web-assets/templates/grid-item-image.mustache'),
 			gameControls: await loadFile('web-assets/templates/game-controls.mustache'),
 			analyticsHead: await loadFile('web-assets/templates/google-analytics-head.mustache'),
@@ -140,11 +139,10 @@ async function loadAssets() {
 			flash: await loadFile('web-assets/templates/flash.mustache'),
 			rawJS: await loadFile('web-assets/templates/raw-js.mustache'),
 			proxy: await loadFile('web-assets/templates/proxy.mustache'),
-			binpackedGrid: await loadFile('web-assets/templates/binpacked-grid.mustache'),
-			uniformGrid: await loadFile('web-assets/templates/uniform-grid.mustache')
+			gallery: await loadFile('web-assets/templates/gallery.mustache')
 		},
 		scripts: {
-			binpackedGrid: await loadFile('web-assets/scripts/binpacked-grid.js'),
+			gallery: await loadFile('web-assets/scripts/gallery.js'),
 			pico8: await loadFile('web-assets/scripts/pico-8.js'),
 			rawJS: await loadFile('web-assets/scripts/raw-js.js'),
 			proxy: await loadFile('web-assets/scripts/proxy.js')
@@ -153,8 +151,6 @@ async function loadAssets() {
 			universal: await loadFile('web-assets/styles/universal.css'),
 			gallery: await loadFile('web-assets/styles/gallery.css'),
 			project: await loadFile('web-assets/styles/project.css'),
-			binpackedGrid: await loadFile('web-assets/styles/binpacked-grid.css'),
-			uniformGrid: await loadFile('web-assets/styles/uniform-grid.css'),
 			game: await loadFile('web-assets/styles/game.css'),
 			pico8: await loadFile('web-assets/styles/pico-8.css'),
 			proxy: await loadFile('web-assets/styles/proxy.css'),
@@ -180,24 +176,19 @@ export async function buildGalleryHtml(galleryData, projects) {
 	let content = null;
 	let scripts = [];
 	let styles = [ assets.styles.universal, assets.styles.gallery, assets.styles.fontRaleway ];
-	if (galleryData.galleryType === 'binpacked-grid') {
-		content = assets.content.binpackedGrid;
-		scripts.push(assets.scripts.binpackedGrid);
-		styles.push(assets.styles.binpackedGrid);
-		view.projectsJSON = JSON.stringify(Object.values(projects)
-			.map(projectData => [ projectData.id, projectData.grid.coordinates ]));
-		view.animatedProjectsJSON = JSON.stringify(Object.values(projects)
-			.filter(projectData => projectData.image.animated)
-			.map(projectData => [ projectData.id, projectData.grid.scale, projectData.image.project.uri ]));
-	}
-	else if (galleryData.galleryType === 'uniform-grid') {
-		content = assets.content.uniformGrid;
-		styles.push(assets.styles.uniformGrid);
-	}
-	await buildHtml(`build/public/${galleryData.uri}.html`, view, content, scripts, styles);
+	content = assets.content.gallery;
+	scripts.push(assets.scripts.gallery);
+	styles.push(assets.styles.gallery);
+	view.projectsJSON = JSON.stringify(Object.values(projects)
+		.map(projectData => [ projectData.id, projectData.grid.coordinates ]));
+	view.animatedProjectsJSON = JSON.stringify(Object.values(projects)
+		.filter(projectData => projectData.image.animated)
+		.map(projectData => [ projectData.id, projectData.grid.scale, projectData.image.raw.uri ]));
+	await buildHtml(`build/html/${galleryData.uri}.html`, view, content, scripts, styles);
 }
 
 export async function buildProjectHtml(galleryData, projectData) {
+	if (config.showVerboseLogging) { console.log(`    Building ${projectData.project} html...`); }
 	if (!hasLoadedAssets) {
 		await loadAssets();
 	}
@@ -244,7 +235,7 @@ export async function buildProjectHtml(galleryData, projectData) {
 		view.minBodyHeight = Math.max(projectData.proxy.height + 200, 400);
 		view.mainWidth = Math.max(projectData.proxy.width, 280);
 	}
-	await buildHtml(`build/public/${galleryData.uri}/${projectData.project}.html`, view, content, scripts, styles);
+	await buildHtml(`build/html/${galleryData.uri}/${projectData.project}.html`, view, content, scripts, styles);
 };
 
 async function buildHtml(uri, view, content, scripts, styles) {

@@ -3,71 +3,68 @@ import parseDate from './parseDate';
 import loadFile from './helper/loadFile';
 import loadImage from './helper/loadImage';
 import applyDefaults from './helper/applyDefaults';
-import saveDeanimatedImage from './helper/saveDeanimatedImage';
+
+function cleanUpFilePath(data, defaultName, defaultExtension) {
+	data.name = data.name || defaultName;
+	data.ext = data.ext || defaultExtension;
+	data.file = data.name + '.' + data.ext;
+}
 
 export default async (galleryData, projects) => {
 	let proxies = {};
 	// gather some metadata
 	let ordered = [];
 	for (let [ project, projectData ] of Object.entries(projects)) {
+		// apply default metadata from the gallery
 		if (galleryData.projectDefaults) {
 			applyDefaults(galleryData.projectDefaults, projectData);
 		}
+		// add basic metadata
 		projectData.project = project;
 		projectData.id = `project-${project}`;
 		projectData.uri = `/${galleryData.uri}/${project}`;
-		if (!projectData.shortDescription) {
-			projectData.shortDescription = projectData.description;
-		}
 		projectData.priority = projectData.priority || 0;
+		projectData.shortDescription = projectData.shortDescription || projectData.description;
 		projectData.descriptionStripped = projectData.description ? striptags(projectData.description) : null;
 		projectData.shortDescriptionStripped = projectData.shortDescription ? striptags(projectData.shortDescription) : null;
-		projectData.includeScreenReadableText = !projectData.isComplete;
-		// parse the time and human-readable date
+		// parse the date into a  time and human-readable date
 		let { time, dateText } = parseDate(projectData.date);
 		projectData.time = time;
 		projectData.dateText = dateText;
 		ordered.push({ project, time });
-		// add metadata about the image
+		// add metadata about the image associated with the project
+		if (projectData.type === 'image') {
+			projectData.image = projectData.image || {};
+			projectData.image.animated = projectData.image.animated || false;
+			projectData.image.touchesEdges = projectData.image.touchesEdges || false;
+		}
 		if (projectData.image) {
-			let imagePath = `web-assets/images/${galleryData.uri}/${projectData.image.fileName}`;
-			let imageUri = `/${galleryData.uri}/${projectData.image.fileName}`;
+			cleanUpFilePath(projectData.image, project, (projectData.image.animated ? 'gif' : 'png'));
+			let imagePath = `web-assets/images/${galleryData.uri}/${projectData.image.file}`;
 			let image = await loadImage(imagePath);
 			projectData.image.raw = {
 				path: imagePath,
-				uri: imageUri,
+				uri: `/${galleryData.uri}/${projectData.image.file}`,
 				width: image.width,
 				height: image.height
 			};
-			let scale = Math.max(1, Math.min(Math.floor(Math.min(550 / image.width, 600 / image.height)), 6));
-			if (projectData.isPixelArt) {
-				scale = Math.max(2, scale);
-			}
-			else {
-				scale = Math.min(1, scale);
-			}
-			projectData.image.project = {
-				path: imagePath,
-				uri: imageUri,
-				width: image.width * scale,
-				height: image.height * scale
-			};
-			// if it's an animated image, we need to create a non-animated one
-			if (projectData.image.animated) {
-				let deanimatedImagePath = `build/deanimated/${projectData.image.fileName}`;
-				await saveDeanimatedImage(imagePath, deanimatedImagePath);
-				projectData.image.raw.deanimatedPath = deanimatedImagePath;
-			}
 		}
+		// each project type has its own files to load
 		if (projectData.type === 'pico-8') {
-			projectData.code.path = `web-assets/pico-8/${galleryData.uri}/${projectData.code.fileName}`;
+			projectData.code = projectData.code || {};
+			cleanUpFilePath(projectData.code, project, 'js');
+			projectData.code.path = `web-assets/pico-8/${galleryData.uri}/${projectData.code.file}`;
 			projectData.code.content = await loadFile(projectData.code.path);
 		}
 		else if (projectData.type === 'flash') {
-			projectData.code.uri = `/${galleryData.uri}/${projectData.code.fileName}`;
+			projectData.code = projectData.code || {};
+			cleanUpFilePath(projectData.code, project, 'swf');
+			projectData.code.uri = `/${galleryData.uri}/${projectData.code.file}`;
 		}
 		else if (projectData.type === 'raw-js') {
-			projectData.code.path = `web-assets/scripts/${galleryData.uri}/${projectData.code.fileName}`;
+			projectData.code = projectData.code || {};
+			cleanUpFilePath(projectData.code, project, 'js');
+			projectData.code.path = `web-assets/scripts/${galleryData.uri}/${projectData.code.file}`;
 			projectData.code.content = await loadFile(projectData.code.path);
 		}
 		else if (projectData.type === 'proxy') {
@@ -76,11 +73,12 @@ export default async (galleryData, projects) => {
 		}
 	}
 
-	// add metadata about which projects comes next/prev in the order
+	// add metadata about project order
 	ordered.sort((a, b) => b.time - a.time);
 	for (let i = 0; i < ordered.length; i++) {
 		let project = ordered[i].project;
 		let projectData = projects[project];
+		projectData.order = i;
 		let nextProjectIndex = i === ordered.length - 1 ? 0 : i + 1;
 		let prevProjectIndex = i === 0 ? ordered.length - 1 : i - 1;
 		projectData.nextProject = ordered[nextProjectIndex].project;

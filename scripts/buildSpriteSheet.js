@@ -8,7 +8,7 @@ export default async (galleryData, projects) => {
 	// figure out how to pack all the projects images together
 	let { bins, width, height } = packProjectImages(projects);
 	// create a new spritesheet
-	let spriteSheetPath = `build/public/${galleryData.uri}/sprite-sheet-1.png`;
+	let spriteSheetPath = `build/sprite-sheets/${galleryData.uri}/sprite-sheet-1.png`;
 	let spriteSheetUri = `/${galleryData.uri}/sprite-sheet-1.png`;
 	let canvas = new Canvas(width, height);
 	let ctx = canvas.getContext('2d');
@@ -17,22 +17,11 @@ export default async (galleryData, projects) => {
 		let project = bin.project;
 		let projectData = projects[project];
 		// draw the project's image into the spritesheet
-		let imagePath = projectData.image.animated ? projectData.image.raw.deanimatedPath : projectData.image.raw.path;
-		let image = await loadImage(imagePath);
+		let image = await loadImage(projectData.image.rescaled.path);
 		ctx.fillStyle = projectData.backgroundColor;
-		ctx.fillRect(bin.x - 3, bin.y - 3, bin.width + 6, bin.height + 6);
-		ctx.drawImage(image, bin.offsetX, bin.offsetY, bin.width, bin.height, bin.x, bin.y, bin.width, bin.height);
+		ctx.fillRect(bin.fillX, bin.fillY, bin.fillWidth, bin.fillHeight);
+		ctx.drawImage(image, 0, 0, bin.width, bin.height, bin.x, bin.y, bin.width, bin.height);
 		// save the metadata to the project
-		projectData.image.spriteSheet = {
-			path: spriteSheetPath,
-			uri: spriteSheetUri,
-			x: bin.x,
-			y: bin.y,
-			width: bin.width,
-			height: bin.height,
-			sheetWidth: width,
-			sheetHeight: height
-		};
 		let scale = projectData.grid.scale;
 		projectData.image.gallery = {
 			path: spriteSheetPath,
@@ -43,7 +32,7 @@ export default async (galleryData, projects) => {
 			height: scale * bin.height,
 			sheetWidth: scale * width,
 			sheetHeight: scale * height
-		}
+		};
 	}
 	// save the spritesheet
 	await saveCanvas(spriteSheetPath, canvas);

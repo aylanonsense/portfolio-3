@@ -4,8 +4,7 @@
 		"description": "Test for a platformer where you can lodge a minepike into walls. Left/Right to move, X to jump, Z to swing.",
 		"date": "2017/07",
 		"type": "pico-8",
-		"code": { "fileName": "minepick-platformer.js" },
-		"image": { "fileName": "minepick-platformer.gif", "animated": true, "touchesEdges": true },
+		"image": { "animated": true, "touchesEdges": true },
 		"grid": { "rows": 4 },
 		"priority": 5,
 		"isPixelArt": true
@@ -15,8 +14,7 @@
 		"description": "Spin a web, eat bugs, earn points, and have fun!",
 		"date": "2017/06",
 		"type": "pico-8",
-		"code": { "fileName": "8-legs-to-love.js" },
-		"image": { "fileName": "8-legs-to-love.gif", "animated": true, "touchesEdges": true },
+		"image": { "animated": true, "touchesEdges": true },
 		"grid": { "cols": 4, "rows": 4 },
 		"priority": 10,
 		"isPixelArt": true
@@ -26,8 +24,7 @@
 		"description": "Downhill snowboarding simulation. Left/Right to turn, Z to jump.",
 		"date": "2017/06",
 		"type": "pico-8",
-		"code": { "fileName": "snowboarding.js" },
-		"image": { "fileName": "snowboarding.gif", "animated": true, "touchesEdges": true },
+		"image": { "animated": true, "touchesEdges": true },
 		"grid": { "rows": 4 },
 		"priority": 5,
 		"isPixelArt": true
@@ -38,7 +35,7 @@
 		"date": "2017/05",
 		"type": "proxy",
 		"proxy": { "port": 3007, "width": 575, "height": 310 },
-		"image": { "fileName": "wave-function-collapse.gif", "animated": true, "touchesEdges": true },
+		"image": { "animated": true, "touchesEdges": true },
 		"backgroundColor": "#000",
 		"isPixelArt": true
 	},
@@ -47,8 +44,7 @@
 		"description": "Breakout but with a tennis player. Left/Right to move, Z to forehand, Up + Z to spike, Down + Z to lob.",
 		"date": "2016/10",
 		"type": "pico-8",
-		"code": { "fileName": "racquet-panic.js" },
-		"image": { "fileName": "racquet-panic.gif", "animated": true, "touchesEdges": true },
+		"image": { "animated": true, "touchesEdges": true },
 		"grid": { "cols": 4, "rows": 2 },
 		"priority": 5,
 		"isPixelArt": true
@@ -59,7 +55,7 @@
 		"date": "2016/05",
 		"type": "proxy",
 		"proxy": { "port": 3003, "width": 500, "height": 400 },
-		"image": { "fileName": "smash-game.gif", "animated": true },
+		"image": { "animated": true },
 		"backgroundColor": "#222",
 		"isPixelArt": true
 	},
@@ -69,7 +65,7 @@
 		"date": "2016/03",
 		"type": "proxy",
 		"proxy": { "port": 3005, "width": 500, "height": 375 },
-		"image": { "fileName": "3d-blocks.gif", "animated": true },
+		"image": { "animated": true },
 		"backgroundColor": "#000"
 	},
 	"grapple-game": {
@@ -78,7 +74,7 @@
 		"date": "2015/11",
 		"type": "proxy",
 		"proxy": { "port": 3004, "width": 500, "height": 500 },
-		"image": { "fileName": "grapple-game.gif", "animated": true },
+		"image": { "animated": true },
 		"backgroundColor": "#fff7ef"
 	},
 	"processing-sketchbook": {
@@ -87,7 +83,7 @@
 		"date": "2015/02",
 		"type": "proxy",
 		"proxy": { "port": 3009, "width": 450, "height": 475 },
-		"image": { "fileName": "processing-sketchbook.gif", "animated": true },
+		"image": { "animated": true },
 		"backgroundColor": "#f5fff5"
 	},
 	"breakout-ball": {
@@ -96,7 +92,7 @@
 		"date": "2015/01",
 		"type": "proxy",
 		"proxy": { "port": 3001, "width": 500, "height": 400 },
-		"image": { "fileName": "breakout-ball.gif", "animated": true },
+		"image": { "animated": true },
 		"backgroundColor": "#000"
 	},
 	"paradox-anomaly": {
@@ -105,16 +101,16 @@
 		"date": "2014/12",
 		"type": "proxy",
 		"proxy": { "port": 3002, "width": 432, "height": 324 },
-		"image": { "fileName": "paradox-anomaly.gif", "animated": true, "touchesEdges": true },
+		"image": { "animated": true, "touchesEdges": true },
 		"backgroundColor": "#666"
 	},
 	"boss-rush": {
 		"title": "Boss rush game",
 		"description": "A platformer intended to be a sequence of boss fights. Only one was fully programmed (with another, a fire queen, in development).",
-		"date": { "start": "2014/08", "end": "2014/11" },
+		"date": "2014/11",
 		"type": "proxy",
 		"proxy": { "port": 3006, "width": 400, "height": 300 },
-		"image": { "fileName": "boss-rush.gif", "animated": true, "touchesEdges": true },
+		"image": { "animated": true, "touchesEdges": true },
 		"backgroundColor": "#222"
 	},
 	"spider-game": {
@@ -123,7 +119,7 @@
 		"date": "2014/09",
 		"type": "proxy",
 		"proxy": { "port": 3008, "width": 450, "height": 450 },
-		"image": { "fileName": "spider-game.gif", "animated": true },
+		"image": { "animated": true },
 		"backgroundColor": "#000"
 	},
 	"minisnake": {
@@ -131,8 +127,8 @@
 		"description": "An exercise in <a href=\"https://en.wikipedia.org/wiki/Code_golf\" target=\"_blank\">code golf</a>. The goal was to implement a minimalist version of Snake in the fewest characters possible. The version above is 623 characters minified.",
 		"date": "2014/09",
 		"type": "raw-js",
-		"code": { "fileName": "minisnake.js", "width": 400, "height": 400 },
-		"image": { "fileName": "minisnake.gif", "animated": true },
+		"code": { "width": 400, "height": 400 },
+		"image": { "animated": true },
 		"backgroundColor": "#e5ffdb"
 	},
 	"zombie-aflockalypse": {
@@ -140,8 +136,8 @@
 		"description": "A flocking simulation. The zombies (green dots) are programmed to seek out humans (blue dots) while the humans are programmed to stick together and avoid zombies.",
 		"date": "2009",
 		"type": "flash",
-		"code": { "fileName": "zombie-aflockalypse.swf", "width": 600, "height": 450 },
-		"image": { "fileName": "zombie-aflockalypse.gif", "animated": true, "touchesEdges": true },
+		"code": { "width": 600, "height": 450 },
+		"image": { "animated": true, "touchesEdges": true },
 		"backgroundColor": "#b37c1b"
 	},
 	"hex-world": {
@@ -149,8 +145,8 @@
 		"description": "A little hex world with customizable terrain.",
 		"date": "2009",
 		"type": "flash",
-		"code": { "fileName": "hex-world.swf", "width": 500, "height": 400 },
-		"image": { "fileName": "hex-world.gif", "animated": true, "touchesEdges": true },
+		"code": { "width": 500, "height": 400 },
+		"image": { "animated": true, "touchesEdges": true },
 		"backgroundColor": "#92692c"
 	},
 	"nebulaic": {
@@ -158,8 +154,8 @@
 		"description": "A Flash game built around gravity. The red particles follow your mouse, try to turn all the particles red!",
 		"date": "2008",
 		"type": "flash",
-		"code": { "fileName": "nebulaic.swf", "width": 600, "height": 600 },
-		"image": { "fileName": "nebulaic.gif", "animated": true },
+		"code": { "width": 600, "height": 600 },
+		"image": { "animated": true },
 		"backgroundColor": "#000"
 	},
 	"physics-engine": {
@@ -167,8 +163,8 @@
 		"description": "The beginnings of my first ever physics engine.",
 		"date": "2006",
 		"type": "flash",
-		"code": { "fileName": "physics-engine.swf", "width": 550, "height": 400 },
-		"image": { "fileName": "physics-engine.gif", "animated": true, "touchesEdges": true },
+		"code": { "width": 550, "height": 400 },
+		"image": { "animated": true, "touchesEdges": true },
 		"backgroundColor": "#fff"
 	},
 	"efflorescence": {
@@ -176,8 +172,8 @@
 		"description": "An extremely esoteric math game. Click the stems of fruits to make them fall to the ground.",
 		"date": "2005",
 		"type": "flash",
-		"code": { "fileName": "efflorescence.swf", "width": 800, "height": 400 },
-		"image": { "fileName": "efflorescence.gif", "animated": true, "touchesEdges": true },
+		"code": { "width": 800, "height": 400 },
+		"image": { "animated": true, "touchesEdges": true },
 		"backgroundColor": "#74efdc"
 	},
 	"mindsweeper": {
@@ -185,8 +181,8 @@
 		"description": "An experimental take on Minesweeper for <a href=\"http://playwithyourmind.com/\" target=\"_blank\">Play With Your Mind</a>.",
 		"date": "2005",
 		"type": "flash",
-		"code": { "fileName": "mindsweeper.swf", "width": 575, "height": 525 },
-		"image": { "fileName": "mindsweeper.gif", "animated": true, "touchesEdges": true },
+		"code": { "width": 575, "height": 525 },
+		"image": { "animated": true, "touchesEdges": true },
 		"backgroundColor": "#000"
 	},
 	"virtual-pet": {
@@ -194,8 +190,8 @@
 		"description": "Animation test for a virtual pet game.",
 		"date": "2004",
 		"type": "flash",
-		"code": { "fileName": "virtual-pet.swf", "width": 550, "height": 400 },
-		"image": { "fileName": "virtual-pet.gif", "animated": true, "touchesEdges": true },
+		"code": { "width": 550, "height": 400 },
+		"image": { "animated": true, "touchesEdges": true },
 		"backgroundColor": "#fff"
 	}
 }

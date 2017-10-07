@@ -1,4 +1,5 @@
 import addMetadata from './addMetadata';
+import processProjectImages from './processProjectImages';
 import buildSpriteSheet from './buildSpriteSheet';
 import determineGridSizes from './determineGridSizes';
 import buildGrid from './buildGrid';
@@ -10,12 +11,12 @@ export default async (galleryData, projects) => {
 	let proxies = await addMetadata(galleryData, projects);
 	console.log('  Determining grid sizes...');
 	await determineGridSizes(galleryData, projects);
+	console.log('  Processing project images...');
+	await processProjectImages(galleryData, projects);
 	console.log('  Building spritesheet...');
 	await buildSpriteSheet(galleryData, projects);
-	if (galleryData.galleryType === 'binpacked-grid') {
-		console.log('  Building grid...');
-		await buildGrid(projects);
-	}
+	console.log('  Building grid...');
+	await buildGrid(projects);
 	console.log('  Building gallery html...');
 	await buildGalleryHtml(galleryData, projects);
 	console.log('  Building project html...');
