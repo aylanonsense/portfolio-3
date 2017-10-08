@@ -9,12 +9,12 @@ rimraf('build', () => {
 	fs.mkdirSync('build');
 	fs.mkdirSync('build/html');
 	fs.mkdirSync('build/sprite-sheets');
-	fs.mkdirSync('build/rescaled-images');
+	fs.mkdirSync('build/deanimated-images');
 	for (let [ section, sectionData ] of Object.entries(config.sections)) {
 		if (sectionData.isGallery) {
 			fs.mkdirSync(`build/html/${sectionData.uri}`);
 			fs.mkdirSync(`build/sprite-sheets/${sectionData.uri}`);
-			fs.mkdirSync(`build/rescaled-images/${sectionData.uri}`);
+			fs.mkdirSync(`build/deanimated-images/${sectionData.uri}`);
 		}
 	}
 	console.log('  Done!');

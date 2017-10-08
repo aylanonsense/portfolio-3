@@ -55,13 +55,13 @@ export default async (galleryData, projects) => {
 						- (projectData.isPixelArt ? pixelArtPenalty : penalty);
 					if (projectData.grid) {
 						if (projectData.grid.cols && cols === projectData.grid.cols) {
-							fitness += 1;
+							fitness += 100;
 						}
 						if (projectData.grid.rows && rows === projectData.grid.rows) {
-							fitness += 1;
+							fitness += 100;
 						}
 						if (projectData.grid.scale && scale === projectData.grid.scale) {
-							fitness += 1;
+							fitness += 100;
 						}
 					}
 					if (!bestFit || bestFit.fitness < fitness) {

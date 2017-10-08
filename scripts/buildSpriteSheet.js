@@ -19,20 +19,22 @@ export default async (galleryData, projects) => {
 		let projectData = projects[project];
 		// draw the project's image into the spritesheet
 		if (config.saveImages) {
-			let image = await loadImage(projectData.image.rescaled.path);
+			let image = await loadImage(projectData.image.animated ? projectData.image.deanimated.path : projectData.image.raw.path);
 			ctx.fillStyle = projectData.backgroundColor;
 			ctx.fillRect(bin.fillX, bin.fillY, bin.fillWidth, bin.fillHeight);
-			ctx.drawImage(image, 0, 0, bin.width, bin.height, bin.x, bin.y, bin.width, bin.height);
+			ctx.drawImage(image,
+				bin.sourceX, bin.sourceY, bin.sourceWidth, bin.sourceHeight,
+				bin.targetX, bin.targetY, bin.targetWidth, bin.targetHeight);
 		}
 		// save the metadata to the project
-		let scale = projectData.grid.scale;
+		let scale = Math.max(1, projectData.grid.scale);
 		projectData.image.gallery = {
 			path: spriteSheetPath,
 			uri: spriteSheetUri,
-			x: scale * bin.x,
-			y: scale * bin.y,
-			width: scale * bin.width,
-			height: scale * bin.height,
+			x: scale * bin.targetX,
+			y: scale * bin.targetY,
+			width: scale * bin.targetWidth,
+			height: scale * bin.targetHeight,
 			sheetWidth: scale * width,
 			sheetHeight: scale * height
 		};
