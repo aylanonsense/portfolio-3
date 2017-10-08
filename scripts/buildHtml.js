@@ -165,7 +165,7 @@ export async function buildGalleryHtml(galleryData, projects) {
 	}
 	let view = {
 		...galleryData,
-		projects: Object.values(projects),
+		projects: Object.values(projects).filter(projectData => !projectData.hidden),
 		showSubheading: true,
 		navInHeader: false,
 		showFooterText: true,
@@ -180,9 +180,10 @@ export async function buildGalleryHtml(galleryData, projects) {
 	scripts.push(assets.scripts.gallery);
 	styles.push(assets.styles.gallery);
 	view.projectsJSON = JSON.stringify(Object.values(projects)
+		.filter(projectData => !projectData.hidden)
 		.map(projectData => [ projectData.id, projectData.grid.coordinates ]));
 	view.animatedProjectsJSON = JSON.stringify(Object.values(projects)
-		.filter(projectData => projectData.image.animated)
+		.filter(projectData => projectData.image.animated && !projectData.hidden)
 		.map(projectData => [ projectData.id, projectData.grid.scale, projectData.image.raw.uri ]));
 	await buildHtml(`build/html/${galleryData.uri}.html`, view, content, scripts, styles);
 }

@@ -77,6 +77,16 @@
 		"image": { "animated": true },
 		"backgroundColor": "#fff7ef"
 	},
+	"beevoobaa": {
+		"title": "beevoobaa",
+		"description": "A multiplayer beach volleyball simulation.",
+		"date": "2015/05",
+		"type": "proxy",
+		"proxy": { "port": 3010, "width": 500, "height": 500 },
+		"image": { "animated": true },
+		"backgroundColor": "#222",
+		"hidden": true
+	},
 	"processing-sketchbook": {
 		"title": "Processing sketchbook",
 		"description": "Some doodles to get acquainted with Processing.",

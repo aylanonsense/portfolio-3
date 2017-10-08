@@ -49,6 +49,7 @@
 	"abbreviateMonths": true,
 	"dateDelimeter": "to",
 	"siteBackgroundColor": "#fff",
+	"saveImages": true,
 	"showVerboseLogging": false,
 	"showDebugColors": false
 }

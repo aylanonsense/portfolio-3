@@ -1,5 +1,6 @@
 import fs from 'fs';
 import Canvas from 'canvas';
+import config from '../data/config';
 import loadImage from './helper/loadImage';
 import saveCanvas from './helper/saveCanvas';
 import packProjectImages from './packProjectImages';
@@ -17,10 +18,12 @@ export default async (galleryData, projects) => {
 		let project = bin.project;
 		let projectData = projects[project];
 		// draw the project's image into the spritesheet
-		let image = await loadImage(projectData.image.rescaled.path);
-		ctx.fillStyle = projectData.backgroundColor;
-		ctx.fillRect(bin.fillX, bin.fillY, bin.fillWidth, bin.fillHeight);
-		ctx.drawImage(image, 0, 0, bin.width, bin.height, bin.x, bin.y, bin.width, bin.height);
+		if (config.saveImages) {
+			let image = await loadImage(projectData.image.rescaled.path);
+			ctx.fillStyle = projectData.backgroundColor;
+			ctx.fillRect(bin.fillX, bin.fillY, bin.fillWidth, bin.fillHeight);
+			ctx.drawImage(image, 0, 0, bin.width, bin.height, bin.x, bin.y, bin.width, bin.height);
+		}
 		// save the metadata to the project
 		let scale = projectData.grid.scale;
 		projectData.image.gallery = {
@@ -35,5 +38,7 @@ export default async (galleryData, projects) => {
 		};
 	}
 	// save the spritesheet
-	await saveCanvas(spriteSheetPath, canvas);
+	if (config.saveImages) {
+		await saveCanvas(spriteSheetPath, canvas);
+	}
 };

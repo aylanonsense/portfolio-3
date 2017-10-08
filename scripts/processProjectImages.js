@@ -38,11 +38,13 @@ export default async (galleryData, projects) => {
 			}
 			// save a rescaled (and deanimated) version
 			let rescaledPath = `build/rescaled-images/${galleryData.uri}/${projectData.image.file}`;
-			await saveProcessedImage(projectData.image.raw.path, rescaledPath, {
-				deanimate: projectData.image.animated,
-				resize: resize,
-				crop: crop
-			});
+			if (config.saveImages) {
+				await saveProcessedImage(projectData.image.raw.path, rescaledPath, {
+					deanimate: projectData.image.animated,
+					resize: resize,
+					crop: crop
+				});
+			}
 			projectData.image.rescaled = { path: rescaledPath, width, height };
 			// determine how big the image will be on the project page
 			scale = Math.max(1, Math.min(Math.floor(Math.min(550 / projectData.image.raw.width, 600 / projectData.image.raw.height)), 6));

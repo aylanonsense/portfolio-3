@@ -34,9 +34,11 @@ function packProjectsIntoGrid(projects, numCols) {
 	}
 	let projectCoordinates = {};
 	for (let projectData of projectArr) {
-		let { col, row, newNumRows } = findSpaceInGrid(projectData, grid, numCols, numRows);
-		projectCoordinates[projectData.project] = { col, row };
-		numRows = newNumRows;
+		if (!projectData.hidden) {
+			let { col, row, newNumRows } = findSpaceInGrid(projectData, grid, numCols, numRows);
+			projectCoordinates[projectData.project] = { col, row };
+			numRows = newNumRows;
+		}
 	}
 	return { numRows, projectCoordinates, grid };
 }
@@ -84,19 +86,23 @@ function calcFitness(projects, grid, numCols, numRows) {
 
 export default async projects => {
 	for (let [ project, projectData ] of Object.entries(projects)) {
-		projectData.grid.coordinates = [];
+		if (!projectData.hidden) {
+			projectData.grid.coordinates = [];
+		}
 	}
 	// for each possible number of columns
 	for (let numCols = config.grid.minCols; numCols <= config.grid.maxCols; numCols += config.grid.colStep) {
 		// pack the projects into a grid with that many columns
 		let { numRows, projectCoordinates } = repeatedlyPackProjectsIntoGrid(projects, numCols, config.grid.packAttempts);
 		for (let [ project, projectData ] of Object.entries(projects)) {
-			// add that metadata onto each project
-			let { col, row } = projectCoordinates[project];
-			projectData.grid.coordinates.push(col + 1, row + 1);
-			if (numCols === config.grid.defaultCols) {
-				projectData.grid.colStart = col + 1;
-				projectData.grid.rowStart = row + 1;
+			if (!projectData.hidden) {
+				// add that metadata onto each project
+				let { col, row } = projectCoordinates[project];
+				projectData.grid.coordinates.push(col + 1, row + 1);
+				if (numCols === config.grid.defaultCols) {
+					projectData.grid.colStart = col + 1;
+					projectData.grid.rowStart = row + 1;
+				}
 			}
 		}
 	}

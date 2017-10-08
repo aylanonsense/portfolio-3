@@ -23,6 +23,7 @@ export default async (galleryData, projects) => {
 		projectData.project = project;
 		projectData.id = `project-${project}`;
 		projectData.uri = `/${galleryData.uri}/${project}`;
+		projectData.hidden = projectData.hidden || false;
 		projectData.priority = projectData.priority || 0;
 		projectData.shortDescription = projectData.shortDescription || projectData.description;
 		projectData.descriptionStripped = projectData.description ? striptags(projectData.description) : null;
