@@ -39,6 +39,15 @@
 		"backgroundColor": "#000",
 		"isPixelArt": true
 	},
+	"yam-thingy": {
+		"title": "YAM Thingy",
+		"description": "Multiplayer tech demo showcasing client-side prediction. Arrow keys to move, Space to push blocks.",
+		"date": "2015/05",
+		"type": "proxy",
+		"proxy": { "port": 3011, "width": 600, "height": 400 },
+		"image": { "animated": true },
+		"backgroundColor": "#000"
+	},
 	"racquet-panic": {
 		"title": "Racquet Panic",
 		"description": "Breakout but with a tennis player. Left/Right to move, Z to forehand, Up + Z to spike, Down + Z to lob.",
@@ -84,8 +93,7 @@
 		"type": "proxy",
 		"proxy": { "port": 3010, "width": 600, "height": 450 },
 		"image": { "animated": true },
-		"backgroundColor": "#222",
-		"hidden": true
+		"backgroundColor": "#222"
 	},
 	"processing-sketchbook": {
 		"title": "Processing sketchbook",
