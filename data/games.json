@@ -79,10 +79,10 @@
 	},
 	"beevoobaa": {
 		"title": "beevoobaa",
-		"description": "A multiplayer beach volleyball simulation.",
+		"description": "A multiplayer beach volleyball simulation. Left/Right to move, Space to jump, Z/X to swing.",
 		"date": "2015/05",
 		"type": "proxy",
-		"proxy": { "port": 3010, "width": 500, "height": 500 },
+		"proxy": { "port": 3010, "width": 600, "height": 450 },
 		"image": { "animated": true },
 		"backgroundColor": "#222",
 		"hidden": true
