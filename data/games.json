@@ -77,8 +77,8 @@
 		"image": { "animated": true },
 		"backgroundColor": "#000"
 	},
-	"grapple-game": {
-		"title": "Grapple Game",
+	"grapple-debug": {
+		"title": "Grapple Debug",
 		"description": "Debug playground for a platformer featuring a grappling hook. WASD to move, Space to jump, Click and hold to grapple, Shift to pull grapple.",
 		"date": "2015/11",
 		"type": "proxy",
@@ -148,6 +148,15 @@
 		"code": { "width": 400, "height": 400 },
 		"image": { "animated": true },
 		"backgroundColor": "#e5ffdb"
+	},
+	"grapple-game": {
+		"title": "Grapple Game",
+		"description": "A platforming game featuring a grappling hook. WASD to move, Space to jump, Click to grapple, Shift to pull grapple.",
+		"date": "2014/02",
+		"type": "proxy",
+		"proxy": { "port": 3012, "width": 600, "height": 450 },
+		"image": { "animated": true },
+		"backgroundColor": "#fff"
 	},
 	"zombie-aflockalypse": {
 		"title": "Zombie Aflockalypse",
