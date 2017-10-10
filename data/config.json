@@ -46,6 +46,7 @@
 		"googleTagManagerId": "GTM-TPMZL3J"
 	},
 	"minify": true,
+	"compressionLevel": 3,
 	"abbreviateMonths": true,
 	"dateDelimeter": "to",
 	"siteBackgroundColor": "#fff",

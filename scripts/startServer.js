@@ -1,5 +1,6 @@
 import path from 'path';
 import express from 'express';
+import compression from 'compression';
 import proxy from 'express-http-proxy';
 import config from '../data/config.json';
 import loadFile from './helper/loadFile';
@@ -9,10 +10,29 @@ function send404(res) {
 	res.send('Not found');
 }
 
+function addHtmlHeaders(res) {
+	res.set('Content-Security-Policy',
+		'default-src \'self\';' +
+		'style-src \'self\' \'unsafe-inline\';' +
+		'script-src \'self\' https://www.googletagmanager.com http://www.google-analytics.com \'unsafe-inline\';' +
+		'img-src \'self\' http://www.google-analytics.com;');
+	res.set('X-Frame-Options', 'DENY');
+	res.set('X-XSS-Protection', '1; mode=block');
+}
+
 export default async () => {
 	console.log('Starting server');
 	// create a new app
 	const app = express();
+
+	// compress anything you can!
+	app.use(compression({ level: config.compressionLevel }));
+
+	// add a nosniff header to all responses
+	app.use((req, res, next) => {
+		res.set('X-Content-Type-Options', 'nosniff');
+		next();
+	});
 
 	// requests for .html files will 404
 	app.get(/.*\.html/, (req, res) => send404(res));
@@ -21,7 +41,10 @@ export default async () => {
 	for (let [ section, sectionData ] of Object.entries(config.sections)) {
 		let uri = sectionData.uri;
 		let filePath = path.join(__dirname, '..', 'build/html', `${uri}.html`);
-		app.get(`/${uri}`, (req, res) => res.sendFile(filePath));
+		app.get(`/${uri}`, (req, res) => {
+			addHtmlHeaders(res);
+			res.sendFile(filePath);
+		});
 	}
 
 	// requests for images
@@ -52,8 +75,14 @@ export default async () => {
 	// requests for html files
 	app.use(express.static('build/html', {
 		extensions: [ 'html' ],
-		index: `${config.sections[config.defaultSection].uri}.html`
+		index: `${config.sections[config.defaultSection].uri}.html`,
+		setHeaders: addHtmlHeaders
 	}));
+
+	// requests for robots.txt (allow all traffic)
+	app.get('/robots.txt', (req, res) => {
+		res.send('User-agent: *\nDisallow:');
+	});
 
 	// any requests that don't match any of the above should 404
 	app.use((req, res) => send404(res));
