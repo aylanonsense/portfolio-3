@@ -1,4 +1,12 @@
 {
+	"beet": {
+		"title": "Beet",
+		"description": "A laughing beet. No reason.",
+		"date": "2017/10",
+		"priority": 10,
+		"grid": { "scale": 2 },
+		"backgroundColor": "#ffd5c5"
+	},
 	"match-three": {
 		"title": "Match Three",
 		"description": "Concept art for a hypothetical game. Inspired by <a href=\"https://twitter.com/Pixel_Dailies\" target=\"_blank\">Pixel Dailies</a> prompt for #MatchThree.",
