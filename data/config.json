@@ -38,7 +38,7 @@
 		"packAttempts": 1000
 	},
 	"nav": [ "pixels", "games" ],
-	"defaultSection": "pixels",
+	"index": "pixels",
 	"external": {
 		"githubUri": "https://github.com/bridgs",
 		"twitterUri": "https://twitter.com/bridgs_dev",

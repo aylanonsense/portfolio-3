@@ -1,3 +1,4 @@
+import config from '../data/config.json';
 import addMetadata from './addMetadata';
 import processProjectImages from './processProjectImages';
 import buildSpriteSheet from './buildSpriteSheet';
@@ -19,6 +20,12 @@ export default async (galleryData, projects) => {
 	await buildGrid(projects);
 	console.log('  Building gallery html...');
 	await buildGalleryHtml(galleryData, projects);
+	if (config.index === galleryData.section) {
+		await buildGalleryHtml(galleryData, projects, {
+			title: null,
+			uri: 'index'
+		});
+	}
 	console.log('  Building project html...');
 	for (let [ project, projectData ] of Object.entries(projects)) {
 		await buildProjectHtml(galleryData, projectData);

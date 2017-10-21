@@ -9,6 +9,8 @@
     "build-and-serve": "babel-node build-and-serve.js --presets env",
     "build-and-serve:watch": "nodemon build-and-serve.js --exec babel-node --presets env",
     "clean": "babel-node clean.js --presets env",
+    "serve": "babel-node server.js --presets env",
+    "serve:watch": "nodemon server.js --exec babel-node --presets env",
     "server": "babel-node server.js --presets env",
     "server:watch": "nodemon server.js --exec babel-node --presets env"
   },

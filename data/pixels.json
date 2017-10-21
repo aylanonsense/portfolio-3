@@ -1,4 +1,29 @@
 {
+	"self-portrait": {
+		"title": "Self Portrait",
+		"description": "A laughing beet. No reason.",
+		"date": "2017/10",
+		"priority": 10,
+		"backgroundColor": "#fff8dd"
+	},
+	"couch": {
+		"title": "Couch",
+		"description": "3D model of a couch. Not quite pixel art... but eh.",
+		"date": "2017/10",
+		"image": { "animated": true },
+		"priority": 10,
+		"backgroundColor": "#fcf5e7",
+		"isPixelArt": false
+	},
+	"beach-supplies": {
+		"title": "Beach Supplies",
+		"description": "My first ever 3D models. Ready for the beach!",
+		"date": "2017/10",
+		"image": { "animated": true },
+		"priority": 10,
+		"backgroundColor": "#ffe16c",
+		"isPixelArt": false
+	},
 	"beet": {
 		"title": "Beet",
 		"description": "A laughing beet. No reason.",

@@ -75,7 +75,7 @@ export default async () => {
 	// requests for html files
 	app.use(express.static('build/html', {
 		extensions: [ 'html' ],
-		index: `${config.sections[config.defaultSection].uri}.html`,
+		index: 'index.html',
 		setHeaders: addHtmlHeaders
 	}));
 

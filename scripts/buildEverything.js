@@ -8,6 +8,9 @@ import addMetadata from './addMetadata';
 import { buildProjectHtml } from './buildHtml';
 
 export default async () => {
+	for(let [ section, sectionData ] of Object.entries(config.sections)) {
+		sectionData.section = section;
+	}
 	let proxies = {
 		...(await buildGallery(config.sections.pixels, pixels)),
 		...(await buildGallery(config.sections.games, games))

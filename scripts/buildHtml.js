@@ -159,7 +159,7 @@ async function loadAssets() {
 	};
 }
 
-export async function buildGalleryHtml(galleryData, projects) {
+export async function buildGalleryHtml(galleryData, projects, options) {
 	if (!hasLoadedAssets) {
 		await loadAssets();
 	}
@@ -171,21 +171,19 @@ export async function buildGalleryHtml(galleryData, projects) {
 		showFooterText: true,
 		minBodyWidth: 320,
 		minBodyHeight: null,
-		mainWidth: null
+		mainWidth: null,
+		projectsJSON: JSON.stringify(Object.values(projects)
+			.filter(projectData => !projectData.hidden)
+			.map(projectData => [ projectData.id, projectData.grid.coordinates ])),
+		animatedProjectsJSON: JSON.stringify(Object.values(projects)
+			.filter(projectData => projectData.image.animated && !projectData.hidden)
+			.map(projectData => [ projectData.id, projectData.grid.scale, projectData.image.raw.uri ])),
+		...options
 	};
-	let content = null;
-	let scripts = [];
+	let content = assets.content.gallery;
+	let scripts = [ assets.scripts.gallery ];
 	let styles = [ assets.styles.universal, assets.styles.gallery, assets.styles.fontRaleway ];
-	content = assets.content.gallery;
-	scripts.push(assets.scripts.gallery);
-	styles.push(assets.styles.gallery);
-	view.projectsJSON = JSON.stringify(Object.values(projects)
-		.filter(projectData => !projectData.hidden)
-		.map(projectData => [ projectData.id, projectData.grid.coordinates ]));
-	view.animatedProjectsJSON = JSON.stringify(Object.values(projects)
-		.filter(projectData => projectData.image.animated && !projectData.hidden)
-		.map(projectData => [ projectData.id, projectData.grid.scale, projectData.image.raw.uri ]));
-	await buildHtml(`build/html/${galleryData.uri}.html`, view, content, scripts, styles);
+	await buildHtml(`build/html/${view.uri}.html`, view, content, scripts, styles);
 }
 
 export async function buildProjectHtml(galleryData, projectData) {
