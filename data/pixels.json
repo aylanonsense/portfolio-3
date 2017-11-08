@@ -1,4 +1,11 @@
 {
+	"cosmic-skeleton": {
+		"title": "Cosmic Skeleton",
+		"description": "A cosmic skeleton using the PICO-8 palette.",
+		"date": "2017/11",
+		"priority": 10,
+		"backgroundColor": "#000"
+	},
 	"self-portrait": {
 		"title": "Self Portrait",
 		"description": "A laughing beet. No reason.",
