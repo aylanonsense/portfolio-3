@@ -13,7 +13,8 @@ export default async () => {
 	}
 	let proxies = {
 		...(await buildGallery(config.sections.pixels, pixels)),
-		...(await buildGallery(config.sections.games, games))
+		...(await buildGallery(config.sections.games, games)),
+		'/slides/pixel-art': 3013
 	};
 	saveFile('build/proxies.json', JSON.stringify(proxies, null, '\t'));
 };

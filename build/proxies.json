@@ -10,5 +10,6 @@
 	"/games/paradox-anomaly/proxy": 3002,
 	"/games/boss-rush/proxy": 3006,
 	"/games/spider-game/proxy": 3008,
-	"/games/grapple-game/proxy": 3012
+	"/games/grapple-game/proxy": 3012,
+	"/slides/pixel-art": 3013
 }
