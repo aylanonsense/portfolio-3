@@ -1,0 +1,10 @@
+{
+	"pixel-art": {
+		"type": "proxy",
+		"proxy": { "port": 3013 }
+	},
+	"networking-games": {
+		"type": "proxy",
+		"proxy": { "port": 3014 }
+	}
+}

@@ -2,6 +2,7 @@ import buildGallery from './buildGallery';
 import config from '../data/config.json';
 import pixels from '../data/pixels.json';
 import games from '../data/games.json';
+import slides from '../data/slides.json';
 import saveFile from './helper/saveFile';
 
 import addMetadata from './addMetadata';
@@ -13,8 +14,9 @@ export default async () => {
 	}
 	let proxies = {
 		...(await buildGallery(config.sections.pixels, pixels)),
-		...(await buildGallery(config.sections.games, games)),
-		'/slides/pixel-art': 3013
+		...(await buildGallery(config.sections.games, games))
 	};
-	saveFile('build/proxies.json', JSON.stringify(proxies, null, '\t'));
+	for(let [ slide, slideData ] of Object.entries(slides)) {
+		proxies[`/slides/${slide}`] = slideData.proxy.port;
+	}
 };
