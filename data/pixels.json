@@ -1,4 +1,12 @@
 {
+	"mirror-intro": {
+		"title": "Mirror Intro",
+		"description": "A magic mirror for a PICO-8 boss fight.",
+		"date": "2017/12",
+		"priority": 10,
+		"image": { "animated": true, "touchesEdges": true },
+		"backgroundColor": "#000"
+	},
 	"cosmic-skeleton": {
 		"title": "Cosmic Skeleton",
 		"description": "A cosmic skeleton using the PICO-8 palette.",

@@ -1,4 +1,15 @@
 {
+	"curse-collector": {
+		"title": "Curse Collector",
+		"description": "Quick little game submitted to <a href=\"https://ldjam.com/events/ludum-dare/40\">Ludum Dare 40</a>, a 72 hour game jam. Arrow keys to move, Z to attack.",
+		"date": "2017/12",
+		"type": "pico-8",
+		"image": { "animated": true, "touchesEdges": false },
+		"grid": { "cols": 4, "rows": 2 },
+		"priority": 5,
+		"backgroundColor": "#000",
+		"isPixelArt": true
+	},
 	"minepick-platformer": {
 		"title": "Minepick Platformer",
 		"description": "Test for a platformer where you can lodge a minepike into walls. Left/Right to move, X to jump, Z to swing.",
