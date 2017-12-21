@@ -248,5 +248,5 @@ async function buildHtml(uri, view, content, scripts, styles) {
 		scripts: scripts.join('\n'),
 		styles: styles.join('\n')
 	});
-	await saveFile(uri, config.minify ? minify(html, minifyOptions) : html);
+	await saveFile(uri, config.minify && !config.quickBuild ? minify(html, minifyOptions) : html);
 }

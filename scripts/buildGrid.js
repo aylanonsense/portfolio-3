@@ -93,7 +93,8 @@ export default async projects => {
 	// for each possible number of columns
 	for (let numCols = config.grid.minCols; numCols <= config.grid.maxCols; numCols += config.grid.colStep) {
 		// pack the projects into a grid with that many columns
-		let { numRows, projectCoordinates } = repeatedlyPackProjectsIntoGrid(projects, numCols, config.grid.packAttempts);
+		let numPackAttempts = (config.quickBuild ? 1 : config.grid.packAttempts);
+		let { numRows, projectCoordinates } = repeatedlyPackProjectsIntoGrid(projects, numCols, numPackAttempts);
 		for (let [ project, projectData ] of Object.entries(projects)) {
 			if (!projectData.hidden) {
 				// add that metadata onto each project

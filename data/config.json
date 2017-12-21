@@ -1,4 +1,5 @@
 {
+	"quickBuild": true,
 	"siteName": "bridgs",
 	"siteSubheading": "I make games and schtuff!",
 	"siteDescription": "Pixel art and indie games created by Ayla Myers a.k.a bridgs.",
@@ -22,6 +23,11 @@
 					"cols": 2, "rows": 2
 				}
 			}
+		},
+		"blog": {
+			"title": "Blog",
+			"uri": "blog",
+			"isGallery": false
 		}
 	},
 	"grid": {

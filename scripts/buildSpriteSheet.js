@@ -18,7 +18,7 @@ export default async (galleryData, projects) => {
 		let project = bin.project;
 		let projectData = projects[project];
 		// draw the project's image into the spritesheet
-		if (config.saveImages) {
+		if (config.saveImages && !config.quickBuild) {
 			let image = await loadImage(projectData.image.animated ? projectData.image.deanimated.path : projectData.image.raw.path);
 			ctx.fillStyle = projectData.backgroundColor;
 			ctx.fillRect(bin.fillX, bin.fillY, bin.fillWidth, bin.fillHeight);

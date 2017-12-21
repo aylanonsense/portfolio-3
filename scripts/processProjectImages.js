@@ -14,7 +14,7 @@ export default async (galleryData, projects) => {
 		if (projectData.image) {
 			// save a deanimated version of animated images
 			let deanimatedPath = `build/deanimated-images/${galleryData.uri}/${projectData.image.file}`;
-			if (config.saveImages) {
+			if (config.saveImages && !config.quickBuild) {
 				await saveDeanimatedImage(projectData.image.raw.path, deanimatedPath);
 			}
 			projectData.image.deanimated = {
