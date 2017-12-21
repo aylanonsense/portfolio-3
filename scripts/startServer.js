@@ -47,6 +47,9 @@ export default async () => {
 		});
 	}
 
+	// requests for favicons
+	app.use(express.static('web-assets/favicons'));
+
 	// requests for images
 	app.use(express.static('web-assets/images'));
 

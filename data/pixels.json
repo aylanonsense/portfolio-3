@@ -1,4 +1,10 @@
 {
+	"macaroon": {
+		"title": "Macaroon",
+		"description": "A little macaroon (and the favicon of this site).",
+		"date": "2017/12",
+		"backgroundColor": "#fff"
+	},
 	"mirror-intro": {
 		"title": "Mirror Intro",
 		"description": "A magic mirror for a PICO-8 boss fight.",
