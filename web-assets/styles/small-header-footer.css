@@ -1,0 +1,17 @@
+header {
+	padding: 10px 0;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+h1 {
+	padding: 0 0 0 20px;
+	position: relative;
+	top: -3px;
+	font-size: 200%;
+}
+footer {
+	width: 100%;
+	padding: 10px 0;
+}

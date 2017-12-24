@@ -31,7 +31,7 @@
     ]
   },
   "nodemonConfig": {
-    "ext": "js,json,mustache,css,svg",
+    "ext": "js,json,mustache,css,svg,html",
     "ignore": "build/"
   },
   "dependencies": {

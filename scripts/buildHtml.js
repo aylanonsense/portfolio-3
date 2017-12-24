@@ -155,6 +155,9 @@ async function loadAssets() {
 			pico8: await loadFile('web-assets/styles/pico-8.css'),
 			proxy: await loadFile('web-assets/styles/proxy.css'),
 			fontRaleway: await loadFile('web-assets/styles/font-raleway.css'),
+			fullHeaderFooter: await loadFile('web-assets/styles/full-header-footer.css'),
+			smallHeaderFooter: await loadFile('web-assets/styles/small-header-footer.css'),
+			blogPost: await loadFile('web-assets/styles/blog-post.css')
 		},
 	};
 }
@@ -182,7 +185,7 @@ export async function buildGalleryHtml(galleryData, projects, options) {
 	};
 	let content = assets.content.gallery;
 	let scripts = [ assets.scripts.gallery ];
-	let styles = [ assets.styles.universal, assets.styles.gallery, assets.styles.fontRaleway ];
+	let styles = [ assets.styles.universal, assets.styles.fullHeaderFooter, assets.styles.gallery, assets.styles.fontRaleway ];
 	await buildHtml(`build/html/${view.uri}.html`, view, content, scripts, styles);
 }
 
@@ -200,7 +203,7 @@ export async function buildProjectHtml(galleryData, projectData) {
 	};
 	let content = null;
 	let scripts = [];
-	let styles = [ assets.styles.universal, assets.styles.project, assets.styles.fontRaleway ];
+	let styles = [ assets.styles.universal, assets.styles.smallHeaderFooter, assets.styles.project, assets.styles.fontRaleway ];
 	// change project defaults for each project type
 	if (projectData.type === "image") {
 		content = assets.content.image;
@@ -236,6 +239,26 @@ export async function buildProjectHtml(galleryData, projectData) {
 	}
 	await buildHtml(`build/html/${galleryData.uri}/${projectData.project}.html`, view, content, scripts, styles);
 };
+
+export async function buildBlogPostHtml(blogData, postData) {
+	if (config.showVerboseLogging) { console.log(`    Building ${postData.post} html...`); }
+	if (!hasLoadedAssets) {
+		await loadAssets();
+	}
+	let view = {
+		...postData,
+		showSubheading: false,
+		navInHeader: true,
+		showFooterText: false,
+		minBodyWidth: 320,
+		minBodyHeight: null,
+		mainWidth: null,
+	};
+	let content = postData.html.content;
+	let scripts = [ ];
+	let styles = [ assets.styles.universal, assets.styles.smallHeaderFooter, assets.styles.blogPost, assets.styles.fontRaleway ];
+	await buildHtml(`build/html/${blogData.uri}/${postData.post}.html`, view, content, scripts, styles);
+}
 
 async function buildHtml(uri, view, content, scripts, styles) {
 	let html = Mustache.render(assets.templates.base, {
