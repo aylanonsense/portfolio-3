@@ -1,4 +1,13 @@
 {
+	"tubin-down-a-river": {
+		"title": "TUBIN' DOWN A RIVER",
+		"description": "Submission for <a href=\"https://itch.io/jam/flatgame-annual-2017\" target=\"_blank\">Flatjam 2017</a>, use the WASD keys to (slightly) control your tube as it floats lazily down a river of imagination.",
+		"date": "2018/01",
+		"type": "proxy",
+		"proxy": { "port": 3015, "width": 700, "height": 500 },
+		"image": { "animated": true },
+		"backgroundColor": "#f9ede5"
+	},
 	"curse-collector": {
 		"title": "Curse Collector",
 		"description": "Quick little game submitted to <a href=\"https://ldjam.com/events/ludum-dare/40\">Ludum Dare 40</a>, a 72 hour game jam. Arrow keys to move, Z to attack.",

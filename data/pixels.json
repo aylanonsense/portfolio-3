@@ -1,4 +1,12 @@
 {
+	"chocolates": {
+		"title": "Chocolates",
+		"description": "Some tasty chocolates for a <a href=\"http://pixeljoint.com/pixels/challenge_item.asp?id=1607\" target=\"_blank\">Pixel Joint weekly challenge</a>.",
+		"date": "2017/12",
+		"priority": 10,
+		"image": { "touchesEdges": true },
+		"backgroundColor": "#320008"
+	},
 	"macaroon": {
 		"title": "Macaroon",
 		"description": "A little macaroon (and the favicon of this site).",
@@ -17,7 +25,6 @@
 		"title": "Cosmic Skeleton",
 		"description": "A cosmic skeleton using the PICO-8 palette.",
 		"date": "2017/11",
-		"priority": 10,
 		"backgroundColor": "#000"
 	},
 	"self-portrait": {
@@ -32,7 +39,6 @@
 		"description": "3D model of a couch. Not quite pixel art... but eh.",
 		"date": "2017/10",
 		"image": { "animated": true },
-		"priority": 10,
 		"backgroundColor": "#fcf5e7",
 		"isPixelArt": false
 	},
@@ -41,7 +47,6 @@
 		"description": "My first ever 3D models. Ready for the beach!",
 		"date": "2017/10",
 		"image": { "animated": true },
-		"priority": 10,
 		"backgroundColor": "#ffe16c",
 		"isPixelArt": false
 	},
@@ -49,7 +54,6 @@
 		"title": "Beet",
 		"description": "A laughing beet. No reason.",
 		"date": "2017/10",
-		"priority": 10,
 		"grid": { "scale": 2 },
 		"backgroundColor": "#ffd5c5"
 	},
@@ -58,7 +62,6 @@
 		"description": "Concept art for a hypothetical game. Inspired by <a href=\"https://twitter.com/Pixel_Dailies\" target=\"_blank\">Pixel Dailies</a> prompt for #MatchThree.",
 		"date": "2017/09",
 		"image": { "animated": true },
-		"priority": 10,
 		"backgroundColor": "#000"
 	},
 	"west-showcase": {
@@ -67,7 +70,6 @@
 		"date": "2017/09",
 		"image": { "animated": true },
 		"grid": { "cols": 4, "rows": 1, "scale": 2 },
-		"priority": 5,
 		"backgroundColor": "#000"
 	},
 	"west-lighting": {

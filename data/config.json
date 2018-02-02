@@ -1,5 +1,5 @@
 {
-	"quickBuild": true,
+	"quickBuild": false,
 	"siteName": "bridgs",
 	"siteSubheading": "I make games and schtuff!",
 	"siteDescription": "Pixel art and indie games created by Ayla Myers a.k.a bridgs.",
@@ -43,7 +43,7 @@
 		"maxItemRows": 6,
 		"packAttempts": 1000
 	},
-	"nav": [ "pixels", "games", "blog" ],
+	"nav": [ "pixels", "games" ],
 	"index": "pixels",
 	"external": {
 		"githubUri": "https://github.com/bridgs",
