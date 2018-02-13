@@ -58,7 +58,7 @@ footer p {
 	margin: 0;
 	padding: 0;
 }
-footer a {
+footer a.icon {
 	text-decoration: none;
 }
 .screen-reader-only {

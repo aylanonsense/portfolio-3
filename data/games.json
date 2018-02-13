@@ -1,4 +1,15 @@
 {
+	"just-one-boss": {
+		"title": "Just One Boss",
+		"description": "A duel against a charming opponent! Use the arrow keys to move your lil' blob.",
+		"date": "2018/02",
+		"type": "pico-8",
+		"image": { "animated": true, "touchesEdges": true },
+		"grid": { "cols": 4, "rows": 4 },
+		"priority": 10,
+		"backgroundColor": "#000",
+		"isPixelArt": true
+	},
 	"tubin-down-a-river": {
 		"title": "TUBIN' DOWN A RIVER",
 		"description": "Submission for <a href=\"https://itch.io/jam/flatgame-annual-2017\" target=\"_blank\">Flatjam 2017</a>, use the WASD keys to (slightly) control your tube as it floats lazily down a river of imagination.",
@@ -37,7 +48,7 @@
 		"type": "pico-8",
 		"image": { "animated": true, "touchesEdges": true },
 		"grid": { "cols": 4, "rows": 4 },
-		"priority": 10,
+		"priority": 9,
 		"backgroundColor": "#000",
 		"isPixelArt": true
 	},

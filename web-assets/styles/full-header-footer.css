@@ -14,7 +14,7 @@ header p {
 	font-size: 79%;
 	font-weight: 400;
 }
-footer a {
+footer a.icon {
 	position: relative;
 	top: 3px;
 }

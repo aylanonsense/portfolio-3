@@ -1,9 +1,10 @@
 <p>
-	{{#showFooterText}}<span>Follow me on:</span>{{/showFooterText}}
-	<a href="{{{external.githubUri}}}">
+	{{#showFooterText}}<span>Follow me on</span>{{/showFooterText}}
+	<a class="icon" href="{{{external.githubUri}}}">
 		{{> githubIcon}}
 	</a>
-	<a href="{{{external.twitterUri}}}">
+	<a class="icon" href="{{{external.twitterUri}}}">
 		{{> twitterIcon}}
 	</a>
+	{{#showFooterText}}<span>or consider <a href="{{{external.kofiUri}}}" target="_blank">buying me a coffee</a>{{/showFooterText}}
 </p>
