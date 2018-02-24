@@ -1,4 +1,15 @@
 {
+	"juggle-panic": {
+		"title": "Juggle Panic",
+		"description": "A one-on-one juggle extravaganza!",
+		"date": "2018/02",
+		"type": "pico-8",
+		"image": { "animated": true, "touchesEdges": true },
+		"grid": { "cols": 4, "rows": 4 },
+		"priority": 10,
+		"backgroundColor": "#000",
+		"isPixelArt": true
+	},
 	"just-one-boss": {
 		"title": "Just One Boss",
 		"description": "A duel against a charming opponent! Use the arrow keys to move your lil' blob.",
@@ -6,7 +17,7 @@
 		"type": "pico-8",
 		"image": { "animated": true, "touchesEdges": true },
 		"grid": { "cols": 4, "rows": 4 },
-		"priority": 10,
+		"priority": 7,
 		"backgroundColor": "#000",
 		"isPixelArt": true
 	},
@@ -48,7 +59,7 @@
 		"type": "pico-8",
 		"image": { "animated": true, "touchesEdges": true },
 		"grid": { "cols": 4, "rows": 4 },
-		"priority": 9,
+		"priority": 6,
 		"backgroundColor": "#000",
 		"isPixelArt": true
 	},
