@@ -1,8 +1,8 @@
 {
 	"juggle-panic": {
 		"title": "Juggle Panic",
-		"description": "A one-on-one juggle extravaganza!",
-		"date": "2018/02",
+		"description": "A two-player juggling extravaganza!",
+		"date": "2018/03",
 		"type": "pico-8",
 		"image": { "animated": true, "touchesEdges": true },
 		"grid": { "cols": 4, "rows": 4 },
