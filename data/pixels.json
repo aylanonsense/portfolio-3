@@ -1,9 +1,54 @@
 {
+	"slime-concept": {
+		"title": "Slime Concept",
+		"description": "Concept art for a platformer about being a slime.",
+		"date": "2018/04",
+		"image": { "touchesEdges": true },
+		"backgroundColor": "#ffec27"
+	},
+	"slime-jump": {
+		"title": "Slime Jump",
+		"description": "A squooshy leap forward.",
+		"date": "2018/04",
+		"image": { "animated": true, "touchesEdges": true },
+		"backgroundColor": "#ffec27"
+	},
+	"red-flag": {
+		"title": "Red Flag",
+		"description": "A red flag blowing in the wind.",
+		"date": "2018/04",
+		"image": { "animated": true },
+		"backgroundColor": "#ffec27"
+	},
+	"tomato": {
+		"title": "Tomato",
+		"description": "A little tomato pickup.",
+		"date": "2018/04",
+		"image": { "animated": true },
+		"backgroundColor": "#ffec27"
+	},
+	"paella-storefront": {
+		"title": "Paella Storefront",
+		"description": "The storefront of a paella shop.",
+		"date": "2018/04",
+		"backgroundColor": "#fe8e5a"
+	},
+	"purple-guy": {
+		"title": "Purple Guy",
+		"description": "A shady-lookin' character in a purple suit.",
+		"date": "2018/04",
+		"backgroundColor": "#3e804a"
+	},
+	"gordon-cole": {
+		"title": "Gordon Cole",
+		"description": "A likeness of Gordon Cole from Twin Peaks in the style of Day of the Tentacles.",
+		"date": "2018/02",
+		"backgroundColor": "#f9eee0"
+	},
 	"chocolates": {
 		"title": "Chocolates",
 		"description": "Some tasty chocolates for a <a href=\"http://pixeljoint.com/pixels/challenge_item.asp?id=1607\" target=\"_blank\">Pixel Joint weekly challenge</a>.",
 		"date": "2017/12",
-		"priority": 10,
 		"image": { "touchesEdges": true },
 		"backgroundColor": "#320008"
 	},
@@ -17,7 +62,6 @@
 		"title": "Mirror Intro",
 		"description": "A magic mirror for a PICO-8 boss fight.",
 		"date": "2017/12",
-		"priority": 10,
 		"image": { "animated": true, "touchesEdges": true },
 		"backgroundColor": "#000"
 	},
