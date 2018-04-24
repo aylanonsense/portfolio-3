@@ -19,6 +19,8 @@ footer a.icon-link {
 	position: relative;
 	top: 3px;
 }
-footer .footer-text {
-
+@media (max-width: 500px) {
+	footer .footer-text {
+		display: none;
+	}
 }

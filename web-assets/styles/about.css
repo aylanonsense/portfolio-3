@@ -41,7 +41,10 @@ ul {
 	image-rendering: pixelated;
 }
 @media (max-width: 500px) {
-	footer .footer-text {
-		display: none;
+	#portrait {
+		display: block;
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
 	}
 }
