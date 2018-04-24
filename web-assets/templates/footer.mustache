@@ -1,10 +1,16 @@
 <p>
-	{{#showFooterText}}<span>Follow me on</span>{{/showFooterText}}
-	<a class="icon" href="{{{external.githubUri}}}">
-		{{> githubIcon}}
-	</a>
-	<a class="icon" href="{{{external.twitterUri}}}">
+	{{#showFooterText}}<span class="footer-text">Follow me on</span>{{/showFooterText}}
+	<a class="icon-link" href="{{{external.twitterUri}}}" traget="_blank">
 		{{> twitterIcon}}
 	</a>
-	{{#showFooterText}}<span>or consider <a href="{{{external.kofiUri}}}" target="_blank">buying me a coffee</a>{{/showFooterText}}
+	<a class="icon-link" href="{{{external.youtubeUri}}}" traget="_blank">
+		{{> youtubeIcon}}
+	</a>
+	<a class="icon-link" href="{{{external.twitchUri}}}" traget="_blank">
+		{{> twitchIcon}}
+	</a>
+	<a class="icon-link" href="{{{external.githubUri}}}" traget="_blank">
+		{{> githubIcon}}
+	</a>
+	{{#showFooterText}}<span class="footer-text">or consider <a href="{{{external.kofiUri}}}" target="_blank">buying me a coffee</a>{{/showFooterText}}
 </p>

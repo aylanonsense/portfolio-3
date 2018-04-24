@@ -1,0 +1,9 @@
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	text-align: center;
+	{{#showDebugColors}}background-color: #88f;{{/showDebugColors}}
+}

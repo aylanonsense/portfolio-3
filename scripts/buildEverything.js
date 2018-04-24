@@ -4,6 +4,7 @@ import games from '../data/games.json';
 import posts from '../data/posts.json';
 import slides from '../data/slides.json';
 import buildGallery from './buildGallery';
+import buildAbout from './buildAbout';
 import buildBlog from './buildBlog';
 import saveFile from './helper/saveFile';
 
@@ -15,7 +16,8 @@ export default async () => {
 		...(await buildGallery(config.sections.pixels, pixels)),
 		...(await buildGallery(config.sections.games, games))
 	};
-	buildBlog(config.sections.blog, posts);
+	await buildAbout(config.sections.about);
+	// await buildBlog(config.sections.blog, posts);
 	for(let [ slide, slideData ] of Object.entries(slides)) {
 		proxies[`/slides/${slide}`] = slideData.proxy.port;
 	}

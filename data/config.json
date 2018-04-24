@@ -28,6 +28,11 @@
 			"title": "Blog",
 			"uri": "blog",
 			"isGallery": false
+		},
+		"about": {
+			"title": "About Me",
+			"uri": "about",
+			"isGallery": false
 		}
 	},
 	"grid": {
@@ -43,12 +48,26 @@
 		"maxItemRows": 6,
 		"packAttempts": 1000
 	},
-	"nav": [ "pixels", "games" ],
+	"nav": [ "pixels", "games", "about" ],
 	"index": "pixels",
 	"external": {
+		"artstationUri": "https://bridgs.artstation.com",
+		"deviantartUri": "https://bridgs.deviantart.com",
+		"facebookUri": "https://www.facebook.com/bridgsdev-1989969121323860",
+		"gamejoltUri": "https://gamejolt.com/@bridgs",
 		"githubUri": "https://github.com/bridgs",
-		"twitterUri": "https://twitter.com/bridgs_dev",
+		"instagramUri": "https://www.instagram.com/bridgs.dev",
 		"kofiUri": "https://ko-fi.com/bridgs",
+		"lexaloffleUri": "https://www.lexaloffle.com/bbs/?uid=16414",
+		"linkedinUri": "https://www.linkedin.com/in/ayla-myers-015211154",
+		"mediumUri": "https://medium.com/@bridgs.dev",
+		"newgroundsUri": "https://bridgs.newgrounds.com",
+		"patreonUri": "https://www.patreon.com/bridgs",
+		"pinterestUri": "https://www.pinterest.com/bridgs",
+		"tumblrUri": "https://bridgs.tumblr.com",
+		"twitchUri": "https://www.twitch.tv/bridgs_dev",
+		"twitterUri": "https://twitter.com/bridgs_dev",
+		"youtubeUri": "https://www.youtube.com/channel/UC2Ea8uwt3r2NOttXY8gcOSw",
 		"twitterAccountName": "bridgs_dev",
 		"googleTagManagerId": "GTM-TPMZL3J"
 	},

@@ -1,0 +1,47 @@
+main a {
+	color: #e92553;
+}
+ul {
+	text-align: left;
+}
+#grid {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	margin: -2px;
+	padding: 0;
+	list-style-type: none;
+}
+#grid li {
+	width: 133px;
+	height: 60px;
+	margin: 2px;
+	border-radius: 4px;
+}
+#grid a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	fill: #ffffff;
+}
+#grid .icon {
+	width: 40px;
+	height: 40px;
+}
+#grid .kofi .icon, #grid .newgrounds .icon {
+	width: 50px;
+	height: 50px;
+}
+#portrait {
+	float: left;
+	margin-right: 15px;
+	margin-bottom: 15px;
+	image-rendering: pixelated;
+}
+@media (max-width: 500px) {
+	footer .footer-text {
+		display: none;
+	}
+}

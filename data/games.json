@@ -65,7 +65,7 @@
 	},
 	"8-legs-to-love": {
 		"title": "8 Legs to Love",
-		"description": "Spin a web, eat bugs, earn points, and have fun!",
+		"description": "Spin a web, eat bugs, earn points, and have fun! Arrow keys to move, Z to spin web.",
 		"date": "2017/06",
 		"type": "pico-8",
 		"image": { "animated": true, "touchesEdges": true },

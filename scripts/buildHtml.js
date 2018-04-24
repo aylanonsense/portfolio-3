@@ -130,8 +130,23 @@ async function loadAssets() {
 			gameControls: await loadFile('web-assets/templates/game-controls.mustache'),
 			analyticsHead: await loadFile('web-assets/templates/google-analytics-head.mustache'),
 			analyticsBody: await loadFile('web-assets/templates/google-analytics-body.mustache'),
+			artstationIcon: await loadFile('web-assets/icons/artstation.svg'),
+			deviantartIcon: await loadFile('web-assets/icons/deviantart.svg'),
+			facebookIcon: await loadFile('web-assets/icons/facebook.svg'),
+			gamejoltIcon: await loadFile('web-assets/icons/gamejolt.svg'),
 			githubIcon: await loadFile('web-assets/icons/github.svg'),
-			twitterIcon: await loadFile('web-assets/icons/twitter.svg')
+			instagramIcon: await loadFile('web-assets/icons/instagram.svg'),
+			kofiIcon: await loadFile('web-assets/icons/kofi.svg'),
+			lexaloffleIcon: await loadFile('web-assets/icons/lexaloffle.svg'),
+			linkedinIcon: await loadFile('web-assets/icons/linkedin.svg'),
+			mediumIcon: await loadFile('web-assets/icons/medium.svg'),
+			newgroundsIcon: await loadFile('web-assets/icons/newgrounds.svg'),
+			patreonIcon: await loadFile('web-assets/icons/patreon.svg'),
+			pinterestIcon: await loadFile('web-assets/icons/pinterest.svg'),
+			tumblrIcon: await loadFile('web-assets/icons/tumblr.svg'),
+			twitchIcon: await loadFile('web-assets/icons/twitch.svg'),
+			twitterIcon: await loadFile('web-assets/icons/twitter.svg'),
+			youtubeIcon: await loadFile('web-assets/icons/youtube.svg')
 		},
 		content: {
 			image: await loadFile('web-assets/templates/image.mustache'),
@@ -139,6 +154,7 @@ async function loadAssets() {
 			flash: await loadFile('web-assets/templates/flash.mustache'),
 			rawJS: await loadFile('web-assets/templates/raw-js.mustache'),
 			proxy: await loadFile('web-assets/templates/proxy.mustache'),
+			about: await loadFile('web-assets/templates/about.mustache'),
 			gallery: await loadFile('web-assets/templates/gallery.mustache')
 		},
 		scripts: {
@@ -149,6 +165,9 @@ async function loadAssets() {
 		},
 		styles: {
 			universal: await loadFile('web-assets/styles/universal.css'),
+			about: await loadFile('web-assets/styles/about.css'),
+			centeredContent: await loadFile('web-assets/styles/centered-content.css'),
+			textContent: await loadFile('web-assets/styles/text-content.css'),
 			gallery: await loadFile('web-assets/styles/gallery.css'),
 			project: await loadFile('web-assets/styles/project.css'),
 			game: await loadFile('web-assets/styles/game.css'),
@@ -185,7 +204,7 @@ export async function buildGalleryHtml(galleryData, projects, options) {
 	};
 	let content = assets.content.gallery;
 	let scripts = [ assets.scripts.gallery ];
-	let styles = [ assets.styles.universal, assets.styles.fullHeaderFooter, assets.styles.gallery, assets.styles.fontRaleway ];
+	let styles = [ assets.styles.universal, assets.styles.centeredContent, assets.styles.fullHeaderFooter, assets.styles.gallery, assets.styles.fontRaleway ];
 	await buildHtml(`build/html/${view.uri}.html`, view, content, scripts, styles);
 }
 
@@ -203,7 +222,7 @@ export async function buildProjectHtml(galleryData, projectData) {
 	};
 	let content = null;
 	let scripts = [];
-	let styles = [ assets.styles.universal, assets.styles.smallHeaderFooter, assets.styles.project, assets.styles.fontRaleway ];
+	let styles = [ assets.styles.universal, assets.styles.centeredContent, assets.styles.smallHeaderFooter, assets.styles.project, assets.styles.fontRaleway ];
 	// change project defaults for each project type
 	if (projectData.type === "image") {
 		content = assets.content.image;
@@ -238,7 +257,7 @@ export async function buildProjectHtml(galleryData, projectData) {
 		view.mainWidth = Math.max(projectData.proxy.width, 280);
 	}
 	await buildHtml(`build/html/${galleryData.uri}/${projectData.project}.html`, view, content, scripts, styles);
-};
+}
 
 export async function buildBlogPostHtml(blogData, postData) {
 	if (config.showVerboseLogging) { console.log(`    Building ${postData.post} html...`); }
@@ -260,10 +279,31 @@ export async function buildBlogPostHtml(blogData, postData) {
 	await buildHtml(`build/html/${blogData.uri}/${postData.post}.html`, view, content, scripts, styles);
 }
 
+export async function buildAboutHtml(aboutData) {
+	if (config.showVerboseLogging) { console.log(`    Building About Me html...`); }
+	if (!hasLoadedAssets) {
+		await loadAssets();
+	}
+	let view = {
+		...aboutData,
+		showSubheading: true,
+		navInHeader: false,
+		showFooterText: true,
+		minBodyWidth: 320
+	};
+	let content = assets.content.about;
+	let scripts = [ ];
+	let styles = [ assets.styles.universal, assets.styles.textContent, assets.styles.about, assets.styles.fullHeaderFooter, assets.styles.fontRaleway ];
+	await buildHtml(`build/html/${aboutData.uri}.html`, view, content, scripts, styles);
+}
+
 async function buildHtml(uri, view, content, scripts, styles) {
 	let html = Mustache.render(assets.templates.base, {
 		...siteData,
 		...view,
+		sections: siteData.sections.map(section => {
+			return { ...section, isSelected: (view.uri === section.uri) };
+		}),
 		configJSON: configJSON
 	}, {
 		...assets.templates,
