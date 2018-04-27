@@ -59,6 +59,9 @@ export default async () => {
 	// requests for Flash files
 	app.use(express.static('web-assets/flash'));
 
+	// requests for documents
+	app.use(express.static('web-assets/documents'));	
+
 	// requests for sprite sheets
 	app.use(express.static('build/sprite-sheets'));
 

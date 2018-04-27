@@ -302,7 +302,7 @@ async function buildHtml(uri, view, content, scripts, styles) {
 		...siteData,
 		...view,
 		sections: siteData.sections.map(section => {
-			return { ...section, isSelected: (view.uri === section.uri) };
+			return { ...section, isSelected: (view.uri === section.uri || (view.uri === 'index' && section.uri === config.index)) };
 		}),
 		configJSON: configJSON
 	}, {
