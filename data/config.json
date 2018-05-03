@@ -49,7 +49,7 @@
 		"packAttempts": 1000
 	},
 	"nav": [ "pixels", "games", "about" ],
-	"index": "pixels",
+	"index": "games",
 	"external": {
 		"artstationUri": "https://bridgs.artstation.com",
 		"deviantartUri": "https://bridgs.deviantart.com",
