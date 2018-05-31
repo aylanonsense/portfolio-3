@@ -1,4 +1,17 @@
 {
+	"arcade": {
+		"title": "Arcade",
+		"description": "Event banner for an arcade + dance party.",
+		"date": "2018/05",
+		"image": { "touchesEdges": true },
+		"backgroundColor": "#0b1a6a"
+	},
+	"dougie": {
+		"title": "Dougie",
+		"description": "Dougie from Twin Peaks.",
+		"date": "2018/05",
+		"backgroundColor": "#f9eee0"
+	},
 	"slime-concept": {
 		"title": "Slime Concept",
 		"description": "Concept art for a platformer about being a slime.",

@@ -70,6 +70,9 @@ export default async (galleryData, projects) => {
 		}
 		else if (projectData.type === 'proxy') {
 			projectData.proxy.uri = `/${galleryData.uri}/${project}/proxy`;
+			if (projectData.proxy.linkToProxy) {
+				projectData.uri = projectData.proxy.uri;
+			}
 			proxies[projectData.proxy.uri] = projectData.proxy.port;
 		}
 	}

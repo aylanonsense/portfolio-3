@@ -77,6 +77,6 @@
 	"dateDelimeter": "to",
 	"siteBackgroundColor": "#fff",
 	"saveImages": true,
-	"showVerboseLogging": false,
+	"showVerboseLogging": true,
 	"showDebugColors": false
 }
