@@ -3,6 +3,7 @@
 		"title": "Arcade",
 		"description": "Event banner for an arcade + dance party.",
 		"date": "2018/05",
+		"priority": 5,
 		"image": { "touchesEdges": true },
 		"backgroundColor": "#0b1a6a"
 	},
@@ -10,12 +11,14 @@
 		"title": "Dougie",
 		"description": "Dougie from Twin Peaks.",
 		"date": "2018/05",
+		"priority": 5,
 		"backgroundColor": "#f9eee0"
 	},
 	"slime-concept": {
 		"title": "Slime Concept",
 		"description": "Concept art for a platformer about being a slime.",
 		"date": "2018/04",
+		"priority": 6,
 		"image": { "touchesEdges": true },
 		"backgroundColor": "#ffec27"
 	},
@@ -23,6 +26,7 @@
 		"title": "Slime Jump",
 		"description": "A squooshy leap forward.",
 		"date": "2018/04",
+		"priority": 5,
 		"image": { "animated": true, "touchesEdges": true },
 		"backgroundColor": "#ffec27"
 	},
@@ -30,6 +34,7 @@
 		"title": "Red Flag",
 		"description": "A red flag blowing in the wind.",
 		"date": "2018/04",
+		"priority": 5,
 		"image": { "animated": true },
 		"backgroundColor": "#ffec27"
 	},
@@ -37,6 +42,7 @@
 		"title": "Tomato",
 		"description": "A little tomato pickup.",
 		"date": "2018/04",
+		"priority": 5,
 		"image": { "animated": true },
 		"backgroundColor": "#ffec27"
 	},
@@ -44,24 +50,28 @@
 		"title": "Paella Storefront",
 		"description": "The storefront of a paella shop.",
 		"date": "2018/04",
+		"priority": 5,
 		"backgroundColor": "#fe8e5a"
 	},
 	"purple-guy": {
 		"title": "Purple Guy",
 		"description": "A shady-lookin' character in a purple suit.",
 		"date": "2018/04",
+		"priority": 5,
 		"backgroundColor": "#3e804a"
 	},
 	"gordon-cole": {
 		"title": "Gordon Cole",
 		"description": "A likeness of Gordon Cole from Twin Peaks in the style of Day of the Tentacles.",
 		"date": "2018/02",
+		"priority": 5,
 		"backgroundColor": "#f9eee0"
 	},
 	"chocolates": {
 		"title": "Chocolates",
 		"description": "Some tasty chocolates for a <a href=\"http://pixeljoint.com/pixels/challenge_item.asp?id=1607\" target=\"_blank\">Pixel Joint weekly challenge</a>.",
 		"date": "2017/12",
+		"priority": 5,
 		"image": { "touchesEdges": true },
 		"backgroundColor": "#320008"
 	},
@@ -69,12 +79,14 @@
 		"title": "Macaroon",
 		"description": "A little macaroon (and the favicon of this site).",
 		"date": "2017/12",
+		"priority": 5,
 		"backgroundColor": "#fff"
 	},
 	"mirror-intro": {
 		"title": "Mirror Intro",
 		"description": "A magic mirror for a PICO-8 boss fight.",
 		"date": "2017/12",
+		"priority": 5,
 		"image": { "animated": true, "touchesEdges": true },
 		"backgroundColor": "#000"
 	},
@@ -82,6 +94,7 @@
 		"title": "Cosmic Skeleton",
 		"description": "A cosmic skeleton using the PICO-8 palette.",
 		"date": "2017/11",
+		"priority": 5,
 		"backgroundColor": "#000"
 	},
 	"self-portrait": {
@@ -95,22 +108,27 @@
 		"title": "Couch",
 		"description": "3D model of a couch. Not quite pixel art... but eh.",
 		"date": "2017/10",
+		"priority": 5,
 		"image": { "animated": true },
 		"backgroundColor": "#fcf5e7",
-		"isPixelArt": false
+		"isPixelArt": false,
+		"hidden": true
 	},
 	"beach-supplies": {
 		"title": "Beach Supplies",
 		"description": "My first ever 3D models. Ready for the beach!",
 		"date": "2017/10",
+		"priority": 5,
 		"image": { "animated": true },
 		"backgroundColor": "#ffe16c",
-		"isPixelArt": false
+		"isPixelArt": false,
+		"hidden": true
 	},
 	"beet": {
 		"title": "Beet",
 		"description": "A laughing beet. No reason.",
 		"date": "2017/10",
+		"priority": 5,
 		"grid": { "scale": 2 },
 		"backgroundColor": "#ffd5c5"
 	},
@@ -118,6 +136,7 @@
 		"title": "Match Three",
 		"description": "Concept art for a hypothetical game. Inspired by <a href=\"https://twitter.com/Pixel_Dailies\" target=\"_blank\">Pixel Dailies</a> prompt for #MatchThree.",
 		"date": "2017/09",
+		"priority": 5,
 		"image": { "animated": true },
 		"backgroundColor": "#000"
 	},
@@ -125,6 +144,7 @@
 		"title": "West Showcase",
 		"description": "Showcase of some gameplay mechanics for a wild west PICO-8 game.",
 		"date": "2017/09",
+		"priority": 5,
 		"image": { "animated": true },
 		"grid": { "cols": 4, "rows": 1, "scale": 2 },
 		"backgroundColor": "#000"
@@ -133,12 +153,14 @@
 		"title": "West Lighting",
 		"description": "Testing out different lighting options for a wild west PICO-8 game.",
 		"date": "2017/08",
+		"priority": 5,
 		"backgroundColor": "#000"
 	},
 	"splosion": {
 		"title": "Splosion",
 		"description": "An explosion for my wild west PICO-8 game.",
 		"date": "2017/08",
+		"priority": 5,
 		"image": { "animated": true },
 		"backgroundColor": "#ffa300"
 	},
@@ -146,12 +168,14 @@
 		"title": "Hyuge Fun",
 		"description": "A terrible thing.",
 		"date": "2017/06",
+		"priority": 1,
 		"backgroundColor": "#000"
 	},
 	"snowboarding": {
 		"title": "Snowboarding",
 		"description": "Initial game mechanics for a downhill snowboarding game.",
 		"date": "2017/06",
+		"priority": 5,
 		"image": { "animated": true },
 		"backgroundColor": "#fff1e8"
 	},
@@ -159,6 +183,7 @@
 		"title": "Wave Function Collapse",
 		"description": "Pixel art generated by my implementation of the wave function collapse algorithm.",
 		"date": "2017/06",
+		"priority": 4,
 		"image": { "animated": true },
 		"backgroundColor": "#eee6d2"
 	},
@@ -166,6 +191,7 @@
 		"title": "Nightmare",
 		"description": "Animation inspired by <a href=\"https://twitter.com/Pixel_Dailies\" target=\"_blank\">Pixel Dailies</a> prompt for #nightmare.",
 		"date": "2017/06",
+		"priority": 5,
 		"image": { "animated": true, "touchesEdges": true },
 		"backgroundColor": "#1c0b20"
 	},
@@ -173,6 +199,7 @@
 		"title": "Palace",
 		"description": "Inspired by <a href=\"https://twitter.com/Pixel_Dailies\" target=\"_blank\">Pixel Dailies</a> prompt for #palace.",
 		"date": "2017/05",
+		"priority": 5,
 		"image": { "touchesEdges": true },
 		"backgroundColor": "#f7e9dc"
 	},
@@ -180,6 +207,7 @@
 		"title": "Cherry Tree",
 		"description": "A small scene of a cherry tree for a level of 8 Legs to Love.",
 		"date": "2017/05",
+		"priority": 2,
 		"image": { "touchesEdges": true },
 		"backgroundColor": "#fca"
 	},
@@ -187,6 +215,7 @@
 		"title": "Flower Bloom",
 		"description": "An animation midway through its creation, showing guidelines and reference curves.",
 		"date": "2017/04",
+		"priority": 5,
 		"image": { "animated": true },
 		"grid": { "scale": 1 },
 		"backgroundColor": "#fff"
@@ -195,6 +224,7 @@
 		"title": "Blueberry",
 		"description": "Quick sketch of a blueberry.",
 		"date": "2017/04",
+		"priority": 2,
 		"image": { "touchesEdges": true },
 		"backgroundColor": "#fc8778"
 	},
@@ -202,6 +232,7 @@
 		"title": "Colored Pipes",
 		"description": "Some colored pipes meant as input for a wave function collapse algorithm.",
 		"date": "2017/03",
+		"priority": 5,
 		"image": { "touchesEdges": true },
 		"backgroundColor": "#000"
 	},
@@ -209,6 +240,7 @@
 		"title": "Snek",
 		"description": "Unfinished composition of a traveler and her giant snake companion.",
 		"date": "2017/02",
+		"priority": 5,
 		"image": { "touchesEdges": true },
 		"backgroundColor": "#373737"
 	},
@@ -216,18 +248,21 @@
 		"title": "Alabaster Giant",
 		"description": "An unfinished piece following the results of the 2016 US presidential election.",
 		"date": "2016/11",
+		"priority": 5,
 		"backgroundColor": "#452416"
 	},
 	"racquet-panic": {
 		"title": "Racquet Panic",
 		"description": "Mock-up of PICO-8 breakout/tennis game.",
 		"date": "2016/10",
+		"priority": 5,
 		"backgroundColor": "#1d2b53"
 	},
 	"phantom-dust": {
 		"title": "Phantom Dust",
 		"description": "Sketch inspired by one of my favorites cult classics, Phantom Dust.",
 		"date": "2016/09",
+		"priority": 5,
 		"image": { "touchesEdges": true },
 		"backgroundColor": "#d88869"
 	},
@@ -235,12 +270,14 @@
 		"title": "Spectral Armor",
 		"description": "Inspired by <a href=\"https://twitter.com/Pixel_Dailies\" target=\"_blank\">Pixel Dailies</a> prompt for #ghost.",
 		"date": "2016/09",
+		"priority": 5,
 		"backgroundColor": "#2a0039"
 	},
 	"super-happy-tree": {
 		"title": "Super Happy Tree",
 		"description": "Sketch of the Super Happy Tree from Yoshi's Story.",
 		"date": "2016/09",
+		"priority": 5,
 		"image": { "touchesEdges": true },
 		"backgroundColor": "#ffd1a2"
 	},
@@ -248,6 +285,7 @@
 		"title": "Gaudy Ladybug",
 		"description": "Inspired by <a href=\"https://twitter.com/Pixel_Dailies\" target=\"_blank\">Pixel Dailies</a> prompt for #luckycharm.",
 		"date": "2016/08",
+		"priority": 5,
 		"image": { "touchesEdges": true },
 		"backgroundColor": "#5a8751"
 	},
@@ -255,30 +293,35 @@
 		"title": "Mortimer",
 		"description": "Icon for a personal Slack bot named Mortimer.",
 		"date": "2016/08",
+		"priority": 5,
 		"backgroundColor": "#fbac00"
 	},
 	"masks": {
 		"title": "Masks",
 		"description": "Quick sketch of some 8x8 masks from Majora's Mask using the PICO-8 palette.",
 		"date": "2016/08",
+		"priority": 5,
 		"backgroundColor": "#000"
 	},
 	"deku": {
 		"title": "Deku",
 		"description": "The Deku Butler's son from Majora's Mask.",
 		"date": "2016/08",
+		"priority": 5,
 		"backgroundColor": "#0d0f1c"
 	},
 	"space": {
 		"title": "Space",
 		"description": "Mock-up of the last level of 8 Legs to Love.",
 		"date": "2016/07",
+		"priority": 5,
 		"backgroundColor": "#000"
 	},
 	"monolith": {
 		"title": "Monolith",
 		"description": "Inspired by <a href=\"https://twitter.com/Pixel_Dailies\" target=\"_blank\">Pixel Dailies</a> prompt for #monolith.",
 		"date": "2016/07",
+		"priority": 5,
 		"image": { "touchesEdges": true },
 		"backgroundColor": "#645146"
 	},
@@ -286,6 +329,7 @@
 		"title": "Zergling",
 		"description": "Inspired by <a href=\"https://twitter.com/Pixel_Dailies\" target=\"_blank\">Pixel Dailies</a> prompt for #zergling.",
 		"date": "2016/07",
+		"priority": 5,
 		"image": { "animated": true },
 		"backgroundColor": "#f4e9d7"
 	},
@@ -293,12 +337,14 @@
 		"title": "Autumn Hair",
 		"description": "A portrait of a dear friend.",
 		"date": "2016/07",
+		"priority": 5,
 		"backgroundColor": "#debb37"
 	},
 	"skater": {
 		"title": "Skater",
 		"description": "Animation practice of an ice skater.",
 		"date": "2016/07",
+		"priority": 5,
 		"image": { "animated": true },
 		"backgroundColor": "#a2faff"
 	},
@@ -306,6 +352,7 @@
 		"title": "Super Yay Train",
 		"description": "Preliminary gameplay for a PICO-8 game named Super Yay Train.",
 		"date": "2016/07",
+		"priority": 5,
 		"image": { "animated": true, "touchesEdges": true },
 		"backgroundColor": "#ffccaa"
 	},
@@ -313,6 +360,7 @@
 		"title": "Traffic Knight",
 		"description": "A traffic-knight-robot for funsies.",
 		"date": "2016/06",
+		"priority": 5,
 		"image": { "touchesEdges": true },
 		"grid": { "scale": 2 },
 		"backgroundColor": "#fffbd3"
@@ -321,6 +369,7 @@
 		"title": "Mail Angel",
 		"description": "A mailman with envelope wings.",
 		"date": "2016/06",
+		"priority": 5,
 		"image": { "animated": true },
 		"backgroundColor": "#fffe5e"
 	},
@@ -328,6 +377,7 @@
 		"title": "Croc",
 		"description": "Debug sprite and animations for a fighting game.",
 		"date": "2016/04",
+		"priority": 5,
 		"image": { "animated": true, "touchesEdges": true },
 		"backgroundColor": "#b8e0e4"
 	},
@@ -335,12 +385,14 @@
 		"title": "Bonsai",
 		"description": "Sketch of a bonsai tree for a class on pixel art.",
 		"date": "2016/03",
+		"priority": 5,
 		"backgroundColor": "#fcff9f"
 	},
 	"froggins": {
 		"title": "Froggins",
 		"description": "Sketch of a frog for a class on pixel art.",
 		"date": "2016/03",
+		"priority": 5,
 		"grid": { "scale": 2 },
 		"backgroundColor": "#62dbaf"
 	},
@@ -348,12 +400,14 @@
 		"title": "Stratos",
 		"description": "Very quick color blocking of Stratos, the god of air from the game Sacrifice.",
 		"date": "2016/03",
+		"priority": 3,
 		"backgroundColor": "#ed5207"
 	},
 	"robo-gladiator": {
 		"title": "Robo Gladiator",
 		"description": "Attack animation for a platforming/action game.",
 		"date": "2016/02",
+		"priority": 5,
 		"image": { "animated": true },
 		"backgroundColor": "#f2cbfc"
 	},
@@ -361,12 +415,14 @@
 		"title": "Catbug",
 		"description": "A sadly unused cross-stitching pattern of Catbug from Bravest Warriors.",
 		"date": "2016",
+		"priority": 5,
 		"backgroundColor": "#f1f0d2"
 	},
 	"sprouts": {
 		"title": "Sprouts",
 		"description": "Concept art for a Harvest Moon-like.",
 		"date": "2016",
+		"priority": 5,
 		"image": { "touchesEdges": true },
 		"backgroundColor": "#d7ab4f"
 	},
@@ -374,24 +430,28 @@
 		"title": "Test Tileset",
 		"description": "Riffing off the tilesets of the Fire Emblem series",
 		"date": "2016",
+		"priority": 5,
 		"backgroundColor": "#5ece53"
 	},
 	"hammerachnid": {
 		"title": "Hammerachnid",
 		"description": "Assets for a boss of a boss rush.",
 		"date": "2016",
+		"priority": 5,
 		"backgroundColor": "#111"
 	},
 	"tiny-face": {
 		"title": "Tiny Face",
 		"description": "A small portrait of a follower.",
 		"date": "2016",
+		"priority": 5,
 		"backgroundColor": "#fff"
 	},
 	"grapple-world": {
 		"title": "Grapple World",
 		"description": "A bunch of assets for a platforming game that featured a grappling hook.",
 		"date": "2016/03",
+		"priority": 5,
 		"image": { "touchesEdges": true },
 		"backgroundColor": "#fed"
 	},
@@ -399,6 +459,7 @@
 		"title": "Grapple Girl",
 		"description": "Walk cycle for a platformer.",
 		"date": "2015/11",
+		"priority": 5,
 		"image": { "animated": true, "touchesEdges": true },
 		"backgroundColor": "#ededd7"
 	},
@@ -406,18 +467,21 @@
 		"title": "Rocky Platforms",
 		"description": "Progression of floating rocky platforms for a platformer.",
 		"date": "2015/11",
+		"priority": 5,
 		"backgroundColor": "#fed"
 	},
 	"pillars": {
 		"title": "Pillars",
 		"description": "Progression of crumbling pillars for a platformer.",
 		"date": "2015/11",
+		"priority": 5,
 		"backgroundColor": "#fed"
 	},
 	"rock-blocks": {
 		"title": "Rock Blocks",
 		"description": "Progression of rocky blocks for a platformer.",
 		"date": "2015/11",
+		"priority": 5,
 		"grid": { "rows": 1, "scale": 1 },
 		"backgroundColor": "#fed"
 	},
@@ -425,12 +489,14 @@
 		"title": "Tree Progression",
 		"description":  "Progression of a tree for a platformer.",
 		"date": "2015/11",
+		"priority": 5,
 		"backgroundColor": "#fed"
 	},
 	"ghus": {
 		"title": "Gh&uuml;s",
 		"description": "Animation of Gh&uuml;s from the Saga comic book series.",
 		"date": "2015/06",
+		"priority": 5,
 		"image": { "animated": true },
 		"backgroundColor": "#e6f8f9"
 	},
@@ -438,6 +504,7 @@
 		"title": "Tree",
 		"description": "A tree painted pixel by pixel.",
 		"date": "2015/06",
+		"priority": 6,
 		"grid": { "scale": 3 },
 		"backgroundColor": "#faf6ea"
 	},
@@ -445,6 +512,7 @@
 		"title": "Loading Blob",
 		"description": "A loading animation for a previous version of my portfolio.",
 		"date": "2015/05",
+		"priority": 5,
 		"image": { "animated": true },
 		"backgroundColor": "#535353"
 	},
@@ -452,6 +520,7 @@
 		"title": "Mini Grapple Assets",
 		"description": "Teensy pixel assets for a grappling hook platformer.",
 		"date": "2015/03",
+		"priority": 5,
 		"image": { "touchesEdges": true },
 		"backgroundColor": "#ffefdd"
 	},
@@ -459,18 +528,21 @@
 		"title": "Grinning Frog",
 		"description": "Color test for a portrait of a grinning frog. Or a family of happy frogs, if you prefer.",
 		"date": "2015/03",
+		"priority": 5,
 		"backgroundColor": "#000"
 	},
 	"heist-room": {
 		"title": "Heist Room",
 		"description": "Mock-up of a heist-type game.",
 		"date": "2015/01",
+		"priority": 5,
 		"backgroundColor": "#112421"
 	},
 	"paradox-anomaly": {
 		"title": "Paradox Anomaly",
 		"description": "Sprite and animations for the main character of a time-traveling heist game.",
 		"date": "2014/12",
+		"priority": 5,
 		"image": { "animated": true },
 		"backgroundColor": "#1c394a"
 	},
@@ -478,6 +550,7 @@
 		"title": "Scorching Queen",
 		"description": "Sprite and animations for a boss rush.",
 		"date": "2014/11",
+		"priority": 5,
 		"image": { "animated": true },
 		"backgroundColor": "#23000a"
 	},
@@ -485,6 +558,7 @@
 		"title": "Ice Emperor",
 		"description": "Sprite and animations for a boss rush.",
 		"date": "2014/11",
+		"priority": 5,
 		"image": { "animated": true },
 		"backgroundColor": "#00042d"
 	},
@@ -492,6 +566,7 @@
 		"title": "Gazelle Gladiator",
 		"description": "One of my first pieces of pixel art. Sprite for a gazelle gladiator boss.",
 		"date": "2012",
+		"priority": 5,
 		"image": { "animated": true },
 		"backgroundColor": "#312526"
 	},
@@ -500,6 +575,7 @@
 		"title": "Beevoobaa",
 		"description": "Player sprite for a beach volleyball game.",
 		"date": null,
+		"priority": 5,
 		"image": { "animated": true },
 		"backgroundColor": "#2d1501"
 	},
@@ -507,6 +583,7 @@
 		"title": "Grapple Animations",
 		"description": "Unfinished player sprite and animations for a platformer.",
 		"date": null,
+		"priority": 1,
 		"image": { "animated": true },
 		"backgroundColor": "#fdfb35"
 	},
@@ -514,6 +591,7 @@
 		"title": "Vampire Dolphin",
 		"description": "Concept for a boss for a PICO-8 boss rush game. Vampire dolphin: yes please.",
 		"date": null,
+		"priority": 2,
 		"image": { "animated": true },
 		"backgroundColor": "#000"
 	}
