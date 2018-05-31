@@ -75,7 +75,7 @@
 	},
 	"quickdraw": {
 		"title": "Quickdraw",
-		"description": "Prototype of a tale of revenge in the wild west. Arrow keys to move, Z to swing.",
+		"description": "Prototype of a tale of revenge in the wild west. Arrow keys to move, Z to swing, X to restart.",
 		"date": "2017/09",
 		"type": "pico-8",
 		"image": { "animated": true },
