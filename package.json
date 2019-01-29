@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Uhhh attempt 3 at a portfolio?",
   "scripts": {
-    "start": "babel-node index.js --presets env",
+    "start": "babel-node server.js --presets env",
     "build": "babel-node build.js --presets env",
     "build:watch": "nodemon build.js --exec babel-node --presets env",
     "build-and-serve": "babel-node build-and-serve.js --presets env",

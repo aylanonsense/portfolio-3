@@ -28,7 +28,9 @@ export default async (galleryData, projects) => {
 	}
 	console.log('  Building project html...');
 	for (let [ project, projectData ] of Object.entries(projects)) {
-		await buildProjectHtml(galleryData, projectData);
+		if (projectData.type !== 'link') {
+			await buildProjectHtml(galleryData, projectData);
+		}
 	}
 	console.log(`  Done building ${galleryData.title}!`);
 	return proxies;

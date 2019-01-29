@@ -1,4 +1,18 @@
 {
+	"quickdraw-sign": {
+		"title": "Arcade",
+		"description": "Title screen for Quickraw Blackjack.",
+		"date": "2018/12",
+		"priority": 5,
+		"backgroundColor": "#f78329"
+	},
+	"quickdraw-cards": {
+		"title": "Arcade",
+		"description": "A pixely set of cards for a game.",
+		"date": "2018/12",
+		"priority": 5,
+		"backgroundColor": "#f78329"
+	},
 	"arcade": {
 		"title": "Arcade",
 		"description": "Event banner for an arcade + dance party.",

@@ -22,7 +22,7 @@ export default async (galleryData, projects) => {
 		// add basic metadata
 		projectData.project = project;
 		projectData.id = `project-${project}`;
-		projectData.uri = `/${galleryData.uri}/${project}`;
+		projectData.uri = projectData.uri || `/${galleryData.uri}/${project}`;
 		projectData.hidden = projectData.hidden || false;
 		projectData.priority = projectData.priority || 0;
 		projectData.shortDescription = projectData.shortDescription || projectData.description;
@@ -32,7 +32,9 @@ export default async (galleryData, projects) => {
 		let { time, dateText } = parseDate(projectData.date);
 		projectData.time = time;
 		projectData.dateText = dateText;
-		ordered.push({ project, time });
+		if (project.type !== 'link') {
+			ordered.push({ project, time });
+		}
 		// add metadata about the image associated with the project
 		if (projectData.type === 'image') {
 			projectData.image = projectData.image || {};

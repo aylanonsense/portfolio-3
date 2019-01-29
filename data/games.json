@@ -1,4 +1,26 @@
 {
+	"snowball-showdown": {
+		"title": "Snowball Showdown",
+		"description": "A 1v1 blizard standoff! Left player: Q, Right player: N.",
+		"date": "2018/12",
+		"type": "pico-8",
+		"image": { "animated": true },
+		"grid": { "cols": 4, "rows": 2 },
+		"priority": 7,
+		"backgroundColor": "#000",
+		"isPixelArt": true
+	},
+	"quickdraw-blackjack": {
+		"title": "Quickdraw Blackjack",
+		"description": "Blackjack but with shooty bits! Click to assemble a hand of 21.",
+		"date": "2018/12",
+		"type": "link",
+		"uri": "https://www.playcastle.io/games?name=Quickdraw%20Blackjack&author=bridgs&url=https://raw.githubusercontent.com/bridgs/quickdraw-blackjack/master/main.lua",
+		"image": { "animated": true },
+		"grid": { "cols": 2, "rows": 2 },
+		"priority": 5,
+		"backgroundColor": "#f78329"
+	},
 	"arpongi": {
 		"title": "Arpongi",
 		"description": "A two-player competitive pong RPG! Left player: WS + CV, Right player: Arrow keys + NM, Middle button: space bar.",
